@@ -4,62 +4,57 @@ struct ParameterCardView: View {
     let parameter: OBDParameterData
 
     var body: some View {
-        VStack(spacing: 8) {
-            // Icon
-            Image(systemName: parameter.type.iconName)
-                .font(.system(size: 34, weight: .medium))
-                .foregroundColor(cardColor)
-                .shadow(color: cardColor.opacity(0.5), radius: 6)
-                .frame(height: 42)
-
+        VStack(alignment: .leading, spacing: 10) {
             // Title
             Text(parameter.type.title)
-                .font(.caption)
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.center)
-                .lineLimit(2)
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+                .lineLimit(1)
                 .minimumScaleFactor(0.8)
 
-            // Value
-            Text(parameter.value == "N/A" ? "N/A" : parameter.value)
-                .font(.title2)
-                .fontWeight(.bold)
-                .foregroundColor(parameter.value == "N/A" ? .gray : .white)
+            Spacer()
 
-            // Unit
-            if parameter.value != "N/A" {
-                Text(parameter.type.unit)
-                    .font(.caption2)
-                    .foregroundColor(.secondary)
+            // Icon + Value row
+            HStack(alignment: .bottom) {
+                Image(systemName: parameter.type.iconName)
+                    .font(.system(size: 22, weight: .medium))
+                    .foregroundColor(accentGreen)
+
+                Spacer()
+
+                HStack(alignment: .firstTextBaseline, spacing: 3) {
+                    Text(parameter.value == "N/A" ? "--" : parameter.value)
+                        .font(.system(size: 28, weight: .bold, design: .rounded))
+                        .foregroundColor(.white)
+
+                    if parameter.value != "N/A" {
+                        Text(parameter.type.unit)
+                            .font(.caption)
+                            .foregroundColor(Color(white: 0.5))
+                    }
+                }
             }
+
+            // Detail link
+            HStack(spacing: 4) {
+                Text("Details")
+                    .font(.caption)
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 10, weight: .semibold))
+            }
+            .foregroundColor(accentGreen)
         }
-        .frame(maxWidth: .infinity)
-        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(14)
+        .frame(minHeight: 120)
         .background(
             RoundedRectangle(cornerRadius: 16)
-                .fill(.ultraThinMaterial)
+                .fill(cardBackground)
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                        .stroke(accentGreen.opacity(0.12), lineWidth: 1)
                 )
         )
-    }
-
-    private var cardColor: Color {
-        if parameter.value == "N/A" {
-            return .gray
-        }
-
-        switch parameter.type {
-        case .rpm: return .blue
-        case .speed: return .green
-        case .coolantTemp: return .orange
-        case .engineLoad: return .purple
-        case .throttlePosition: return .indigo
-        case .fuelLevel: return .yellow
-        case .intakeAirTemp: return .cyan
-        case .maf: return .mint
-        case .timing: return .pink
-        }
     }
 }

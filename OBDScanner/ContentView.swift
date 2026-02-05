@@ -334,6 +334,10 @@ class OBDConnection: ObservableObject {
     }
 }
 
+// Shared accent color matching the reference design
+let accentGreen = Color(red: 0.35, green: 0.85, blue: 0.40)
+let cardBackground = Color(red: 0.10, green: 0.14, blue: 0.12)
+
 struct ContentView: View {
     @StateObject private var obd = OBDConnection()
 
@@ -355,18 +359,12 @@ struct ContentView: View {
                                 Text("Connect to OBD-II")
                             }
                             .font(.headline)
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 14)
-                            .background(
-                                LinearGradient(
-                                    colors: [Color.blue, Color.blue.opacity(0.7)],
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            )
-                            .clipShape(Capsule())
-                            .shadow(color: .blue.opacity(0.4), radius: 8, y: 4)
+                            .background(accentGreen)
+                            .cornerRadius(14)
+                            .shadow(color: accentGreen.opacity(0.3), radius: 8, y: 4)
                         }
                         .padding(.horizontal)
                     } else {
@@ -382,24 +380,17 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 14)
-                            .background(
-                                LinearGradient(
-                                    colors: [Color.red, Color.red.opacity(0.7)],
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            )
-                            .clipShape(Capsule())
-                            .shadow(color: .red.opacity(0.4), radius: 8, y: 4)
+                            .background(Color(white: 0.20))
+                            .cornerRadius(14)
                         }
                         .padding(.horizontal)
                     }
 
                     // Grid of parameters
                     LazyVGrid(columns: [
-                        GridItem(.flexible(), spacing: 16),
-                        GridItem(.flexible(), spacing: 16)
-                    ], spacing: 16) {
+                        GridItem(.flexible(), spacing: 14),
+                        GridItem(.flexible(), spacing: 14)
+                    ], spacing: 14) {
                         ForEach(obd.parameters) { parameter in
                             NavigationLink(destination: ParameterDetailView(parameter: parameter)) {
                                 ParameterCardView(parameter: parameter)
@@ -407,19 +398,13 @@ struct ContentView: View {
                             .buttonStyle(PlainButtonStyle())
                         }
                     }
-                    .padding()
+                    .padding(.horizontal)
                 }
+                .padding(.bottom)
             }
             .navigationTitle("OBD Scanner")
             .toolbarColorScheme(.dark, for: .navigationBar)
-            .background(
-                LinearGradient(
-                    colors: [Color.black, Color(white: 0.12)],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .ignoresSafeArea()
-            )
+            .background(Color.black.ignoresSafeArea())
         }
         .preferredColorScheme(.dark)
     }
@@ -431,32 +416,34 @@ struct ConnectionStatusBanner: View {
     var body: some View {
         HStack {
             Circle()
-                .fill(isConnected ? Color.green : Color.gray)
+                .fill(isConnected ? accentGreen : Color.gray)
                 .frame(width: 10, height: 10)
-                .shadow(color: isConnected ? .green.opacity(0.6) : .clear, radius: 4)
+                .shadow(color: isConnected ? accentGreen.opacity(0.6) : .clear, radius: 4)
 
             Text(isConnected ? "Connected" : "Not Connected")
                 .font(.subheadline)
                 .fontWeight(.medium)
+                .foregroundColor(.white)
 
             Spacer()
 
             if isConnected {
                 HStack(spacing: 4) {
                     Image(systemName: "wifi")
+                        .foregroundColor(accentGreen)
                     Text("192.168.0.10")
                 }
                 .font(.caption)
-                .foregroundColor(.secondary)
+                .foregroundColor(Color(white: 0.5))
             }
         }
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 14)
-                .fill(.ultraThinMaterial)
+                .fill(cardBackground)
                 .overlay(
                     RoundedRectangle(cornerRadius: 14)
-                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                        .stroke(accentGreen.opacity(0.15), lineWidth: 1)
                 )
         )
         .padding(.horizontal)
