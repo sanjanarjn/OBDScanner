@@ -7,9 +7,10 @@ struct ParameterCardView: View {
         VStack(spacing: 8) {
             // Icon
             Image(systemName: parameter.type.iconName)
-                .font(.system(size: 32))
+                .font(.system(size: 34, weight: .medium))
                 .foregroundColor(cardColor)
-                .frame(height: 40)
+                .shadow(color: cardColor.opacity(0.5), radius: 6)
+                .frame(height: 42)
 
             // Title
             Text(parameter.type.title)
@@ -23,7 +24,7 @@ struct ParameterCardView: View {
             Text(parameter.value == "N/A" ? "N/A" : parameter.value)
                 .font(.title2)
                 .fontWeight(.bold)
-                .foregroundColor(parameter.value == "N/A" ? .gray : .primary)
+                .foregroundColor(parameter.value == "N/A" ? .gray : .white)
 
             // Unit
             if parameter.value != "N/A" {
@@ -36,8 +37,11 @@ struct ParameterCardView: View {
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 16)
-                .fill(Color(.systemBackground))
-                .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 2)
+                .fill(.ultraThinMaterial)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                )
         )
     }
 

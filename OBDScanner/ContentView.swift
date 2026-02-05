@@ -340,32 +340,48 @@ struct ContentView: View {
                         Button(action: {
                             obd.connect()
                         }) {
-                            HStack {
-                                Image(systemName: "link.circle.fill")
+                            HStack(spacing: 10) {
+                                Image(systemName: "bolt.circle.fill")
+                                    .font(.title3)
                                 Text("Connect to OBD-II")
                             }
                             .font(.headline)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.blue)
-                            .cornerRadius(12)
+                            .padding(.vertical, 14)
+                            .background(
+                                LinearGradient(
+                                    colors: [Color.blue, Color.blue.opacity(0.7)],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                            .clipShape(Capsule())
+                            .shadow(color: .blue.opacity(0.4), radius: 8, y: 4)
                         }
                         .padding(.horizontal)
                     } else {
                         Button(action: {
                             obd.disconnect()
                         }) {
-                            HStack {
-                                Image(systemName: "link.circle")
+                            HStack(spacing: 10) {
+                                Image(systemName: "xmark.circle.fill")
+                                    .font(.title3)
                                 Text("Disconnect")
                             }
                             .font(.headline)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.red)
-                            .cornerRadius(12)
+                            .padding(.vertical, 14)
+                            .background(
+                                LinearGradient(
+                                    colors: [Color.red, Color.red.opacity(0.7)],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                            .clipShape(Capsule())
+                            .shadow(color: .red.opacity(0.4), radius: 8, y: 4)
                         }
                         .padding(.horizontal)
                     }
@@ -386,8 +402,17 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("OBD Scanner")
-            .background(Color(.systemGroupedBackground).ignoresSafeArea())
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .background(
+                LinearGradient(
+                    colors: [Color.black, Color(white: 0.12)],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .ignoresSafeArea()
+            )
         }
+        .preferredColorScheme(.dark)
     }
 }
 
@@ -398,7 +423,8 @@ struct ConnectionStatusBanner: View {
         HStack {
             Circle()
                 .fill(isConnected ? Color.green : Color.gray)
-                .frame(width: 12, height: 12)
+                .frame(width: 10, height: 10)
+                .shadow(color: isConnected ? .green.opacity(0.6) : .clear, radius: 4)
 
             Text(isConnected ? "Connected" : "Not Connected")
                 .font(.subheadline)
@@ -417,8 +443,12 @@ struct ConnectionStatusBanner: View {
         }
         .padding()
         .background(
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color(.secondarySystemBackground))
+            RoundedRectangle(cornerRadius: 14)
+                .fill(.ultraThinMaterial)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 14)
+                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                )
         )
         .padding(.horizontal)
     }
