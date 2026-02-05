@@ -135,6 +135,10 @@ class OBDConnection: ObservableObject {
                 DispatchQueue.main.async {
                     self.isConnected = false
                 }
+            } else if case .cancelled = state {
+                DispatchQueue.main.async {
+                    self.isConnected = false
+                }
             }
         }
 
@@ -156,13 +160,15 @@ class OBDConnection: ObservableObject {
     }
 
     private func startListening() {
-        connection?.receive(minimumIncompleteLength: 1, maximumLength: 1024) { data, _, _, _ in
+        guard let connection = connection,
+              connection.state == .ready else { return }
+        connection.receive(minimumIncompleteLength: 1, maximumLength: 1024) { data, _, _, _ in
             if let data = data, let response = String(data: data, encoding: .utf8) {
                 let cleanResponse = response.trimmingCharacters(in: .whitespacesAndNewlines)
                 print("Raw Response: \(cleanResponse)")
                 self.handleResponse(cleanResponse)
             }
-            self.startListening() // keep listening forever
+            self.startListening()
         }
     }
 
@@ -200,6 +206,8 @@ class OBDConnection: ObservableObject {
     }
 
     private func sendNextParameter() {
+        guard connection != nil, connection?.state == .ready else { return }
+
         // Get the current parameter to poll
         let paramTypes = Array(OBDParameterType.allCases)
         let paramType = paramTypes[currentParameterIndex]
@@ -212,7 +220,8 @@ class OBDConnection: ObservableObject {
     }
 
     private func sendCommand(_ command: String) {
-        guard let connection = connection else { return }
+        guard let connection = connection,
+              connection.state == .ready else { return }
         print("Sending: \(command.trimmingCharacters(in: .whitespacesAndNewlines))")
         let data = command.data(using: .utf8)!
         connection.send(content: data, completion: .contentProcessed({ _ in }))
