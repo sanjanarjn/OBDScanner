@@ -470,6 +470,14 @@ struct ContentView: View {
                                     Image(systemName: "bolt.circle.fill")
                                         .font(.title3)
                                     Text("Connect to OBD-II")
+                                }
+                                .font(.headline)
+                                .foregroundColor(.black)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 14)
+                                .background(accentGreen)
+                                .cornerRadius(14)
+                                .shadow(color: accentGreen.opacity(0.3), radius: 8, y: 4)
                             }
                             .padding(.horizontal)
                         } else {
