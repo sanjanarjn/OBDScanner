@@ -357,69 +357,73 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(spacing: 20) {
-                    // Connection status banner
-                    ConnectionStatusBanner(isConnected: obd.isConnected)
+            ZStack {
+                Color.black.ignoresSafeArea()
 
-                    // Connection button
-                    if !obd.isConnected {
-                        Button(action: {
-                            obd.connect()
-                        }) {
-                            HStack(spacing: 10) {
-                                Image(systemName: "bolt.circle.fill")
-                                    .font(.title3)
-                                Text("Connect to OBD-II")
+                ScrollView {
+                    VStack(spacing: 20) {
+                        // Connection status banner
+                        ConnectionStatusBanner(isConnected: obd.isConnected)
+
+                        // Connection button
+                        if !obd.isConnected {
+                            Button(action: {
+                                obd.connect()
+                            }) {
+                                HStack(spacing: 10) {
+                                    Image(systemName: "bolt.circle.fill")
+                                        .font(.title3)
+                                    Text("Connect to OBD-II")
+                                }
+                                .font(.headline)
+                                .foregroundColor(.black)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 14)
+                                .background(accentGreen)
+                                .cornerRadius(14)
+                                .shadow(color: accentGreen.opacity(0.3), radius: 8, y: 4)
                             }
-                            .font(.headline)
-                            .foregroundColor(.black)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 14)
-                            .background(accentGreen)
-                            .cornerRadius(14)
-                            .shadow(color: accentGreen.opacity(0.3), radius: 8, y: 4)
+                            .padding(.horizontal)
+                        } else {
+                            Button(action: {
+                                obd.disconnect()
+                            }) {
+                                HStack(spacing: 10) {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .font(.title3)
+                                    Text("Disconnect")
+                                }
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 14)
+                                .background(Color(white: 0.20))
+                                .cornerRadius(14)
+                            }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
-                    } else {
-                        Button(action: {
-                            obd.disconnect()
-                        }) {
-                            HStack(spacing: 10) {
-                                Image(systemName: "xmark.circle.fill")
-                                    .font(.title3)
-                                Text("Disconnect")
+
+                        // Grid of parameters
+                        LazyVGrid(columns: [
+                            GridItem(.flexible(), spacing: 14),
+                            GridItem(.flexible(), spacing: 14)
+                        ], spacing: 14) {
+                            ForEach(obd.parameters) { parameter in
+                                NavigationLink(destination: ParameterDetailView(parameter: parameter)) {
+                                    ParameterCardView(parameter: parameter)
+                                }
+                                .buttonStyle(PlainButtonStyle())
                             }
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 14)
-                            .background(Color(white: 0.20))
-                            .cornerRadius(14)
                         }
                         .padding(.horizontal)
                     }
-
-                    // Grid of parameters
-                    LazyVGrid(columns: [
-                        GridItem(.flexible(), spacing: 14),
-                        GridItem(.flexible(), spacing: 14)
-                    ], spacing: 14) {
-                        ForEach(obd.parameters) { parameter in
-                            NavigationLink(destination: ParameterDetailView(parameter: parameter)) {
-                                ParameterCardView(parameter: parameter)
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                        }
-                    }
-                    .padding(.horizontal)
+                    .padding(.bottom)
                 }
-                .padding(.bottom)
             }
             .navigationTitle("OBD Scanner")
             .toolbarColorScheme(.dark, for: .navigationBar)
-            .background(Color.black.ignoresSafeArea())
         }
+        .navigationViewStyle(.stack)
         .preferredColorScheme(.dark)
     }
 }
