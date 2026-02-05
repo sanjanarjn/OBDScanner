@@ -107,6 +107,7 @@ class OBDConnection: ObservableObject {
     private var isWaitingForResponse = false
     private var pollingTimer: Timer?
     private var currentParameterIndex = 0
+    private var isActive = false
 
     @Published var parameters: [OBDParameterData] = []
     @Published var isConnected = false
@@ -122,23 +123,26 @@ class OBDConnection: ObservableObject {
         let host = NWEndpoint.Host("192.168.0.10")   // default IP for iCar Pro WiFi
         let port = NWEndpoint.Port(rawValue: 35000)!
 
+        isActive = true
         connection = NWConnection(host: host, port: port, using: .tcp)
-        connection?.stateUpdateHandler = { state in
+        connection?.stateUpdateHandler = { [weak self] state in
+            guard let self = self else { return }
             print("Connection state: \(state)")
-            if case .ready = state {
-                DispatchQueue.main.async {
-                    self.isConnected = true
-                }
+            switch state {
+            case .ready:
+                DispatchQueue.main.async { self.isConnected = true }
                 self.startListening()
                 self.initialize()
-            } else if case .failed = state {
-                DispatchQueue.main.async {
-                    self.isConnected = false
-                }
-            } else if case .cancelled = state {
-                DispatchQueue.main.async {
-                    self.isConnected = false
-                }
+            case .failed, .cancelled:
+                self.isActive = false
+                DispatchQueue.main.async { self.isConnected = false }
+            case .waiting:
+                // Connection can't be established — clean up
+                self.isActive = false
+                self.connection?.cancel()
+                DispatchQueue.main.async { self.isConnected = false }
+            default:
+                break
             }
         }
 
@@ -146,13 +150,14 @@ class OBDConnection: ObservableObject {
     }
 
     func disconnect() {
+        isActive = false
         pollingTimer?.invalidate()
         pollingTimer = nil
         connection?.cancel()
         connection = nil
+        isWaitingForResponse = false
         DispatchQueue.main.async {
             self.isConnected = false
-            // Reset all values to N/A
             self.parameters = OBDParameterType.allCases.map { type in
                 OBDParameterData(type: type, value: "N/A", lastUpdated: Date())
             }
@@ -160,9 +165,9 @@ class OBDConnection: ObservableObject {
     }
 
     private func startListening() {
-        guard let connection = connection,
-              connection.state == .ready else { return }
-        connection.receive(minimumIncompleteLength: 1, maximumLength: 1024) { data, _, _, _ in
+        guard isActive, let connection = connection else { return }
+        connection.receive(minimumIncompleteLength: 1, maximumLength: 1024) { [weak self] data, _, _, _ in
+            guard let self = self, self.isActive else { return }
             if let data = data, let response = String(data: data, encoding: .utf8) {
                 let cleanResponse = response.trimmingCharacters(in: .whitespacesAndNewlines)
                 print("Raw Response: \(cleanResponse)")
@@ -174,28 +179,35 @@ class OBDConnection: ObservableObject {
 
     private func initialize() {
         // Send initialization commands sequentially with proper delays
-        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            guard let self = self, self.isActive else { return }
             self.sendCommand("ATZ\r")  // Reset
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) { [weak self] in
+            guard let self = self, self.isActive else { return }
             self.sendCommand("ATE0\r") // Echo off
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 3.0) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 3.0) { [weak self] in
+            guard let self = self, self.isActive else { return }
             self.sendCommand("ATL0\r") // Linefeeds off
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 4.0) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 4.0) { [weak self] in
+            guard let self = self, self.isActive else { return }
             self.sendCommand("ATS0\r") // Spaces off
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 5.0) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 5.0) { [weak self] in
+            guard let self = self, self.isActive else { return }
             self.sendCommand("ATH0\r") // Headers off
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 6.0) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 6.0) { [weak self] in
+            guard let self = self, self.isActive else { return }
             self.sendCommand("ATSP0\r") // Auto protocol
         }
 
         // Start polling after ALL initialization commands complete (8 seconds)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0) {
-            print("🚀 Starting polling...")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0) { [weak self] in
+            guard let self = self, self.isActive else { return }
+            print("Starting polling...")
             self.startPolling()
         }
     }
@@ -206,7 +218,7 @@ class OBDConnection: ObservableObject {
     }
 
     private func sendNextParameter() {
-        guard connection != nil, connection?.state == .ready else { return }
+        guard isActive, connection != nil else { return }
 
         // Get the current parameter to poll
         let paramTypes = Array(OBDParameterType.allCases)
@@ -220,8 +232,7 @@ class OBDConnection: ObservableObject {
     }
 
     private func sendCommand(_ command: String) {
-        guard let connection = connection,
-              connection.state == .ready else { return }
+        guard isActive, let connection = connection else { return }
         print("Sending: \(command.trimmingCharacters(in: .whitespacesAndNewlines))")
         let data = command.data(using: .utf8)!
         connection.send(content: data, completion: .contentProcessed({ _ in }))
@@ -229,13 +240,14 @@ class OBDConnection: ObservableObject {
         isWaitingForResponse = true
 
         // Longer timeout (8 seconds) to allow for SEARCHING and ECU response
-        DispatchQueue.global().asyncAfter(deadline: .now() + 8.0) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 8.0) { [weak self] in
+            guard let self = self, self.isActive else { return }
             if self.isWaitingForResponse {
-                print("⏱ Timeout waiting for response to: \(command.trimmingCharacters(in: .whitespacesAndNewlines))")
+                print("Timeout waiting for response to: \(command.trimmingCharacters(in: .whitespacesAndNewlines))")
                 self.isWaitingForResponse = false
 
-                // Try next parameter after timeout
-                DispatchQueue.global().asyncAfter(deadline: .now() + 1.0) {
+                DispatchQueue.global().asyncAfter(deadline: .now() + 1.0) { [weak self] in
+                    guard let self = self, self.isActive else { return }
                     self.sendNextParameter()
                 }
             }
@@ -243,20 +255,21 @@ class OBDConnection: ObservableObject {
     }
 
     private func handleResponse(_ response: String) {
+        guard isActive else { return }
         // Ignore empty responses and prompts
         guard !response.isEmpty && response != ">" else { return }
 
         // Ignore common non-data responses (don't mark as ready for next command)
         if response.contains("SEARCHING") {
-            print("🔍 Searching for protocol...")
+            print("Searching for protocol...")
             return
         }
 
         if response.contains("STOPPED") {
-            print("⏹ Command stopped - waiting before retry")
+            print("Command stopped - waiting before retry")
             isWaitingForResponse = false
-            // If stopped, wait longer before trying next (2 seconds to let adapter settle)
-            DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) { [weak self] in
+                guard let self = self, self.isActive else { return }
                 self.sendNextParameter()
             }
             return
@@ -264,10 +277,10 @@ class OBDConnection: ObservableObject {
 
         // Handle NO DATA responses (vehicle doesn't support this parameter)
         if response.contains("NO DATA") {
-            print("⚠️ No data for this parameter - skipping")
+            print("No data for this parameter - skipping")
             isWaitingForResponse = false
-            // Skip to next parameter quickly
-            DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                guard let self = self, self.isActive else { return }
                 self.sendNextParameter()
             }
             return
@@ -275,7 +288,7 @@ class OBDConnection: ObservableObject {
 
         // Ignore echo responses (command being echoed back)
         if response.starts(with: "01") && response.count <= 4 {
-            print("↩️ Echo ignored: \(response)")
+            print("Echo ignored: \(response)")
             return
         }
 
@@ -287,10 +300,10 @@ class OBDConnection: ObservableObject {
 
         // Ignore negative response codes
         if response.hasPrefix("7F") {
-            print("⚠️ Negative response from ECU: \(response) - trying next parameter")
+            print("Negative response from ECU: \(response) - trying next parameter")
             isWaitingForResponse = false
-            // Send next parameter after short delay
-            DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                guard let self = self, self.isActive else { return }
                 self.sendNextParameter()
             }
             return
@@ -315,7 +328,8 @@ class OBDConnection: ObservableObject {
         isWaitingForResponse = false
 
         // Send next parameter after short delay
-        DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) { [weak self] in
+            guard let self = self, self.isActive else { return }
             self.sendNextParameter()
         }
     }
