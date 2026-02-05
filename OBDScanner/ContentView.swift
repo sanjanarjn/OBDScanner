@@ -109,6 +109,11 @@ class OBDConnection: ObservableObject {
     private var currentParameterIndex = 0
     private var isActive = false
 
+    // Demo mode
+    @Published var isDemoMode = false
+    private var demoTimer: Timer?
+    private var demoValues: [OBDParameterType: Double] = [:]
+
     @Published var parameters: [OBDParameterData] = []
     @Published var isConnected = false
 
@@ -116,6 +121,83 @@ class OBDConnection: ObservableObject {
         // Initialize all parameters with N/A values
         parameters = OBDParameterType.allCases.map { type in
             OBDParameterData(type: type, value: "N/A", lastUpdated: Date())
+        }
+        // Seed demo values at midpoints
+        demoValues = [
+            .rpm: 1200, .speed: 60, .coolantTemp: 90, .engineLoad: 50,
+            .throttlePosition: 30, .fuelLevel: 55, .intakeAirTemp: 28,
+            .maf: 8.0, .timing: 10.0
+        ]
+    }
+
+    // MARK: - Demo Mode
+
+    func startDemo() {
+        // Stop any real connection first (without resetting isDemoMode)
+        isActive = false
+        pollingTimer?.invalidate()
+        pollingTimer = nil
+        connection?.cancel()
+        connection = nil
+        isWaitingForResponse = false
+
+        isDemoMode = true
+        isConnected = true
+
+        demoTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { [weak self] _ in
+            self?.updateDemoValues()
+        }
+        // Fire immediately for instant feedback
+        updateDemoValues()
+    }
+
+    func stopDemo() {
+        demoTimer?.invalidate()
+        demoTimer = nil
+        isDemoMode = false
+        isConnected = false
+        parameters = OBDParameterType.allCases.map { type in
+            OBDParameterData(type: type, value: "--", lastUpdated: Date())
+        }
+    }
+
+    private func updateDemoValues() {
+        let ranges: [OBDParameterType: (min: Double, max: Double, drift: Double)] = [
+            .rpm:              (650,  3500, 150),
+            .speed:            (0,    120,  8),
+            .coolantTemp:      (80,   100,  2),
+            .engineLoad:       (20,   85,   5),
+            .throttlePosition: (5,    75,   6),
+            .fuelLevel:        (25,   90,   1),
+            .intakeAirTemp:    (15,   45,   2),
+            .maf:              (2.0,  15.0, 1.0),
+            .timing:           (-5.0, 25.0, 2.0)
+        ]
+
+        for paramType in OBDParameterType.allCases {
+            guard let range = ranges[paramType],
+                  let current = demoValues[paramType] else { continue }
+
+            // Drift slightly from previous value
+            let delta = Double.random(in: -range.drift...range.drift)
+            let newValue = min(range.max, max(range.min, current + delta))
+            demoValues[paramType] = newValue
+
+            let formatted: String
+            switch paramType {
+            case .maf, .timing:
+                formatted = String(format: "%.1f", newValue)
+            default:
+                formatted = "\(Int(newValue))"
+            }
+
+            if let index = parameters.firstIndex(where: { $0.type == paramType }) {
+                parameters[index] = OBDParameterData(
+                    type: paramType,
+                    value: formatted,
+                    lastUpdated: Date()
+                )
+            }
         }
     }
 
@@ -363,10 +445,24 @@ struct ContentView: View {
                 ScrollView {
                     VStack(spacing: 20) {
                         // Connection status banner
-                        ConnectionStatusBanner(isConnected: obd.isConnected)
+                        ConnectionStatusBanner(isConnected: obd.isConnected, isDemoMode: obd.isDemoMode)
 
-                        // Connection button
-                        if !obd.isConnected {
+                        // Connection button (hidden when in demo mode)
+                        if obd.isDemoMode {
+                            // Show demo mode indicator instead of connect/disconnect
+                            HStack(spacing: 10) {
+                                Image(systemName: "play.circle.fill")
+                                    .font(.title3)
+                                Text("Demo Mode Active")
+                            }
+                            .font(.headline)
+                            .foregroundColor(.black)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 14)
+                            .background(accentGreen.opacity(0.7))
+                            .cornerRadius(14)
+                            .padding(.horizontal)
+                        } else if !obd.isConnected {
                             Button(action: {
                                 obd.connect()
                             }) {
@@ -374,14 +470,6 @@ struct ContentView: View {
                                     Image(systemName: "bolt.circle.fill")
                                         .font(.title3)
                                     Text("Connect to OBD-II")
-                                }
-                                .font(.headline)
-                                .foregroundColor(.black)
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, 14)
-                                .background(accentGreen)
-                                .cornerRadius(14)
-                                .shadow(color: accentGreen.opacity(0.3), radius: 8, y: 4)
                             }
                             .padding(.horizontal)
                         } else {
@@ -422,6 +510,14 @@ struct ContentView: View {
             }
             .navigationTitle("OBD Scanner")
             .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: SettingsView(obd: obd)) {
+                        Image(systemName: "gearshape")
+                            .foregroundColor(accentGreen)
+                    }
+                }
+            }
         }
         .navigationViewStyle(.stack)
         .preferredColorScheme(.dark)
@@ -430,6 +526,7 @@ struct ContentView: View {
 
 struct ConnectionStatusBanner: View {
     let isConnected: Bool
+    var isDemoMode: Bool = false
 
     var body: some View {
         HStack {
@@ -438,14 +535,22 @@ struct ConnectionStatusBanner: View {
                 .frame(width: 10, height: 10)
                 .shadow(color: isConnected ? accentGreen.opacity(0.6) : .clear, radius: 4)
 
-            Text(isConnected ? "Connected" : "Not Connected")
+            Text(isDemoMode ? "Demo Mode" : (isConnected ? "Connected" : "Not Connected"))
                 .font(.subheadline)
                 .fontWeight(.medium)
                 .foregroundColor(.white)
 
             Spacer()
 
-            if isConnected {
+            if isDemoMode {
+                HStack(spacing: 4) {
+                    Image(systemName: "play.circle")
+                        .foregroundColor(accentGreen)
+                    Text("Simulated")
+                }
+                .font(.caption)
+                .foregroundColor(Color(white: 0.5))
+            } else if isConnected {
                 HStack(spacing: 4) {
                     Image(systemName: "wifi")
                         .foregroundColor(accentGreen)
