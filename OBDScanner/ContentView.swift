@@ -107,6 +107,12 @@ class OBDConnection: ObservableObject {
     private var isWaitingForResponse = false
     private var pollingTimer: Timer?
     private var currentParameterIndex = 0
+    private var isActive = false
+
+    // Demo mode
+    @Published var isDemoMode = false
+    private var demoTimer: Timer?
+    private var demoValues: [OBDParameterType: Double] = [:]
 
     @Published var parameters: [OBDParameterData] = []
     @Published var isConnected = false
@@ -116,25 +122,109 @@ class OBDConnection: ObservableObject {
         parameters = OBDParameterType.allCases.map { type in
             OBDParameterData(type: type, value: "N/A", lastUpdated: Date())
         }
+        // Seed demo values at midpoints
+        demoValues = [
+            .rpm: 1200, .speed: 60, .coolantTemp: 90, .engineLoad: 50,
+            .throttlePosition: 30, .fuelLevel: 55, .intakeAirTemp: 28,
+            .maf: 8.0, .timing: 10.0
+        ]
+    }
+
+    // MARK: - Demo Mode
+
+    func startDemo() {
+        // Stop any real connection first (without resetting isDemoMode)
+        isActive = false
+        pollingTimer?.invalidate()
+        pollingTimer = nil
+        connection?.cancel()
+        connection = nil
+        isWaitingForResponse = false
+
+        isDemoMode = true
+        isConnected = true
+
+        demoTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { [weak self] _ in
+            self?.updateDemoValues()
+        }
+        // Fire immediately for instant feedback
+        updateDemoValues()
+    }
+
+    func stopDemo() {
+        demoTimer?.invalidate()
+        demoTimer = nil
+        isDemoMode = false
+        isConnected = false
+        parameters = OBDParameterType.allCases.map { type in
+            OBDParameterData(type: type, value: "--", lastUpdated: Date())
+        }
+    }
+
+    private func updateDemoValues() {
+        let ranges: [OBDParameterType: (min: Double, max: Double, drift: Double)] = [
+            .rpm:              (650,  3500, 150),
+            .speed:            (0,    120,  8),
+            .coolantTemp:      (80,   100,  2),
+            .engineLoad:       (20,   85,   5),
+            .throttlePosition: (5,    75,   6),
+            .fuelLevel:        (25,   90,   1),
+            .intakeAirTemp:    (15,   45,   2),
+            .maf:              (2.0,  15.0, 1.0),
+            .timing:           (-5.0, 25.0, 2.0)
+        ]
+
+        for paramType in OBDParameterType.allCases {
+            guard let range = ranges[paramType],
+                  let current = demoValues[paramType] else { continue }
+
+            // Drift slightly from previous value
+            let delta = Double.random(in: -range.drift...range.drift)
+            let newValue = min(range.max, max(range.min, current + delta))
+            demoValues[paramType] = newValue
+
+            let formatted: String
+            switch paramType {
+            case .maf, .timing:
+                formatted = String(format: "%.1f", newValue)
+            default:
+                formatted = "\(Int(newValue))"
+            }
+
+            if let index = parameters.firstIndex(where: { $0.type == paramType }) {
+                parameters[index] = OBDParameterData(
+                    type: paramType,
+                    value: formatted,
+                    lastUpdated: Date()
+                )
+            }
+        }
     }
 
     func connect() {
         let host = NWEndpoint.Host("192.168.0.10")   // default IP for iCar Pro WiFi
         let port = NWEndpoint.Port(rawValue: 35000)!
 
+        isActive = true
         connection = NWConnection(host: host, port: port, using: .tcp)
-        connection?.stateUpdateHandler = { state in
+        connection?.stateUpdateHandler = { [weak self] state in
+            guard let self = self else { return }
             print("Connection state: \(state)")
-            if case .ready = state {
-                DispatchQueue.main.async {
-                    self.isConnected = true
-                }
+            switch state {
+            case .ready:
+                DispatchQueue.main.async { self.isConnected = true }
                 self.startListening()
                 self.initialize()
-            } else if case .failed = state {
-                DispatchQueue.main.async {
-                    self.isConnected = false
-                }
+            case .failed, .cancelled:
+                self.isActive = false
+                DispatchQueue.main.async { self.isConnected = false }
+            case .waiting:
+                // Connection can't be established — clean up
+                self.isActive = false
+                self.connection?.cancel()
+                DispatchQueue.main.async { self.isConnected = false }
+            default:
+                break
             }
         }
 
@@ -142,13 +232,14 @@ class OBDConnection: ObservableObject {
     }
 
     func disconnect() {
+        isActive = false
         pollingTimer?.invalidate()
         pollingTimer = nil
         connection?.cancel()
         connection = nil
+        isWaitingForResponse = false
         DispatchQueue.main.async {
             self.isConnected = false
-            // Reset all values to N/A
             self.parameters = OBDParameterType.allCases.map { type in
                 OBDParameterData(type: type, value: "N/A", lastUpdated: Date())
             }
@@ -156,40 +247,49 @@ class OBDConnection: ObservableObject {
     }
 
     private func startListening() {
-        connection?.receive(minimumIncompleteLength: 1, maximumLength: 1024) { data, _, _, _ in
+        guard isActive, let connection = connection else { return }
+        connection.receive(minimumIncompleteLength: 1, maximumLength: 1024) { [weak self] data, _, _, _ in
+            guard let self = self, self.isActive else { return }
             if let data = data, let response = String(data: data, encoding: .utf8) {
                 let cleanResponse = response.trimmingCharacters(in: .whitespacesAndNewlines)
                 print("Raw Response: \(cleanResponse)")
                 self.handleResponse(cleanResponse)
             }
-            self.startListening() // keep listening forever
+            self.startListening()
         }
     }
 
     private func initialize() {
         // Send initialization commands sequentially with proper delays
-        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            guard let self = self, self.isActive else { return }
             self.sendCommand("ATZ\r")  // Reset
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) { [weak self] in
+            guard let self = self, self.isActive else { return }
             self.sendCommand("ATE0\r") // Echo off
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 3.0) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 3.0) { [weak self] in
+            guard let self = self, self.isActive else { return }
             self.sendCommand("ATL0\r") // Linefeeds off
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 4.0) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 4.0) { [weak self] in
+            guard let self = self, self.isActive else { return }
             self.sendCommand("ATS0\r") // Spaces off
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 5.0) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 5.0) { [weak self] in
+            guard let self = self, self.isActive else { return }
             self.sendCommand("ATH0\r") // Headers off
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 6.0) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 6.0) { [weak self] in
+            guard let self = self, self.isActive else { return }
             self.sendCommand("ATSP0\r") // Auto protocol
         }
 
         // Start polling after ALL initialization commands complete (8 seconds)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0) {
-            print("🚀 Starting polling...")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0) { [weak self] in
+            guard let self = self, self.isActive else { return }
+            print("Starting polling...")
             self.startPolling()
         }
     }
@@ -200,6 +300,8 @@ class OBDConnection: ObservableObject {
     }
 
     private func sendNextParameter() {
+        guard isActive, connection != nil else { return }
+
         // Get the current parameter to poll
         let paramTypes = Array(OBDParameterType.allCases)
         let paramType = paramTypes[currentParameterIndex]
@@ -212,7 +314,7 @@ class OBDConnection: ObservableObject {
     }
 
     private func sendCommand(_ command: String) {
-        guard let connection = connection else { return }
+        guard isActive, let connection = connection else { return }
         print("Sending: \(command.trimmingCharacters(in: .whitespacesAndNewlines))")
         let data = command.data(using: .utf8)!
         connection.send(content: data, completion: .contentProcessed({ _ in }))
@@ -220,13 +322,14 @@ class OBDConnection: ObservableObject {
         isWaitingForResponse = true
 
         // Longer timeout (8 seconds) to allow for SEARCHING and ECU response
-        DispatchQueue.global().asyncAfter(deadline: .now() + 8.0) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 8.0) { [weak self] in
+            guard let self = self, self.isActive else { return }
             if self.isWaitingForResponse {
-                print("⏱ Timeout waiting for response to: \(command.trimmingCharacters(in: .whitespacesAndNewlines))")
+                print("Timeout waiting for response to: \(command.trimmingCharacters(in: .whitespacesAndNewlines))")
                 self.isWaitingForResponse = false
 
-                // Try next parameter after timeout
-                DispatchQueue.global().asyncAfter(deadline: .now() + 1.0) {
+                DispatchQueue.global().asyncAfter(deadline: .now() + 1.0) { [weak self] in
+                    guard let self = self, self.isActive else { return }
                     self.sendNextParameter()
                 }
             }
@@ -234,20 +337,21 @@ class OBDConnection: ObservableObject {
     }
 
     private func handleResponse(_ response: String) {
+        guard isActive else { return }
         // Ignore empty responses and prompts
         guard !response.isEmpty && response != ">" else { return }
 
         // Ignore common non-data responses (don't mark as ready for next command)
         if response.contains("SEARCHING") {
-            print("🔍 Searching for protocol...")
+            print("Searching for protocol...")
             return
         }
 
         if response.contains("STOPPED") {
-            print("⏹ Command stopped - waiting before retry")
+            print("Command stopped - waiting before retry")
             isWaitingForResponse = false
-            // If stopped, wait longer before trying next (2 seconds to let adapter settle)
-            DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) { [weak self] in
+                guard let self = self, self.isActive else { return }
                 self.sendNextParameter()
             }
             return
@@ -255,10 +359,10 @@ class OBDConnection: ObservableObject {
 
         // Handle NO DATA responses (vehicle doesn't support this parameter)
         if response.contains("NO DATA") {
-            print("⚠️ No data for this parameter - skipping")
+            print("No data for this parameter - skipping")
             isWaitingForResponse = false
-            // Skip to next parameter quickly
-            DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                guard let self = self, self.isActive else { return }
                 self.sendNextParameter()
             }
             return
@@ -266,7 +370,7 @@ class OBDConnection: ObservableObject {
 
         // Ignore echo responses (command being echoed back)
         if response.starts(with: "01") && response.count <= 4 {
-            print("↩️ Echo ignored: \(response)")
+            print("Echo ignored: \(response)")
             return
         }
 
@@ -278,10 +382,10 @@ class OBDConnection: ObservableObject {
 
         // Ignore negative response codes
         if response.hasPrefix("7F") {
-            print("⚠️ Negative response from ECU: \(response) - trying next parameter")
+            print("Negative response from ECU: \(response) - trying next parameter")
             isWaitingForResponse = false
-            // Send next parameter after short delay
-            DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                guard let self = self, self.isActive else { return }
                 self.sendNextParameter()
             }
             return
@@ -306,7 +410,8 @@ class OBDConnection: ObservableObject {
         isWaitingForResponse = false
 
         // Send next parameter after short delay
-        DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) { [weak self] in
+            guard let self = self, self.isActive else { return }
             self.sendNextParameter()
         }
     }
@@ -325,100 +430,152 @@ class OBDConnection: ObservableObject {
     }
 }
 
+// Shared accent color matching the reference design
+let accentGreen = Color(red: 0.35, green: 0.85, blue: 0.40)
+let cardBackground = Color(red: 0.10, green: 0.14, blue: 0.12)
+
 struct ContentView: View {
     @StateObject private var obd = OBDConnection()
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(spacing: 20) {
-                    // Connection status banner
-                    ConnectionStatusBanner(isConnected: obd.isConnected)
+            ZStack {
+                Color.black.ignoresSafeArea()
 
-                    // Connection button
-                    if !obd.isConnected {
-                        Button(action: {
-                            obd.connect()
-                        }) {
-                            HStack {
-                                Image(systemName: "link.circle.fill")
-                                Text("Connect to OBD-II")
+                ScrollView {
+                    VStack(spacing: 20) {
+                        // Connection status banner
+                        ConnectionStatusBanner(isConnected: obd.isConnected, isDemoMode: obd.isDemoMode)
+
+                        // Connection button (hidden when in demo mode)
+                        if obd.isDemoMode {
+                            // Show demo mode indicator instead of connect/disconnect
+                            HStack(spacing: 10) {
+                                Image(systemName: "play.circle.fill")
+                                    .font(.title3)
+                                Text("Demo Mode Active")
                             }
                             .font(.headline)
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.blue)
-                            .cornerRadius(12)
+                            .padding(.vertical, 14)
+                            .background(accentGreen.opacity(0.7))
+                            .cornerRadius(14)
+                            .padding(.horizontal)
+                        } else if !obd.isConnected {
+                            Button(action: {
+                                obd.connect()
+                            }) {
+                                HStack(spacing: 10) {
+                                    Image(systemName: "bolt.circle.fill")
+                                        .font(.title3)
+                                    Text("Connect to OBD-II")
+                                }
+                                .font(.headline)
+                                .foregroundColor(.black)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 14)
+                                .background(accentGreen)
+                                .cornerRadius(14)
+                                .shadow(color: accentGreen.opacity(0.3), radius: 8, y: 4)
+                            }
+                            .padding(.horizontal)
+                        } else {
+                            Button(action: {
+                                obd.disconnect()
+                            }) {
+                                HStack(spacing: 10) {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .font(.title3)
+                                    Text("Disconnect")
+                                }
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 14)
+                                .background(Color(white: 0.20))
+                                .cornerRadius(14)
+                            }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
-                    } else {
-                        Button(action: {
-                            obd.disconnect()
-                        }) {
-                            HStack {
-                                Image(systemName: "link.circle")
-                                Text("Disconnect")
+
+                        // Grid of parameters
+                        LazyVGrid(columns: [
+                            GridItem(.flexible(), spacing: 14),
+                            GridItem(.flexible(), spacing: 14)
+                        ], spacing: 14) {
+                            ForEach(obd.parameters) { parameter in
+                                NavigationLink(destination: ParameterDetailView(parameter: parameter)) {
+                                    ParameterCardView(parameter: parameter)
+                                }
+                                .buttonStyle(PlainButtonStyle())
                             }
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.red)
-                            .cornerRadius(12)
                         }
                         .padding(.horizontal)
                     }
-
-                    // Grid of parameters
-                    LazyVGrid(columns: [
-                        GridItem(.flexible(), spacing: 16),
-                        GridItem(.flexible(), spacing: 16)
-                    ], spacing: 16) {
-                        ForEach(obd.parameters) { parameter in
-                            NavigationLink(destination: ParameterDetailView(parameter: parameter)) {
-                                ParameterCardView(parameter: parameter)
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                        }
-                    }
-                    .padding()
+                    .padding(.bottom)
                 }
             }
             .navigationTitle("OBD Scanner")
-            .background(Color(.systemGroupedBackground).ignoresSafeArea())
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: SettingsView(obd: obd)) {
+                        Image(systemName: "gearshape")
+                            .foregroundColor(accentGreen)
+                    }
+                }
+            }
         }
+        .navigationViewStyle(.stack)
+        .preferredColorScheme(.dark)
     }
 }
 
 struct ConnectionStatusBanner: View {
     let isConnected: Bool
+    var isDemoMode: Bool = false
 
     var body: some View {
         HStack {
             Circle()
-                .fill(isConnected ? Color.green : Color.gray)
-                .frame(width: 12, height: 12)
+                .fill(isConnected ? accentGreen : Color.gray)
+                .frame(width: 10, height: 10)
+                .shadow(color: isConnected ? accentGreen.opacity(0.6) : .clear, radius: 4)
 
-            Text(isConnected ? "Connected" : "Not Connected")
+            Text(isDemoMode ? "Demo Mode" : (isConnected ? "Connected" : "Not Connected"))
                 .font(.subheadline)
                 .fontWeight(.medium)
+                .foregroundColor(.white)
 
             Spacer()
 
-            if isConnected {
+            if isDemoMode {
+                HStack(spacing: 4) {
+                    Image(systemName: "play.circle")
+                        .foregroundColor(accentGreen)
+                    Text("Simulated")
+                }
+                .font(.caption)
+                .foregroundColor(Color(white: 0.5))
+            } else if isConnected {
                 HStack(spacing: 4) {
                     Image(systemName: "wifi")
+                        .foregroundColor(accentGreen)
                     Text("192.168.0.10")
                 }
                 .font(.caption)
-                .foregroundColor(.secondary)
+                .foregroundColor(Color(white: 0.5))
             }
         }
         .padding()
         .background(
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color(.secondarySystemBackground))
+            RoundedRectangle(cornerRadius: 14)
+                .fill(cardBackground)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 14)
+                        .stroke(accentGreen.opacity(0.15), lineWidth: 1)
+                )
         )
         .padding(.horizontal)
     }

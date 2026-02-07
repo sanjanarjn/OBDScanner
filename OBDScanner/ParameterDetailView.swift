@@ -4,79 +4,80 @@ struct ParameterDetailView: View {
     let parameter: OBDParameterData
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 24) {
-                // Header with icon and current value
-                VStack(spacing: 16) {
-                    Image(systemName: parameter.type.iconName)
-                        .font(.system(size: 64))
-                        .foregroundColor(iconColor)
+        ZStack {
+            Color.black.ignoresSafeArea()
 
-                    Text(parameter.type.title)
-                        .font(.title)
-                        .fontWeight(.bold)
+            ScrollView {
+                VStack(spacing: 20) {
+                    // Header with icon and current value
+                    VStack(spacing: 16) {
+                        Image(systemName: parameter.type.iconName)
+                            .font(.system(size: 56, weight: .medium))
+                            .foregroundColor(accentGreen)
+                            .shadow(color: accentGreen.opacity(0.4), radius: 10)
 
-                    Text(parameter.displayValue)
-                        .font(.system(size: 48, weight: .bold))
-                        .foregroundColor(parameter.value == "N/A" ? .gray : .primary)
+                        Text(parameter.type.title)
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+
+                        HStack(alignment: .firstTextBaseline, spacing: 4) {
+                            Text(parameter.value == "N/A" ? "--" : parameter.value)
+                                .font(.system(size: 52, weight: .bold, design: .rounded))
+                                .foregroundColor(.white)
+
+                            if parameter.value != "N/A" {
+                                Text(parameter.type.unit)
+                                    .font(.title3)
+                                    .foregroundColor(Color(white: 0.5))
+                            }
+                        }
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 32)
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(cardBackground)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(accentGreen.opacity(0.15), lineWidth: 1)
+                            )
+                    )
+
+                    // Description section
+                    SectionView(title: "What is this?", icon: "info.circle") {
+                        Text(parameter.type.description)
+                            .font(.body)
+                            .foregroundColor(Color(white: 0.75))
+                    }
+
+                    // Normal range section
+                    SectionView(title: "Normal Range", icon: "chart.line.uptrend.xyaxis") {
+                        Text(parameter.type.normalRange)
+                            .font(.body)
+                            .foregroundColor(Color(white: 0.75))
+                    }
+
+                    // Tips section
+                    SectionView(title: "Tips & Advice", icon: "lightbulb") {
+                        Text(parameter.type.tips)
+                            .font(.body)
+                            .foregroundColor(Color(white: 0.75))
+                    }
+
+                    // Last updated
+                    if parameter.value != "N/A" {
+                        Text("Last updated: \(parameter.lastUpdated.formatted(date: .omitted, time: .standard))")
+                            .font(.caption)
+                            .foregroundColor(Color(white: 0.4))
+                            .padding(.top, 8)
+                    }
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 32)
-                .background(
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color(.secondarySystemBackground))
-                )
-
-                // Description section
-                SectionView(title: "What is this?", icon: "info.circle") {
-                    Text(parameter.type.description)
-                        .font(.body)
-                        .foregroundColor(.primary)
-                }
-
-                // Normal range section
-                SectionView(title: "Normal Range", icon: "chart.line.uptrend.xyaxis") {
-                    Text(parameter.type.normalRange)
-                        .font(.body)
-                        .foregroundColor(.primary)
-                }
-
-                // Tips section
-                SectionView(title: "Tips & Advice", icon: "lightbulb") {
-                    Text(parameter.type.tips)
-                        .font(.body)
-                        .foregroundColor(.primary)
-                }
-
-                // Last updated
-                if parameter.value != "N/A" {
-                    Text("Last updated: \(parameter.lastUpdated.formatted(date: .omitted, time: .standard))")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                        .padding(.top, 8)
-                }
+                .padding()
             }
-            .padding()
         }
         .navigationBarTitleDisplayMode(.inline)
-    }
-
-    private var iconColor: Color {
-        if parameter.value == "N/A" {
-            return .gray
-        }
-
-        switch parameter.type {
-        case .rpm: return .blue
-        case .speed: return .green
-        case .coolantTemp: return .orange
-        case .engineLoad: return .purple
-        case .throttlePosition: return .indigo
-        case .fuelLevel: return .yellow
-        case .intakeAirTemp: return .cyan
-        case .maf: return .mint
-        case .timing: return .pink
-        }
+        .preferredColorScheme(.dark)
     }
 }
 
@@ -89,10 +90,11 @@ struct SectionView<Content: View>: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
                 Image(systemName: icon)
-                    .foregroundColor(.blue)
+                    .foregroundColor(accentGreen)
                 Text(title)
                     .font(.headline)
                     .fontWeight(.semibold)
+                    .foregroundColor(.white)
             }
 
             content
@@ -101,7 +103,11 @@ struct SectionView<Content: View>: View {
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 16)
-                .fill(Color(.secondarySystemBackground))
+                .fill(cardBackground)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(accentGreen.opacity(0.12), lineWidth: 1)
+                )
         )
     }
 }

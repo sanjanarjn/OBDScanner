@@ -277,7 +277,7 @@ enum OBDParameterType: String, CaseIterable, Identifiable {
 }
 
 struct OBDParameterData: Identifiable {
-    let id = UUID()
+    var id: String { type.rawValue }
     let type: OBDParameterType
     var value: String
     var lastUpdated: Date
