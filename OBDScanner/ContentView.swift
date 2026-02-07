@@ -210,18 +210,26 @@ class OBDConnection: ObservableObject {
     // MARK: - Real DTC Scanning (Mode 03 / Mode 04)
 
     func scanForDTCs() {
-        guard isConnected, !isDemoMode, let connection = connection else { return }
+        guard isConnected, !isDemoMode, connection != nil else { return }
         dtcManager?.isScanning = true
         dtcManager?.scanError = nil
+
+        // Flag DTC operation first — this blocks sendNextParameter() immediately
         isDTCOperation = true
-        isWaitingForResponse = false // cancel any pending parameter poll
 
-        let data = "03\r".data(using: .utf8)!
-        print("Sending: 03 (Read DTCs)")
-        connection.send(content: data, completion: .contentProcessed({ _ in }))
+        // Wait for any in-flight parameter command to finish before sending
+        let delay: TimeInterval = isWaitingForResponse ? 1.5 : 0.3
+        isWaitingForResponse = false
 
-        // Timeout — if no response after 10s, report error
-        DispatchQueue.global().asyncAfter(deadline: .now() + 10.0) { [weak self] in
+        DispatchQueue.global().asyncAfter(deadline: .now() + delay) { [weak self] in
+            guard let self = self, let connection = self.connection else { return }
+            let data = "03\r".data(using: .utf8)!
+            print("Sending: 03 (Read DTCs)")
+            connection.send(content: data, completion: .contentProcessed({ _ in }))
+        }
+
+        // Timeout — if no response after 12s, report error
+        DispatchQueue.global().asyncAfter(deadline: .now() + delay + 10.0) { [weak self] in
             guard let self = self, self.isDTCOperation else { return }
             self.isDTCOperation = false
             self.dtcManager?.handleError("No response from vehicle. Check connection.")
@@ -230,18 +238,24 @@ class OBDConnection: ObservableObject {
     }
 
     func clearDTCs() {
-        guard isConnected, !isDemoMode, let connection = connection else { return }
+        guard isConnected, !isDemoMode, connection != nil else { return }
         dtcManager?.isClearing = true
         dtcManager?.scanError = nil
+
         isDTCOperation = true
+
+        let delay: TimeInterval = isWaitingForResponse ? 1.5 : 0.3
         isWaitingForResponse = false
 
-        let data = "04\r".data(using: .utf8)!
-        print("Sending: 04 (Clear DTCs)")
-        connection.send(content: data, completion: .contentProcessed({ _ in }))
+        DispatchQueue.global().asyncAfter(deadline: .now() + delay) { [weak self] in
+            guard let self = self, let connection = self.connection else { return }
+            let data = "04\r".data(using: .utf8)!
+            print("Sending: 04 (Clear DTCs)")
+            connection.send(content: data, completion: .contentProcessed({ _ in }))
+        }
 
         // Timeout
-        DispatchQueue.global().asyncAfter(deadline: .now() + 10.0) { [weak self] in
+        DispatchQueue.global().asyncAfter(deadline: .now() + delay + 10.0) { [weak self] in
             guard let self = self, self.isDTCOperation else { return }
             self.isDTCOperation = false
             self.dtcManager?.handleError("Clear command timed out. Try again.")
@@ -355,7 +369,7 @@ class OBDConnection: ObservableObject {
     }
 
     private func sendNextParameter() {
-        guard isActive, connection != nil else { return }
+        guard isActive, connection != nil, !isDTCOperation else { return }
 
         // Get the current parameter to poll
         let paramTypes = Array(OBDParameterType.allCases)
@@ -409,6 +423,16 @@ class OBDConnection: ObservableObject {
                 guard let self = self, self.isActive else { return }
                 self.sendNextParameter()
             }
+            return
+        }
+
+        // During a DTC operation, handle NO DATA as "no stored DTCs"
+        if isDTCOperation && response.contains("NO DATA") {
+            print("No DTCs stored in vehicle")
+            isDTCOperation = false
+            dtcManager?.handleNoData()
+            isWaitingForResponse = false
+            resumePolling()
             return
         }
 
@@ -470,16 +494,6 @@ class OBDConnection: ObservableObject {
             print("Mode 04 Clear DTCs response: \(response)")
             isDTCOperation = false
             dtcManager?.processClearDTCsResponse(response)
-            isWaitingForResponse = false
-            resumePolling()
-            return
-        }
-
-        // Handle NO DATA during DTC scan (means no stored DTCs)
-        if isDTCOperation && response.contains("NO DATA") {
-            print("No DTCs stored in vehicle")
-            isDTCOperation = false
-            dtcManager?.handleNoData()
             isWaitingForResponse = false
             resumePolling()
             return
