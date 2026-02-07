@@ -1,0 +1,1673 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-06",
+  "totalCodes": 215,
+  "codes": [
+    {
+      "id": "P0100",
+      "description": "Mass or Volume Air Flow Circuit Malfunction",
+      "severity": "warning",
+      "possibleCauses": ["Faulty MAF sensor", "Air leak in intake system", "Damaged wiring or connectors", "Contaminated MAF sensor element"],
+      "symptoms": ["Check Engine Light on", "Poor fuel economy", "Rough idle", "Hesitation during acceleration"]
+    },
+    {
+      "id": "P0101",
+      "description": "Mass or Volume Air Flow Circuit Range/Performance Problem",
+      "severity": "warning",
+      "possibleCauses": ["Dirty or contaminated MAF sensor", "Vacuum leaks", "Restricted air filter", "Faulty MAF sensor"],
+      "symptoms": ["Check Engine Light on", "Poor acceleration", "Black smoke from exhaust", "Engine stalling"]
+    },
+    {
+      "id": "P0102",
+      "description": "Mass or Volume Air Flow Circuit Low Input",
+      "severity": "warning",
+      "possibleCauses": ["Faulty MAF sensor", "Open in MAF sensor circuit", "Poor electrical connection", "Air leaks"],
+      "symptoms": ["Check Engine Light on", "Engine runs lean", "Poor performance", "Hard starting"]
+    },
+    {
+      "id": "P0103",
+      "description": "Mass or Volume Air Flow Circuit High Input",
+      "severity": "warning",
+      "possibleCauses": ["Short to voltage in MAF circuit", "Faulty MAF sensor", "Damaged wiring", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Engine runs rich", "Black smoke", "Poor fuel economy"]
+    },
+    {
+      "id": "P0106",
+      "description": "Manifold Absolute Pressure/Barometric Pressure Circuit Range/Performance Problem",
+      "severity": "warning",
+      "possibleCauses": ["Faulty MAP sensor", "Vacuum leaks", "Clogged or leaking vacuum hoses", "Faulty wiring"],
+      "symptoms": ["Check Engine Light on", "Rough idle", "Poor fuel economy", "Engine surging"]
+    },
+    {
+      "id": "P0107",
+      "description": "Manifold Absolute Pressure/Barometric Pressure Circuit Low Input",
+      "severity": "warning",
+      "possibleCauses": ["Faulty MAP sensor", "Open circuit", "Poor electrical connection", "Vacuum leak"],
+      "symptoms": ["Check Engine Light on", "Hard starting", "Rich fuel mixture", "Poor performance"]
+    },
+    {
+      "id": "P0108",
+      "description": "Manifold Absolute Pressure/Barometric Pressure Circuit High Input",
+      "severity": "warning",
+      "possibleCauses": ["Faulty MAP sensor", "Short to voltage", "Damaged wiring", "Vacuum hose disconnected"],
+      "symptoms": ["Check Engine Light on", "Lean fuel mixture", "Engine surging", "Poor acceleration"]
+    },
+    {
+      "id": "P0110",
+      "description": "Intake Air Temperature Circuit Malfunction",
+      "severity": "info",
+      "possibleCauses": ["Faulty IAT sensor", "Open or short in circuit", "Poor electrical connection", "Damaged wiring"],
+      "symptoms": ["Check Engine Light on", "Poor fuel economy", "Hard starting in cold weather", "Rough idle"]
+    },
+    {
+      "id": "P0111",
+      "description": "Intake Air Temperature Circuit Range/Performance Problem",
+      "severity": "info",
+      "possibleCauses": ["Faulty IAT sensor", "Poor thermal contact", "Wiring issues", "Intake air leak"],
+      "symptoms": ["Check Engine Light on", "Incorrect fuel mixture", "Performance issues", "Starting problems"]
+    },
+    {
+      "id": "P0112",
+      "description": "Intake Air Temperature Circuit Low Input",
+      "severity": "info",
+      "possibleCauses": ["Short to ground in circuit", "Faulty IAT sensor", "Poor connection", "Water intrusion"],
+      "symptoms": ["Check Engine Light on", "Rich running condition", "Poor fuel economy", "Black smoke"]
+    },
+    {
+      "id": "P0113",
+      "description": "Intake Air Temperature Circuit High Input",
+      "severity": "info",
+      "possibleCauses": ["Open circuit", "Faulty IAT sensor", "Damaged wiring", "Poor connection"],
+      "symptoms": ["Check Engine Light on", "Lean running condition", "Hard starting", "Poor cold performance"]
+    },
+    {
+      "id": "P0115",
+      "description": "Engine Coolant Temperature Circuit Malfunction",
+      "severity": "warning",
+      "possibleCauses": ["Faulty ECT sensor", "Open or short in circuit", "Poor electrical connection", "Damaged wiring harness"],
+      "symptoms": ["Check Engine Light on", "Poor fuel economy", "Cooling fan issues", "Hard starting"]
+    },
+    {
+      "id": "P0116",
+      "description": "Engine Coolant Temperature Circuit Range/Performance Problem",
+      "severity": "warning",
+      "possibleCauses": ["Faulty ECT sensor", "Thermostat stuck open", "Low coolant level", "Air in cooling system"],
+      "symptoms": ["Check Engine Light on", "Engine overheating", "Poor heater performance", "Fuel economy issues"]
+    },
+    {
+      "id": "P0117",
+      "description": "Engine Coolant Temperature Circuit Low Input",
+      "severity": "warning",
+      "possibleCauses": ["Short to ground", "Faulty ECT sensor", "Damaged wiring", "Water intrusion in connector"],
+      "symptoms": ["Check Engine Light on", "Engine running rich", "Cooling fan running constantly", "Poor performance"]
+    },
+    {
+      "id": "P0118",
+      "description": "Engine Coolant Temperature Circuit High Input",
+      "severity": "warning",
+      "possibleCauses": ["Open circuit", "Faulty ECT sensor", "Corroded connector", "Damaged wiring"],
+      "symptoms": ["Check Engine Light on", "Hard starting", "Cooling fan not working", "Engine overheating"]
+    },
+    {
+      "id": "P0120",
+      "description": "Throttle Position Sensor/Switch A Circuit Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty TPS", "Damaged wiring", "Poor electrical connection", "Throttle body issues"],
+      "symptoms": ["Check Engine Light on", "Poor acceleration", "Engine stalling", "Erratic idle"]
+    },
+    {
+      "id": "P0121",
+      "description": "Throttle Position Sensor/Switch A Circuit Range/Performance Problem",
+      "severity": "warning",
+      "possibleCauses": ["Worn TPS", "Throttle body carbon buildup", "Loose mounting screws", "Intermittent connection"],
+      "symptoms": ["Check Engine Light on", "Hesitation on acceleration", "Surging at idle", "Poor fuel economy"]
+    },
+    {
+      "id": "P0122",
+      "description": "Throttle Position Sensor/Switch A Circuit Low Input",
+      "severity": "warning",
+      "possibleCauses": ["Short to ground", "Faulty TPS", "Damaged wiring", "Poor connection"],
+      "symptoms": ["Check Engine Light on", "No throttle response", "Engine stalling", "Limp mode"]
+    },
+    {
+      "id": "P0123",
+      "description": "Throttle Position Sensor/Switch A Circuit High Input",
+      "severity": "warning",
+      "possibleCauses": ["Short to voltage", "Faulty TPS", "Open ground circuit", "Damaged wiring"],
+      "symptoms": ["Check Engine Light on", "High idle", "Engine surging", "Unintended acceleration"]
+    },
+    {
+      "id": "P0125",
+      "description": "Insufficient Coolant Temperature for Closed Loop Fuel Control",
+      "severity": "info",
+      "possibleCauses": ["Thermostat stuck open", "Faulty ECT sensor", "Low coolant level", "Cooling system leak"],
+      "symptoms": ["Check Engine Light on", "Poor fuel economy", "Long warm-up time", "Poor heater performance"]
+    },
+    {
+      "id": "P0128",
+      "description": "Coolant Thermostat (Coolant Temperature Below Thermostat Regulating Temperature)",
+      "severity": "info",
+      "possibleCauses": ["Thermostat stuck open", "Faulty thermostat", "Low coolant level", "Faulty ECT sensor"],
+      "symptoms": ["Check Engine Light on", "Engine runs cold", "Poor fuel economy", "Weak heater output"]
+    },
+    {
+      "id": "P0130",
+      "description": "O2 Sensor Circuit Malfunction (Bank 1, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": ["Faulty O2 sensor", "Exhaust leak", "Wiring issues", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Poor fuel economy", "Rough idle", "Failed emissions test"]
+    },
+    {
+      "id": "P0131",
+      "description": "O2 Sensor Circuit Low Voltage (Bank 1, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": ["Lean exhaust condition", "Faulty O2 sensor", "Vacuum leak", "Fuel pressure problem"],
+      "symptoms": ["Check Engine Light on", "Poor performance", "Hesitation", "Lean running condition"]
+    },
+    {
+      "id": "P0132",
+      "description": "O2 Sensor Circuit High Voltage (Bank 1, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": ["Rich exhaust condition", "Faulty O2 sensor", "Short in wiring", "Fuel system problem"],
+      "symptoms": ["Check Engine Light on", "Poor fuel economy", "Black smoke", "Rich running condition"]
+    },
+    {
+      "id": "P0133",
+      "description": "O2 Sensor Circuit Slow Response (Bank 1, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": ["Worn O2 sensor", "Exhaust leaks", "Fuel contamination", "Wiring issues"],
+      "symptoms": ["Check Engine Light on", "Decreased fuel economy", "Failed emissions test", "Rough idle"]
+    },
+    {
+      "id": "P0134",
+      "description": "O2 Sensor Circuit No Activity Detected (Bank 1, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": ["Faulty O2 sensor", "Open circuit", "Exhaust leak before sensor", "Heater circuit problem"],
+      "symptoms": ["Check Engine Light on", "Poor fuel economy", "Failed emissions test", "Running issues"]
+    },
+    {
+      "id": "P0135",
+      "description": "O2 Sensor Heater Circuit Malfunction (Bank 1, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": ["Failed O2 sensor heater", "Blown fuse", "Wiring problem", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Extended warm-up emissions", "Poor cold start performance", "Failed emissions test"]
+    },
+    {
+      "id": "P0136",
+      "description": "O2 Sensor Circuit Malfunction (Bank 1, Sensor 2)",
+      "severity": "warning",
+      "possibleCauses": ["Faulty downstream O2 sensor", "Wiring issues", "Exhaust leak", "Catalytic converter problem"],
+      "symptoms": ["Check Engine Light on", "Failed emissions test", "Poor catalyst efficiency", "Decreased fuel economy"]
+    },
+    {
+      "id": "P0137",
+      "description": "O2 Sensor Circuit Low Voltage (Bank 1, Sensor 2)",
+      "severity": "warning",
+      "possibleCauses": ["Lean exhaust after catalyst", "Faulty O2 sensor", "Exhaust leak", "Wiring problem"],
+      "symptoms": ["Check Engine Light on", "Failed emissions test", "Poor fuel economy", "Catalyst issues"]
+    },
+    {
+      "id": "P0138",
+      "description": "O2 Sensor Circuit High Voltage (Bank 1, Sensor 2)",
+      "severity": "warning",
+      "possibleCauses": ["Rich condition after catalyst", "Faulty O2 sensor", "Short in circuit", "Fuel system problem"],
+      "symptoms": ["Check Engine Light on", "Failed emissions test", "Poor fuel economy", "Black smoke"]
+    },
+    {
+      "id": "P0141",
+      "description": "O2 Sensor Heater Circuit Malfunction (Bank 1, Sensor 2)",
+      "severity": "warning",
+      "possibleCauses": ["Failed O2 sensor heater", "Blown fuse", "Wiring problem", "Poor connection"],
+      "symptoms": ["Check Engine Light on", "Extended emissions warm-up", "Failed emissions test", "Poor performance"]
+    },
+    {
+      "id": "P0150",
+      "description": "O2 Sensor Circuit Malfunction (Bank 2, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": ["Faulty O2 sensor", "Exhaust leak", "Wiring issues", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Poor fuel economy", "Rough running", "Failed emissions test"]
+    },
+    {
+      "id": "P0155",
+      "description": "O2 Sensor Heater Circuit Malfunction (Bank 2, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": ["Failed O2 sensor heater", "Blown fuse", "Wiring problem", "Poor connection"],
+      "symptoms": ["Check Engine Light on", "Extended warm-up emissions", "Poor cold performance", "Failed emissions test"]
+    },
+    {
+      "id": "P0171",
+      "description": "System Too Lean (Bank 1)",
+      "severity": "warning",
+      "possibleCauses": ["Vacuum leak", "Faulty MAF sensor", "Weak fuel pump", "Clogged fuel injectors", "Exhaust leak before O2 sensor"],
+      "symptoms": ["Check Engine Light on", "Rough idle", "Hesitation on acceleration", "Poor fuel economy", "Misfire"]
+    },
+    {
+      "id": "P0172",
+      "description": "System Too Rich (Bank 1)",
+      "severity": "warning",
+      "possibleCauses": ["Faulty O2 sensor", "Leaking fuel injectors", "High fuel pressure", "Faulty MAF sensor", "Stuck open purge valve"],
+      "symptoms": ["Check Engine Light on", "Black smoke from exhaust", "Poor fuel economy", "Strong fuel smell", "Rough idle"]
+    },
+    {
+      "id": "P0174",
+      "description": "System Too Lean (Bank 2)",
+      "severity": "warning",
+      "possibleCauses": ["Vacuum leak", "Faulty MAF sensor", "Weak fuel pump", "Clogged fuel injectors", "Intake gasket leak"],
+      "symptoms": ["Check Engine Light on", "Rough idle", "Hesitation", "Poor fuel economy", "Misfire"]
+    },
+    {
+      "id": "P0175",
+      "description": "System Too Rich (Bank 2)",
+      "severity": "warning",
+      "possibleCauses": ["Faulty O2 sensor", "Leaking fuel injectors", "High fuel pressure", "Faulty MAF sensor", "EVAP system problem"],
+      "symptoms": ["Check Engine Light on", "Black smoke", "Poor fuel economy", "Fuel smell", "Rough running"]
+    },
+    {
+      "id": "P0190",
+      "description": "Fuel Rail Pressure Sensor Circuit Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty fuel rail pressure sensor", "Wiring issues", "Poor connection", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Hard starting", "Engine stalling", "Poor performance"]
+    },
+    {
+      "id": "P0191",
+      "description": "Fuel Rail Pressure Sensor Circuit Range/Performance",
+      "severity": "warning",
+      "possibleCauses": ["Faulty fuel rail pressure sensor", "Fuel pressure problem", "Restricted fuel filter", "Failing fuel pump"],
+      "symptoms": ["Check Engine Light on", "Engine hesitation", "Poor acceleration", "Stalling"]
+    },
+    {
+      "id": "P0200",
+      "description": "Injector Circuit Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty fuel injector", "Wiring problem", "PCM failure", "Poor connection"],
+      "symptoms": ["Check Engine Light on", "Misfire", "Rough idle", "Poor performance"]
+    },
+    {
+      "id": "P0201",
+      "description": "Injector Circuit Malfunction - Cylinder 1",
+      "severity": "critical",
+      "possibleCauses": ["Faulty injector 1", "Open or short in circuit", "Poor connection", "PCM driver failure"],
+      "symptoms": ["Check Engine Light on", "Cylinder 1 misfire", "Rough idle", "Loss of power"]
+    },
+    {
+      "id": "P0202",
+      "description": "Injector Circuit Malfunction - Cylinder 2",
+      "severity": "critical",
+      "possibleCauses": ["Faulty injector 2", "Open or short in circuit", "Poor connection", "PCM driver failure"],
+      "symptoms": ["Check Engine Light on", "Cylinder 2 misfire", "Rough idle", "Loss of power"]
+    },
+    {
+      "id": "P0203",
+      "description": "Injector Circuit Malfunction - Cylinder 3",
+      "severity": "critical",
+      "possibleCauses": ["Faulty injector 3", "Open or short in circuit", "Poor connection", "PCM driver failure"],
+      "symptoms": ["Check Engine Light on", "Cylinder 3 misfire", "Rough idle", "Loss of power"]
+    },
+    {
+      "id": "P0204",
+      "description": "Injector Circuit Malfunction - Cylinder 4",
+      "severity": "critical",
+      "possibleCauses": ["Faulty injector 4", "Open or short in circuit", "Poor connection", "PCM driver failure"],
+      "symptoms": ["Check Engine Light on", "Cylinder 4 misfire", "Rough idle", "Loss of power"]
+    },
+    {
+      "id": "P0205",
+      "description": "Injector Circuit Malfunction - Cylinder 5",
+      "severity": "critical",
+      "possibleCauses": ["Faulty injector 5", "Open or short in circuit", "Poor connection", "PCM driver failure"],
+      "symptoms": ["Check Engine Light on", "Cylinder 5 misfire", "Rough idle", "Loss of power"]
+    },
+    {
+      "id": "P0206",
+      "description": "Injector Circuit Malfunction - Cylinder 6",
+      "severity": "critical",
+      "possibleCauses": ["Faulty injector 6", "Open or short in circuit", "Poor connection", "PCM driver failure"],
+      "symptoms": ["Check Engine Light on", "Cylinder 6 misfire", "Rough idle", "Loss of power"]
+    },
+    {
+      "id": "P0217",
+      "description": "Engine Overheating Condition",
+      "severity": "critical",
+      "possibleCauses": ["Low coolant level", "Faulty thermostat", "Failed water pump", "Clogged radiator", "Faulty cooling fan"],
+      "symptoms": ["Check Engine Light on", "Temperature gauge high", "Steam from engine", "Loss of power", "Engine damage risk"]
+    },
+    {
+      "id": "P0218",
+      "description": "Transmission Over Temperature Condition",
+      "severity": "critical",
+      "possibleCauses": ["Low transmission fluid", "Faulty transmission cooler", "Heavy towing", "Worn transmission components"],
+      "symptoms": ["Check Engine Light on", "Transmission slipping", "Burning smell", "Limp mode", "Shifting problems"]
+    },
+    {
+      "id": "P0219",
+      "description": "Engine Overspeed Condition",
+      "severity": "critical",
+      "possibleCauses": ["Excessive engine RPM", "Transmission slipping", "Downshift at high speed", "Clutch slipping"],
+      "symptoms": ["Check Engine Light on", "Rev limiter activated", "Possible engine damage", "Transmission issues"]
+    },
+    {
+      "id": "P0220",
+      "description": "Throttle/Pedal Position Sensor/Switch B Circuit Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty APP sensor", "Wiring problem", "Poor connection", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Reduced engine power", "Limp mode", "No throttle response"]
+    },
+    {
+      "id": "P0221",
+      "description": "Throttle/Pedal Position Sensor/Switch B Circuit Range/Performance Problem",
+      "severity": "warning",
+      "possibleCauses": ["Worn APP sensor", "Intermittent connection", "Wiring issue", "Carbon buildup"],
+      "symptoms": ["Check Engine Light on", "Erratic throttle response", "Hesitation", "Surging"]
+    },
+    {
+      "id": "P0222",
+      "description": "Throttle/Pedal Position Sensor/Switch B Circuit Low Input",
+      "severity": "warning",
+      "possibleCauses": ["Short to ground", "Faulty sensor", "Damaged wiring", "Poor connection"],
+      "symptoms": ["Check Engine Light on", "No throttle response", "Limp mode", "Engine stalling"]
+    },
+    {
+      "id": "P0223",
+      "description": "Throttle/Pedal Position Sensor/Switch B Circuit High Input",
+      "severity": "warning",
+      "possibleCauses": ["Short to voltage", "Faulty sensor", "Open ground", "Wiring damage"],
+      "symptoms": ["Check Engine Light on", "Unintended acceleration", "High idle", "Surging"]
+    },
+    {
+      "id": "P0230",
+      "description": "Fuel Pump Primary Circuit Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty fuel pump relay", "Blown fuse", "Wiring problem", "Failed fuel pump", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "No start condition", "Engine stalling", "Loss of power"]
+    },
+    {
+      "id": "P0261",
+      "description": "Cylinder 1 Injector Circuit Low",
+      "severity": "warning",
+      "possibleCauses": ["Short to ground in injector circuit", "Faulty injector", "PCM driver failure", "Wiring issue"],
+      "symptoms": ["Check Engine Light on", "Cylinder 1 misfire", "Rough idle", "Poor performance"]
+    },
+    {
+      "id": "P0262",
+      "description": "Cylinder 1 Injector Circuit High",
+      "severity": "warning",
+      "possibleCauses": ["Open injector circuit", "Short to voltage", "Faulty injector", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Cylinder 1 misfire", "Rough running", "Loss of power"]
+    },
+    {
+      "id": "P0300",
+      "description": "Random/Multiple Cylinder Misfire Detected",
+      "severity": "critical",
+      "possibleCauses": ["Worn spark plugs", "Faulty ignition coils", "Vacuum leak", "Low fuel pressure", "Faulty MAF sensor", "Clogged fuel injectors"],
+      "symptoms": ["Check Engine Light flashing", "Rough idle", "Hesitation", "Loss of power", "Poor fuel economy", "Catalytic converter damage risk"]
+    },
+    {
+      "id": "P0301",
+      "description": "Cylinder 1 Misfire Detected",
+      "severity": "critical",
+      "possibleCauses": ["Faulty spark plug 1", "Bad ignition coil 1", "Faulty fuel injector 1", "Vacuum leak", "Low compression"],
+      "symptoms": ["Check Engine Light flashing", "Rough idle", "Loss of power", "Engine vibration", "Poor fuel economy"]
+    },
+    {
+      "id": "P0302",
+      "description": "Cylinder 2 Misfire Detected",
+      "severity": "critical",
+      "possibleCauses": ["Faulty spark plug 2", "Bad ignition coil 2", "Faulty fuel injector 2", "Vacuum leak", "Low compression"],
+      "symptoms": ["Check Engine Light flashing", "Rough idle", "Loss of power", "Engine vibration", "Poor fuel economy"]
+    },
+    {
+      "id": "P0303",
+      "description": "Cylinder 3 Misfire Detected",
+      "severity": "critical",
+      "possibleCauses": ["Faulty spark plug 3", "Bad ignition coil 3", "Faulty fuel injector 3", "Vacuum leak", "Low compression"],
+      "symptoms": ["Check Engine Light flashing", "Rough idle", "Loss of power", "Engine vibration", "Poor fuel economy"]
+    },
+    {
+      "id": "P0304",
+      "description": "Cylinder 4 Misfire Detected",
+      "severity": "critical",
+      "possibleCauses": ["Faulty spark plug 4", "Bad ignition coil 4", "Faulty fuel injector 4", "Vacuum leak", "Low compression"],
+      "symptoms": ["Check Engine Light flashing", "Rough idle", "Loss of power", "Engine vibration", "Poor fuel economy"]
+    },
+    {
+      "id": "P0305",
+      "description": "Cylinder 5 Misfire Detected",
+      "severity": "critical",
+      "possibleCauses": ["Faulty spark plug 5", "Bad ignition coil 5", "Faulty fuel injector 5", "Vacuum leak", "Low compression"],
+      "symptoms": ["Check Engine Light flashing", "Rough idle", "Loss of power", "Engine vibration", "Poor fuel economy"]
+    },
+    {
+      "id": "P0306",
+      "description": "Cylinder 6 Misfire Detected",
+      "severity": "critical",
+      "possibleCauses": ["Faulty spark plug 6", "Bad ignition coil 6", "Faulty fuel injector 6", "Vacuum leak", "Low compression"],
+      "symptoms": ["Check Engine Light flashing", "Rough idle", "Loss of power", "Engine vibration", "Poor fuel economy"]
+    },
+    {
+      "id": "P0307",
+      "description": "Cylinder 7 Misfire Detected",
+      "severity": "critical",
+      "possibleCauses": ["Faulty spark plug 7", "Bad ignition coil 7", "Faulty fuel injector 7", "Vacuum leak", "Low compression"],
+      "symptoms": ["Check Engine Light flashing", "Rough idle", "Loss of power", "Engine vibration", "Poor fuel economy"]
+    },
+    {
+      "id": "P0308",
+      "description": "Cylinder 8 Misfire Detected",
+      "severity": "critical",
+      "possibleCauses": ["Faulty spark plug 8", "Bad ignition coil 8", "Faulty fuel injector 8", "Vacuum leak", "Low compression"],
+      "symptoms": ["Check Engine Light flashing", "Rough idle", "Loss of power", "Engine vibration", "Poor fuel economy"]
+    },
+    {
+      "id": "P0325",
+      "description": "Knock Sensor 1 Circuit Malfunction (Bank 1 or Single Sensor)",
+      "severity": "warning",
+      "possibleCauses": ["Faulty knock sensor", "Wiring problem", "Poor connection", "Engine mechanical noise"],
+      "symptoms": ["Check Engine Light on", "Reduced engine power", "Pinging under load", "Retarded timing"]
+    },
+    {
+      "id": "P0327",
+      "description": "Knock Sensor 1 Circuit Low Input (Bank 1 or Single Sensor)",
+      "severity": "warning",
+      "possibleCauses": ["Short to ground", "Faulty knock sensor", "Damaged wiring", "Poor ground connection"],
+      "symptoms": ["Check Engine Light on", "Reduced power", "Engine knock", "Poor performance"]
+    },
+    {
+      "id": "P0328",
+      "description": "Knock Sensor 1 Circuit High Input (Bank 1 or Single Sensor)",
+      "severity": "warning",
+      "possibleCauses": ["Open circuit", "Faulty knock sensor", "Wiring damage", "Excessive engine noise"],
+      "symptoms": ["Check Engine Light on", "Over-retarded timing", "Reduced power", "Poor fuel economy"]
+    },
+    {
+      "id": "P0335",
+      "description": "Crankshaft Position Sensor A Circuit Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty CKP sensor", "Damaged reluctor wheel", "Wiring problem", "Poor connection", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "No start condition", "Engine stalling", "Rough running", "Intermittent misfire"]
+    },
+    {
+      "id": "P0336",
+      "description": "Crankshaft Position Sensor A Circuit Range/Performance",
+      "severity": "critical",
+      "possibleCauses": ["Damaged reluctor wheel", "Faulty CKP sensor", "Incorrect air gap", "Wiring intermittent"],
+      "symptoms": ["Check Engine Light on", "Engine stalling", "Hard starting", "Misfire", "Rough idle"]
+    },
+    {
+      "id": "P0340",
+      "description": "Camshaft Position Sensor Circuit Malfunction (Bank 1 or Single Sensor)",
+      "severity": "critical",
+      "possibleCauses": ["Faulty CMP sensor", "Damaged wiring", "Poor connection", "Timing chain/belt issues", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Hard starting", "Engine stalling", "Rough idle", "Misfire"]
+    },
+    {
+      "id": "P0341",
+      "description": "Camshaft Position Sensor Circuit Range/Performance (Bank 1 or Single Sensor)",
+      "severity": "warning",
+      "possibleCauses": ["Timing chain stretched", "Faulty CMP sensor", "Incorrect installation", "Wiring problem"],
+      "symptoms": ["Check Engine Light on", "Poor performance", "Rough idle", "Starting issues", "Misfire"]
+    },
+    {
+      "id": "P0345",
+      "description": "Camshaft Position Sensor A Circuit Malfunction (Bank 2)",
+      "severity": "critical",
+      "possibleCauses": ["Faulty CMP sensor", "Wiring problem", "Poor connection", "Timing issues", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Hard starting", "Engine stalling", "Rough running", "Misfire"]
+    },
+    {
+      "id": "P0351",
+      "description": "Ignition Coil A Primary/Secondary Circuit Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty ignition coil 1", "Wiring problem", "Poor connection", "PCM driver failure"],
+      "symptoms": ["Check Engine Light on", "Cylinder 1 misfire", "Rough idle", "Loss of power", "Poor fuel economy"]
+    },
+    {
+      "id": "P0352",
+      "description": "Ignition Coil B Primary/Secondary Circuit Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty ignition coil 2", "Wiring problem", "Poor connection", "PCM driver failure"],
+      "symptoms": ["Check Engine Light on", "Cylinder 2 misfire", "Rough idle", "Loss of power", "Poor fuel economy"]
+    },
+    {
+      "id": "P0353",
+      "description": "Ignition Coil C Primary/Secondary Circuit Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty ignition coil 3", "Wiring problem", "Poor connection", "PCM driver failure"],
+      "symptoms": ["Check Engine Light on", "Cylinder 3 misfire", "Rough idle", "Loss of power", "Poor fuel economy"]
+    },
+    {
+      "id": "P0354",
+      "description": "Ignition Coil D Primary/Secondary Circuit Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty ignition coil 4", "Wiring problem", "Poor connection", "PCM driver failure"],
+      "symptoms": ["Check Engine Light on", "Cylinder 4 misfire", "Rough idle", "Loss of power", "Poor fuel economy"]
+    },
+    {
+      "id": "P0401",
+      "description": "Exhaust Gas Recirculation Flow Insufficient Detected",
+      "severity": "warning",
+      "possibleCauses": ["Clogged EGR passages", "Faulty EGR valve", "Carbon buildup", "Vacuum leak", "Faulty EGR solenoid"],
+      "symptoms": ["Check Engine Light on", "Rough idle", "Engine knock", "Failed emissions test", "Increased NOx emissions"]
+    },
+    {
+      "id": "P0402",
+      "description": "Exhaust Gas Recirculation Flow Excessive Detected",
+      "severity": "warning",
+      "possibleCauses": ["EGR valve stuck open", "Faulty EGR position sensor", "Vacuum line issue", "PCM calibration"],
+      "symptoms": ["Check Engine Light on", "Rough idle", "Stalling", "Hesitation", "Poor performance"]
+    },
+    {
+      "id": "P0404",
+      "description": "Exhaust Gas Recirculation Circuit Range/Performance",
+      "severity": "warning",
+      "possibleCauses": ["Faulty EGR valve", "Carbon buildup", "Position sensor issue", "Wiring problem"],
+      "symptoms": ["Check Engine Light on", "Rough idle", "Hesitation", "Poor acceleration", "Failed emissions"]
+    },
+    {
+      "id": "P0420",
+      "description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+      "severity": "warning",
+      "possibleCauses": ["Failing catalytic converter", "Exhaust leak", "Faulty O2 sensor", "Engine misfire damage", "Oil or coolant contamination"],
+      "symptoms": ["Check Engine Light on", "Failed emissions test", "Sulfur smell from exhaust", "Reduced performance", "Poor fuel economy"]
+    },
+    {
+      "id": "P0430",
+      "description": "Catalyst System Efficiency Below Threshold (Bank 2)",
+      "severity": "warning",
+      "possibleCauses": ["Failing catalytic converter", "Exhaust leak", "Faulty O2 sensor", "Engine misfire damage", "Contamination"],
+      "symptoms": ["Check Engine Light on", "Failed emissions test", "Sulfur smell", "Reduced performance", "Poor fuel economy"]
+    },
+    {
+      "id": "P0440",
+      "description": "Evaporative Emission Control System Malfunction",
+      "severity": "info",
+      "possibleCauses": ["Loose or missing gas cap", "EVAP leak", "Faulty purge valve", "Faulty vent valve", "Cracked hoses"],
+      "symptoms": ["Check Engine Light on", "Fuel smell", "Failed emissions test", "Slight fuel economy decrease"]
+    },
+    {
+      "id": "P0441",
+      "description": "Evaporative Emission Control System Incorrect Purge Flow",
+      "severity": "info",
+      "possibleCauses": ["Faulty purge valve", "Vacuum leak", "Blocked EVAP line", "Faulty vent valve"],
+      "symptoms": ["Check Engine Light on", "Fuel smell", "Failed emissions test", "Rough idle after refueling"]
+    },
+    {
+      "id": "P0442",
+      "description": "Evaporative Emission Control System Leak Detected (Small Leak)",
+      "severity": "info",
+      "possibleCauses": ["Loose gas cap", "Cracked EVAP hose", "Faulty purge valve", "Small leak in fuel tank"],
+      "symptoms": ["Check Engine Light on", "Fuel smell", "Failed emissions test", "No noticeable driveability issues"]
+    },
+    {
+      "id": "P0443",
+      "description": "Evaporative Emission Control System Purge Control Valve Circuit Malfunction",
+      "severity": "info",
+      "possibleCauses": ["Faulty purge solenoid", "Wiring problem", "Poor connection", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Rough idle", "Failed emissions test", "Fuel smell"]
+    },
+    {
+      "id": "P0446",
+      "description": "Evaporative Emission Control System Vent Control Circuit Malfunction",
+      "severity": "info",
+      "possibleCauses": ["Faulty vent valve", "Clogged vent filter", "Wiring problem", "Blocked vent line"],
+      "symptoms": ["Check Engine Light on", "Difficulty refueling", "Failed emissions test", "Fuel tank vacuum"]
+    },
+    {
+      "id": "P0449",
+      "description": "Evaporative Emission Control System Vent Valve/Solenoid Circuit Malfunction",
+      "severity": "info",
+      "possibleCauses": ["Faulty vent solenoid", "Wiring issue", "Poor connection", "Corrosion"],
+      "symptoms": ["Check Engine Light on", "Failed emissions test", "Fuel smell", "Refueling difficulty"]
+    },
+    {
+      "id": "P0451",
+      "description": "Evaporative Emission Control System Pressure Sensor Range/Performance",
+      "severity": "info",
+      "possibleCauses": ["Faulty fuel tank pressure sensor", "Wiring issue", "EVAP system leak", "Poor connection"],
+      "symptoms": ["Check Engine Light on", "Failed emissions test", "No driveability symptoms", "Fuel smell"]
+    },
+    {
+      "id": "P0455",
+      "description": "Evaporative Emission Control System Leak Detected (Gross Leak)",
+      "severity": "warning",
+      "possibleCauses": ["Missing gas cap", "Large EVAP leak", "Disconnected hose", "Cracked charcoal canister"],
+      "symptoms": ["Check Engine Light on", "Strong fuel smell", "Failed emissions test", "Possible fuel loss"]
+    },
+    {
+      "id": "P0456",
+      "description": "Evaporative Emission Control System Leak Detected (Very Small Leak)",
+      "severity": "info",
+      "possibleCauses": ["Gas cap not sealing", "Tiny EVAP leak", "Degraded hose connection", "Minor seal failure"],
+      "symptoms": ["Check Engine Light on", "Slight fuel smell", "Failed emissions test", "No driveability issues"]
+    },
+    {
+      "id": "P0500",
+      "description": "Vehicle Speed Sensor Malfunction",
+      "severity": "warning",
+      "possibleCauses": ["Faulty VSS", "Damaged wiring", "Poor connection", "Damaged reluctor ring", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Speedometer not working", "Transmission shift issues", "Cruise control inoperative"]
+    },
+    {
+      "id": "P0501",
+      "description": "Vehicle Speed Sensor Range/Performance",
+      "severity": "warning",
+      "possibleCauses": ["Intermittent VSS signal", "Damaged reluctor", "Wiring issue", "Wheel bearing problem"],
+      "symptoms": ["Check Engine Light on", "Erratic speedometer", "Shifting problems", "ABS light on"]
+    },
+    {
+      "id": "P0505",
+      "description": "Idle Control System Malfunction",
+      "severity": "warning",
+      "possibleCauses": ["Faulty IAC valve", "Carbon buildup", "Vacuum leak", "Wiring problem", "Throttle body issues"],
+      "symptoms": ["Check Engine Light on", "Rough idle", "Stalling", "Erratic idle speed", "Hard starting"]
+    },
+    {
+      "id": "P0506",
+      "description": "Idle Control System RPM Lower Than Expected",
+      "severity": "warning",
+      "possibleCauses": ["Vacuum leak", "Dirty throttle body", "Faulty IAC", "Low fuel pressure", "Air leak"],
+      "symptoms": ["Check Engine Light on", "Low idle", "Engine stalling", "Rough idle", "Hard to keep running"]
+    },
+    {
+      "id": "P0507",
+      "description": "Idle Control System RPM Higher Than Expected",
+      "severity": "warning",
+      "possibleCauses": ["Vacuum leak", "Faulty IAC valve", "Throttle body issue", "Air leak after MAF"],
+      "symptoms": ["Check Engine Light on", "High idle", "Engine racing", "Hard to stop vehicle", "Increased fuel consumption"]
+    },
+    {
+      "id": "P0520",
+      "description": "Engine Oil Pressure Sensor/Switch Circuit Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty oil pressure sensor", "Wiring problem", "Low oil level", "Oil pump failure", "Poor connection"],
+      "symptoms": ["Check Engine Light on", "Oil pressure warning light", "Low oil pressure reading", "Possible engine damage"]
+    },
+    {
+      "id": "P0521",
+      "description": "Engine Oil Pressure Sensor/Switch Range/Performance",
+      "severity": "warning",
+      "possibleCauses": ["Faulty oil pressure sensor", "Incorrect oil viscosity", "Worn engine bearings", "Oil pump wear"],
+      "symptoms": ["Check Engine Light on", "Erratic oil pressure gauge", "Oil pressure warning", "Engine noise"]
+    },
+    {
+      "id": "P0562",
+      "description": "System Voltage Low",
+      "severity": "warning",
+      "possibleCauses": ["Failing alternator", "Bad battery", "Loose drive belt", "Poor electrical connections", "High electrical load"],
+      "symptoms": ["Check Engine Light on", "Dim lights", "Battery warning light", "Electrical issues", "Hard starting"]
+    },
+    {
+      "id": "P0563",
+      "description": "System Voltage High",
+      "severity": "warning",
+      "possibleCauses": ["Faulty voltage regulator", "Failing alternator", "Poor ground connection", "Battery issue"],
+      "symptoms": ["Check Engine Light on", "Bright lights", "Burnt out bulbs", "Battery overcharging", "Electrical damage"]
+    },
+    {
+      "id": "P0600",
+      "description": "Serial Communication Link Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["PCM internal failure", "CAN bus problem", "Wiring issue", "Module communication failure"],
+      "symptoms": ["Check Engine Light on", "Multiple system failures", "No communication with PCM", "Various warning lights"]
+    },
+    {
+      "id": "P0601",
+      "description": "Internal Control Module Memory Check Sum Error",
+      "severity": "critical",
+      "possibleCauses": ["PCM failure", "Software corruption", "Voltage spike damage", "Water intrusion"],
+      "symptoms": ["Check Engine Light on", "Erratic engine behavior", "No start condition", "Multiple fault codes"]
+    },
+    {
+      "id": "P0606",
+      "description": "PCM Processor Fault",
+      "severity": "critical",
+      "possibleCauses": ["PCM internal failure", "Power supply issue", "Software corruption", "Voltage spike"],
+      "symptoms": ["Check Engine Light on", "Erratic engine operation", "Stalling", "No start condition"]
+    },
+    {
+      "id": "P0700",
+      "description": "Transmission Control System Malfunction",
+      "severity": "warning",
+      "possibleCauses": ["TCM fault", "Transmission sensor issue", "Wiring problem", "Internal transmission problem"],
+      "symptoms": ["Check Engine Light on", "Transmission warning light", "Shifting problems", "Limp mode"]
+    },
+    {
+      "id": "P0705",
+      "description": "Transmission Range Sensor Circuit Malfunction (PRNDL Input)",
+      "severity": "warning",
+      "possibleCauses": ["Faulty range sensor", "Wiring problem", "Poor connection", "Linkage issue"],
+      "symptoms": ["Check Engine Light on", "Wrong gear indicated", "Transmission shifting issues", "No start in park"]
+    },
+    {
+      "id": "P0706",
+      "description": "Transmission Range Sensor Circuit Range/Performance",
+      "severity": "warning",
+      "possibleCauses": ["Worn range sensor", "Misadjusted linkage", "Intermittent connection", "Internal switch wear"],
+      "symptoms": ["Check Engine Light on", "Erratic gear display", "Shifting problems", "Backup lights issue"]
+    },
+    {
+      "id": "P0710",
+      "description": "Transmission Fluid Temperature Sensor Circuit Malfunction",
+      "severity": "warning",
+      "possibleCauses": ["Faulty TFT sensor", "Wiring problem", "Poor connection", "TCM failure"],
+      "symptoms": ["Check Engine Light on", "Transmission shifting issues", "Delayed engagement", "Harsh shifting"]
+    },
+    {
+      "id": "P0715",
+      "description": "Input/Turbine Speed Sensor Circuit Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty input speed sensor", "Wiring problem", "Damaged reluctor", "TCM failure"],
+      "symptoms": ["Check Engine Light on", "Erratic shifting", "Slipping", "No speedometer reading", "Limp mode"]
+    },
+    {
+      "id": "P0720",
+      "description": "Output Speed Sensor Circuit Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty output speed sensor", "Wiring issue", "Damaged reluctor", "TCM failure"],
+      "symptoms": ["Check Engine Light on", "Speedometer not working", "Shifting problems", "Limp mode"]
+    },
+    {
+      "id": "P0725",
+      "description": "Engine Speed Input Circuit Malfunction",
+      "severity": "warning",
+      "possibleCauses": ["Faulty crankshaft sensor", "Wiring problem", "TCM issue", "Signal interference"],
+      "symptoms": ["Check Engine Light on", "Harsh shifting", "Engine stalling", "Transmission slipping"]
+    },
+    {
+      "id": "P0730",
+      "description": "Incorrect Gear Ratio",
+      "severity": "critical",
+      "possibleCauses": ["Worn clutches", "Low transmission fluid", "Faulty solenoid", "Internal transmission damage"],
+      "symptoms": ["Check Engine Light on", "Slipping", "RPM flare during shifts", "Delayed engagement", "Harsh shifting"]
+    },
+    {
+      "id": "P0740",
+      "description": "Torque Converter Clutch Circuit Malfunction",
+      "severity": "warning",
+      "possibleCauses": ["Faulty TCC solenoid", "Wiring problem", "Low transmission fluid", "Valve body issue"],
+      "symptoms": ["Check Engine Light on", "No torque converter lockup", "Poor fuel economy", "Engine stalling at stops"]
+    },
+    {
+      "id": "P0741",
+      "description": "Torque Converter Clutch Circuit Performance or Stuck Off",
+      "severity": "warning",
+      "possibleCauses": ["Worn TCC", "Faulty TCC solenoid", "Low fluid level", "Valve body problem"],
+      "symptoms": ["Check Engine Light on", "No lockup at highway speeds", "Poor fuel economy", "Transmission slipping feel"]
+    },
+    {
+      "id": "P0750",
+      "description": "Shift Solenoid A Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty shift solenoid A", "Wiring problem", "Low transmission fluid", "Valve body issue"],
+      "symptoms": ["Check Engine Light on", "Harsh shifting", "No 2nd gear", "Limp mode", "Delayed engagement"]
+    },
+    {
+      "id": "P0751",
+      "description": "Shift Solenoid A Performance or Stuck Off",
+      "severity": "warning",
+      "possibleCauses": ["Stuck shift solenoid", "Debris in valve body", "Wiring issue", "Low fluid"],
+      "symptoms": ["Check Engine Light on", "Harsh 1-2 shift", "Slipping", "Delayed shifts"]
+    },
+    {
+      "id": "P0755",
+      "description": "Shift Solenoid B Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty shift solenoid B", "Wiring problem", "Low transmission fluid", "Valve body issue"],
+      "symptoms": ["Check Engine Light on", "No 2nd or 4th gear", "Harsh shifting", "Limp mode"]
+    },
+    {
+      "id": "P0760",
+      "description": "Shift Solenoid C Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Faulty shift solenoid C", "Wiring problem", "Low transmission fluid", "Valve body issue"],
+      "symptoms": ["Check Engine Light on", "Shifting problems", "No overdrive", "Harsh shifts"]
+    },
+    {
+      "id": "P0765",
+      "description": "Shift Solenoid D Malfunction",
+      "severity": "warning",
+      "possibleCauses": ["Faulty shift solenoid D", "Wiring issue", "Low fluid", "Valve body problem"],
+      "symptoms": ["Check Engine Light on", "Shifting issues", "Delayed shifts", "Harsh engagement"]
+    },
+    {
+      "id": "P1000",
+      "description": "OBD Systems Readiness Test Not Complete",
+      "severity": "info",
+      "possibleCauses": ["Battery recently disconnected", "Codes recently cleared", "Insufficient drive cycle", "PCM reset"],
+      "symptoms": ["Check Engine Light off", "Failed emissions test", "Monitors not ready", "No driveability issues"]
+    },
+    {
+      "id": "P1101",
+      "description": "Mass Airflow Sensor Out Of Self-Test Range",
+      "severity": "warning",
+      "possibleCauses": ["Faulty MAF sensor", "Vacuum leak", "Air filter restricted", "Intake leak after MAF"],
+      "symptoms": ["Check Engine Light on", "Poor performance", "Hesitation", "Rough idle"]
+    },
+    {
+      "id": "P1131",
+      "description": "Lack Of Upstream Heated Oxygen Sensor Switch - Lean (Bank 1)",
+      "severity": "warning",
+      "possibleCauses": ["Vacuum leak", "Low fuel pressure", "Faulty O2 sensor", "Exhaust leak"],
+      "symptoms": ["Check Engine Light on", "Lean running", "Hesitation", "Poor fuel economy"]
+    },
+    {
+      "id": "P1151",
+      "description": "Lack Of Upstream Heated Oxygen Sensor Switch - Lean (Bank 2)",
+      "severity": "warning",
+      "possibleCauses": ["Vacuum leak", "Low fuel pressure", "Faulty O2 sensor", "Exhaust leak"],
+      "symptoms": ["Check Engine Light on", "Lean running", "Hesitation", "Poor fuel economy"]
+    },
+    {
+      "id": "P1211",
+      "description": "Fuel Injection Pump Controller Above Expected Pressure",
+      "severity": "critical",
+      "possibleCauses": ["Faulty fuel pressure regulator", "Restricted return line", "Faulty fuel pump", "PCM issue"],
+      "symptoms": ["Check Engine Light on", "Hard starting", "Rough running", "Black smoke"]
+    },
+    {
+      "id": "P1259",
+      "description": "VTEC System Malfunction",
+      "severity": "warning",
+      "possibleCauses": ["Low oil level", "Faulty VTEC solenoid", "Wiring issue", "Oil pressure problem"],
+      "symptoms": ["Check Engine Light on", "Loss of power at high RPM", "Poor acceleration", "Engine hesitation"]
+    },
+    {
+      "id": "P1320",
+      "description": "Ignition Signal Primary Circuit",
+      "severity": "critical",
+      "possibleCauses": ["Faulty ignition coil", "Wiring problem", "PCM failure", "Poor ground"],
+      "symptoms": ["Check Engine Light on", "Misfire", "Rough idle", "No start condition"]
+    },
+    {
+      "id": "P1345",
+      "description": "Crankshaft Position - Camshaft Position Correlation (Bank 1)",
+      "severity": "critical",
+      "possibleCauses": ["Timing chain stretched", "Faulty CMP sensor", "Faulty CKP sensor", "Valve timing off"],
+      "symptoms": ["Check Engine Light on", "Rough idle", "Misfire", "Poor performance", "Hard starting"]
+    },
+    {
+      "id": "P1400",
+      "description": "DPFE Sensor Circuit Low Voltage",
+      "severity": "warning",
+      "possibleCauses": ["Faulty DPFE sensor", "Short to ground", "Wiring issue", "Clogged EGR passages"],
+      "symptoms": ["Check Engine Light on", "EGR system fault", "Failed emissions test", "Rough idle"]
+    },
+    {
+      "id": "P1450",
+      "description": "Unable To Bleed Up Fuel Tank Vacuum",
+      "severity": "info",
+      "possibleCauses": ["Faulty vent valve", "EVAP system restriction", "Fuel tank issue", "Purge valve problem"],
+      "symptoms": ["Check Engine Light on", "Difficulty refueling", "Fuel tank vacuum", "Fuel cap issue"]
+    },
+    {
+      "id": "P1516",
+      "description": "Throttle Actuator Control Module Throttle Actuator Position Performance",
+      "severity": "critical",
+      "possibleCauses": ["Faulty throttle body", "APP sensor issue", "Wiring problem", "Carbon buildup"],
+      "symptoms": ["Check Engine Light on", "Reduced engine power", "Limp mode", "Poor throttle response"]
+    },
+    {
+      "id": "P2000",
+      "description": "NOx Adsorber Efficiency Below Threshold Bank 1",
+      "severity": "warning",
+      "possibleCauses": ["Failed NOx adsorber catalyst", "Fuel quality issues", "Exhaust leak", "Sensor failure"],
+      "symptoms": ["Check Engine Light on", "Failed emissions test", "Increased NOx emissions", "No driveability issues"]
+    },
+    {
+      "id": "P2004",
+      "description": "Intake Manifold Runner Control Stuck Open Bank 1",
+      "severity": "warning",
+      "possibleCauses": ["Stuck IMRC valve", "Faulty actuator", "Wiring problem", "Vacuum leak"],
+      "symptoms": ["Check Engine Light on", "Loss of low-end torque", "Poor acceleration", "Rough idle"]
+    },
+    {
+      "id": "P2008",
+      "description": "Intake Manifold Runner Control Circuit/Open Bank 1",
+      "severity": "warning",
+      "possibleCauses": ["Faulty IMRC solenoid", "Open circuit", "Wiring damage", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Reduced performance", "Poor low-RPM torque", "Hesitation"]
+    },
+    {
+      "id": "P2015",
+      "description": "Intake Manifold Runner Position Sensor/Switch Circuit Range/Performance Bank 1",
+      "severity": "warning",
+      "possibleCauses": ["Faulty IMRC sensor", "Stuck runner valve", "Wiring issue", "Carbon buildup"],
+      "symptoms": ["Check Engine Light on", "Rough idle", "Poor performance", "Hesitation"]
+    },
+    {
+      "id": "P2017",
+      "description": "Intake Manifold Runner Position Sensor/Switch Circuit High Bank 1",
+      "severity": "warning",
+      "possibleCauses": ["Open circuit", "Faulty sensor", "Wiring damage", "Poor connection"],
+      "symptoms": ["Check Engine Light on", "Performance issues", "Rough idle", "Hesitation"]
+    },
+    {
+      "id": "P2096",
+      "description": "Post Catalyst Fuel Trim System Too Lean Bank 1",
+      "severity": "warning",
+      "possibleCauses": ["Exhaust leak after catalyst", "Faulty rear O2 sensor", "Fuel system lean", "Vacuum leak"],
+      "symptoms": ["Check Engine Light on", "Failed emissions test", "Poor catalyst efficiency", "No driveability issues"]
+    },
+    {
+      "id": "P2097",
+      "description": "Post Catalyst Fuel Trim System Too Rich Bank 1",
+      "severity": "warning",
+      "possibleCauses": ["Faulty rear O2 sensor", "Fuel system rich", "Leaking injector", "Catalytic converter issue"],
+      "symptoms": ["Check Engine Light on", "Failed emissions test", "Rich exhaust smell", "Poor fuel economy"]
+    },
+    {
+      "id": "P2101",
+      "description": "Throttle Actuator Control Motor Circuit Range/Performance",
+      "severity": "critical",
+      "possibleCauses": ["Faulty electronic throttle body", "Carbon buildup", "Wiring issue", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Reduced engine power", "Limp mode", "Erratic idle"]
+    },
+    {
+      "id": "P2106",
+      "description": "Throttle Actuator Control System - Forced Limited Power",
+      "severity": "critical",
+      "possibleCauses": ["Multiple TPS faults", "Throttle body failure", "APP sensor issue", "Wiring problem"],
+      "symptoms": ["Check Engine Light on", "Severe power reduction", "Limp mode", "Limited acceleration"]
+    },
+    {
+      "id": "P2110",
+      "description": "Throttle Actuator Control System - Forced Limited RPM",
+      "severity": "critical",
+      "possibleCauses": ["Electronic throttle failure", "APP sensor fault", "TPS fault", "PCM protection mode"],
+      "symptoms": ["Check Engine Light on", "RPM limited", "Reduced power", "Limp mode"]
+    },
+    {
+      "id": "P2111",
+      "description": "Throttle Actuator Control System - Stuck Open",
+      "severity": "critical",
+      "possibleCauses": ["Stuck throttle plate", "Faulty throttle motor", "Debris in throttle body", "Spring failure"],
+      "symptoms": ["Check Engine Light on", "High idle", "Uncontrolled acceleration", "Vehicle pulls when braking"]
+    },
+    {
+      "id": "P2112",
+      "description": "Throttle Actuator Control System - Stuck Closed",
+      "severity": "critical",
+      "possibleCauses": ["Stuck throttle plate", "Faulty throttle motor", "Carbon buildup", "Binding linkage"],
+      "symptoms": ["Check Engine Light on", "No throttle response", "Engine stalls", "Cannot accelerate"]
+    },
+    {
+      "id": "P2118",
+      "description": "Throttle Actuator Control Motor Current Range/Performance",
+      "severity": "critical",
+      "possibleCauses": ["Faulty throttle motor", "Wiring issue", "High resistance", "PCM driver failure"],
+      "symptoms": ["Check Engine Light on", "Reduced power", "Erratic throttle", "Limp mode"]
+    },
+    {
+      "id": "P2119",
+      "description": "Throttle Actuator Control Throttle Body Range/Performance",
+      "severity": "critical",
+      "possibleCauses": ["Faulty throttle body", "Carbon buildup", "Binding mechanism", "Sensor mismatch"],
+      "symptoms": ["Check Engine Light on", "Reduced power", "Erratic idle", "Poor throttle response"]
+    },
+    {
+      "id": "P2122",
+      "description": "Throttle/Pedal Position Sensor/Switch D Circuit Low Input",
+      "severity": "critical",
+      "possibleCauses": ["Short to ground", "Faulty APP sensor", "Wiring damage", "Poor connection"],
+      "symptoms": ["Check Engine Light on", "Limp mode", "No throttle response", "Reduced power"]
+    },
+    {
+      "id": "P2127",
+      "description": "Throttle/Pedal Position Sensor/Switch E Circuit Low Input",
+      "severity": "critical",
+      "possibleCauses": ["Short to ground", "Faulty APP sensor", "Wiring issue", "Corrosion"],
+      "symptoms": ["Check Engine Light on", "Reduced power", "Limp mode", "Erratic throttle"]
+    },
+    {
+      "id": "P2135",
+      "description": "Throttle/Pedal Position Sensor/Switch A/B Voltage Correlation",
+      "severity": "critical",
+      "possibleCauses": ["Faulty TPS", "Wiring problem", "Throttle body failure", "Poor connection"],
+      "symptoms": ["Check Engine Light on", "Limp mode", "Reduced power", "Erratic throttle response"]
+    },
+    {
+      "id": "P2138",
+      "description": "Throttle/Pedal Position Sensor/Switch D/E Voltage Correlation",
+      "severity": "critical",
+      "possibleCauses": ["Faulty APP sensor", "Wiring damage", "Poor connection", "Pedal assembly failure"],
+      "symptoms": ["Check Engine Light on", "Limp mode", "No acceleration", "Reduced power warning"]
+    },
+    {
+      "id": "P2176",
+      "description": "Throttle Actuator Control System - Idle Position Not Learned",
+      "severity": "info",
+      "possibleCauses": ["Throttle body replaced", "Battery disconnected", "PCM reset", "Idle not relearned"],
+      "symptoms": ["Check Engine Light on", "High idle", "Rough idle", "Stalling"]
+    },
+    {
+      "id": "P2187",
+      "description": "System Too Lean at Idle Bank 1",
+      "severity": "warning",
+      "possibleCauses": ["Vacuum leak", "PCV valve issue", "Intake gasket leak", "Fuel delivery problem"],
+      "symptoms": ["Check Engine Light on", "Rough idle", "Stalling at idle", "Hesitation"]
+    },
+    {
+      "id": "P2188",
+      "description": "System Too Rich at Idle Bank 1",
+      "severity": "warning",
+      "possibleCauses": ["Leaking fuel injector", "Faulty fuel pressure regulator", "EVAP purge issue", "MAF contamination"],
+      "symptoms": ["Check Engine Light on", "Rough idle", "Black smoke at idle", "Poor fuel economy"]
+    },
+    {
+      "id": "P2195",
+      "description": "O2 Sensor Signal Stuck Lean Bank 1 Sensor 1",
+      "severity": "warning",
+      "possibleCauses": ["Vacuum leak", "Low fuel pressure", "Faulty O2 sensor", "Exhaust leak"],
+      "symptoms": ["Check Engine Light on", "Lean condition", "Poor performance", "Hesitation"]
+    },
+    {
+      "id": "P2196",
+      "description": "O2 Sensor Signal Stuck Rich Bank 1 Sensor 1",
+      "severity": "warning",
+      "possibleCauses": ["Leaking injector", "High fuel pressure", "Faulty O2 sensor", "EVAP problem"],
+      "symptoms": ["Check Engine Light on", "Rich condition", "Poor fuel economy", "Black smoke"]
+    },
+    {
+      "id": "P2270",
+      "description": "O2 Sensor Signal Stuck Lean Bank 1 Sensor 2",
+      "severity": "warning",
+      "possibleCauses": ["Exhaust leak after catalyst", "Faulty rear O2 sensor", "Catalyst efficiency issue", "Wiring problem"],
+      "symptoms": ["Check Engine Light on", "Failed emissions test", "No driveability issues", "Catalyst code"]
+    },
+    {
+      "id": "P2271",
+      "description": "O2 Sensor Signal Stuck Rich Bank 1 Sensor 2",
+      "severity": "warning",
+      "possibleCauses": ["Faulty rear O2 sensor", "Catalyst contamination", "Rich fuel condition", "Wiring short"],
+      "symptoms": ["Check Engine Light on", "Failed emissions test", "Catalyst efficiency issue", "Poor fuel economy"]
+    },
+    {
+      "id": "P2279",
+      "description": "Intake Air System Leak",
+      "severity": "warning",
+      "possibleCauses": ["Intake manifold gasket leak", "Cracked intake hose", "PCV system leak", "Brake booster leak"],
+      "symptoms": ["Check Engine Light on", "Rough idle", "Lean condition", "Hesitation", "Whistling noise"]
+    },
+    {
+      "id": "P2400",
+      "description": "Evaporative Emission System Leak Detection Pump Control Circuit/Open",
+      "severity": "info",
+      "possibleCauses": ["Faulty leak detection pump", "Wiring issue", "Poor connection", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Failed emissions test", "No driveability issues", "EVAP system fault"]
+    },
+    {
+      "id": "P2401",
+      "description": "Evaporative Emission System Leak Detection Pump Sense Circuit/Open",
+      "severity": "info",
+      "possibleCauses": ["Faulty leak detection pump", "Wiring problem", "Sensor failure", "Water intrusion"],
+      "symptoms": ["Check Engine Light on", "Failed emissions test", "No driveability symptoms", "EVAP fault"]
+    },
+    {
+      "id": "P2610",
+      "description": "ECM/PCM Internal Engine Off Timer Performance",
+      "severity": "info",
+      "possibleCauses": ["Battery disconnect while running", "PCM internal issue", "Power interruption", "Software glitch"],
+      "symptoms": ["Check Engine Light on", "Extended crank time", "Monitors not running", "Cold start issues"]
+    },
+    {
+      "id": "P2646",
+      "description": "Rocker Arm Actuator System Performance or Stuck Off Bank 1",
+      "severity": "warning",
+      "possibleCauses": ["Low oil level", "Dirty oil", "Faulty VTEC solenoid", "Wiring issue", "Oil pressure problem"],
+      "symptoms": ["Check Engine Light on", "Loss of high-RPM power", "Rough running", "Valve train noise"]
+    },
+    {
+      "id": "P3400",
+      "description": "Cylinder Deactivation System Bank 1",
+      "severity": "warning",
+      "possibleCauses": ["Faulty lifter", "Oil pressure issue", "Solenoid failure", "Wiring problem"],
+      "symptoms": ["Check Engine Light on", "Rough running", "Vibration", "Misfire", "Poor fuel economy"]
+    },
+    {
+      "id": "P3401",
+      "description": "Cylinder 1 Deactivation/Intake Valve Control Circuit/Open",
+      "severity": "warning",
+      "possibleCauses": ["Faulty solenoid", "Wiring open circuit", "Poor connection", "PCM failure"],
+      "symptoms": ["Check Engine Light on", "Cylinder 1 deactivation issue", "Rough running", "Vibration"]
+    },
+    {
+      "id": "B0001",
+      "description": "Driver Frontal Stage 1 Deployment Control",
+      "severity": "critical",
+      "possibleCauses": ["Faulty airbag module", "Wiring issue", "Impact sensor problem", "Previous deployment"],
+      "symptoms": ["Airbag warning light on", "Airbag may not deploy", "SRS system fault", "Safety concern"]
+    },
+    {
+      "id": "B0002",
+      "description": "Driver Frontal Stage 2 Deployment Control",
+      "severity": "critical",
+      "possibleCauses": ["Faulty airbag module", "Wiring problem", "Airbag control unit issue", "Connector damage"],
+      "symptoms": ["Airbag warning light on", "Reduced airbag protection", "SRS fault", "Safety issue"]
+    },
+    {
+      "id": "B0010",
+      "description": "Driver Frontal Stage 1 Deployment Control Performance",
+      "severity": "critical",
+      "possibleCauses": ["Faulty squib circuit", "High resistance", "Airbag module issue", "Wiring damage"],
+      "symptoms": ["Airbag warning light on", "Airbag may not deploy correctly", "SRS fault", "Safety concern"]
+    },
+    {
+      "id": "B0020",
+      "description": "Passenger Frontal Stage 1 Deployment Control",
+      "severity": "critical",
+      "possibleCauses": ["Faulty passenger airbag", "Wiring issue", "Impact sensor problem", "ACM failure"],
+      "symptoms": ["Airbag warning light on", "Passenger airbag fault", "SRS system issue", "Safety concern"]
+    },
+    {
+      "id": "B0050",
+      "description": "Side Airbag Deployment Control (Left Front)",
+      "severity": "critical",
+      "possibleCauses": ["Faulty side airbag module", "Wiring problem", "Side impact sensor issue", "Seat issue"],
+      "symptoms": ["Airbag warning light on", "Side airbag fault", "SRS system issue", "Safety concern"]
+    },
+    {
+      "id": "B0051",
+      "description": "Side Airbag Deployment Control (Right Front)",
+      "severity": "critical",
+      "possibleCauses": ["Faulty side airbag module", "Wiring issue", "Side impact sensor problem", "Connector damage"],
+      "symptoms": ["Airbag warning light on", "Side airbag fault", "SRS system issue", "Safety concern"]
+    },
+    {
+      "id": "B0060",
+      "description": "Curtain Airbag Deployment Control (Left)",
+      "severity": "critical",
+      "possibleCauses": ["Faulty curtain airbag", "Wiring problem", "Rollover sensor issue", "Headliner damage"],
+      "symptoms": ["Airbag warning light on", "Curtain airbag fault", "SRS issue", "Safety concern"]
+    },
+    {
+      "id": "B0061",
+      "description": "Curtain Airbag Deployment Control (Right)",
+      "severity": "critical",
+      "possibleCauses": ["Faulty curtain airbag", "Wiring issue", "Rollover sensor problem", "ACM failure"],
+      "symptoms": ["Airbag warning light on", "Curtain airbag fault", "SRS issue", "Safety concern"]
+    },
+    {
+      "id": "B0100",
+      "description": "Crash Sensor Front End Cross-Referenced Circuit",
+      "severity": "critical",
+      "possibleCauses": ["Faulty front crash sensor", "Wiring damage", "ACM issue", "Connector corrosion"],
+      "symptoms": ["Airbag warning light on", "SRS system fault", "Airbags may not deploy", "Safety concern"]
+    },
+    {
+      "id": "B0101",
+      "description": "Crash Sensor Data",
+      "severity": "critical",
+      "possibleCauses": ["Faulty crash sensor", "Signal interference", "Wiring problem", "ACM malfunction"],
+      "symptoms": ["Airbag warning light on", "SRS fault", "Crash detection issue", "Safety concern"]
+    },
+    {
+      "id": "B0106",
+      "description": "Seat Weight Sensor Circuit",
+      "severity": "warning",
+      "possibleCauses": ["Faulty seat weight sensor", "Wiring issue", "Seat position problem", "Connector damage"],
+      "symptoms": ["Airbag warning light on", "Passenger airbag off incorrect", "SRS fault", "Safety concern"]
+    },
+    {
+      "id": "B1000",
+      "description": "ECU Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Internal ECU failure", "Voltage spike", "Software corruption", "Water intrusion"],
+      "symptoms": ["Multiple warning lights", "System inoperative", "Erratic behavior", "No communication"]
+    },
+    {
+      "id": "B1001",
+      "description": "Option Configuration Error",
+      "severity": "warning",
+      "possibleCauses": ["Incorrect programming", "Module replaced without coding", "Software mismatch", "VIN error"],
+      "symptoms": ["Warning light on", "Feature not working", "System fault", "Configuration needed"]
+    },
+    {
+      "id": "B1050",
+      "description": "Headlamp Out - Left Low Beam",
+      "severity": "warning",
+      "possibleCauses": ["Burned out bulb", "Wiring issue", "Connector problem", "Fuse blown"],
+      "symptoms": ["Headlight warning", "Left low beam not working", "Reduced visibility", "Safety concern"]
+    },
+    {
+      "id": "B1051",
+      "description": "Headlamp Out - Right Low Beam",
+      "severity": "warning",
+      "possibleCauses": ["Burned out bulb", "Wiring issue", "Connector problem", "Fuse blown"],
+      "symptoms": ["Headlight warning", "Right low beam not working", "Reduced visibility", "Safety concern"]
+    },
+    {
+      "id": "B1100",
+      "description": "Door Lock Circuit",
+      "severity": "info",
+      "possibleCauses": ["Faulty door lock actuator", "Wiring issue", "Door lock switch problem", "BCM failure"],
+      "symptoms": ["Door lock warning", "Door won't lock/unlock", "Remote not working", "Security concern"]
+    },
+    {
+      "id": "B1201",
+      "description": "Fuel Level Sensor Circuit",
+      "severity": "warning",
+      "possibleCauses": ["Faulty fuel level sensor", "Wiring open circuit", "Poor connection", "Instrument cluster issue"],
+      "symptoms": ["Fuel gauge inaccurate", "Low fuel warning error", "Fuel gauge stuck", "Running out of fuel"]
+    },
+    {
+      "id": "B1318",
+      "description": "Battery Voltage Low",
+      "severity": "warning",
+      "possibleCauses": ["Weak battery", "Charging system fault", "Parasitic draw", "Poor connections"],
+      "symptoms": ["Warning light on", "Slow crank", "Electrical issues", "System resets"]
+    },
+    {
+      "id": "B1325",
+      "description": "Ignition Key-In Circuit Malfunction",
+      "severity": "info",
+      "possibleCauses": ["Faulty key-in switch", "Wiring issue", "Ignition lock problem", "BCM failure"],
+      "symptoms": ["Chime always on", "Key warning fault", "Chime never sounds", "Ignition issue"]
+    },
+    {
+      "id": "B1342",
+      "description": "ECU Is Defective",
+      "severity": "critical",
+      "possibleCauses": ["Internal ECU failure", "Power supply issue", "Software corruption", "Voltage damage"],
+      "symptoms": ["Module not responding", "System inoperative", "Multiple faults", "No communication"]
+    },
+    {
+      "id": "B1367",
+      "description": "Ignition Accessory On Circuit Short To Ground",
+      "severity": "warning",
+      "possibleCauses": ["Short to ground in circuit", "Faulty ignition switch", "Wiring damage", "Connector issue"],
+      "symptoms": ["Accessories not working", "Electrical fault", "Blown fuse", "Ignition problem"]
+    },
+    {
+      "id": "B1380",
+      "description": "Ignition Run/Start Circuit Short To Battery",
+      "severity": "warning",
+      "possibleCauses": ["Short to power", "Faulty ignition switch", "Wiring issue", "Starter circuit problem"],
+      "symptoms": ["Start issues", "Accessories always on", "Electrical fault", "Battery drain"]
+    },
+    {
+      "id": "B1600",
+      "description": "PATS Received Invalid Key Code",
+      "severity": "critical",
+      "possibleCauses": ["Wrong key used", "Key not programmed", "PATS transponder failure", "PATS module issue"],
+      "symptoms": ["No start condition", "Security light on", "Key not recognized", "Theft light flashing"]
+    },
+    {
+      "id": "B1601",
+      "description": "PATS Received Incorrect Key Code",
+      "severity": "critical",
+      "possibleCauses": ["Incorrect key", "Key programming error", "Damaged transponder", "PATS malfunction"],
+      "symptoms": ["No start condition", "Security light on", "Anti-theft active", "Key rejected"]
+    },
+    {
+      "id": "B1602",
+      "description": "PATS Received Invalid Format Of Key Code",
+      "severity": "critical",
+      "possibleCauses": ["Corrupted key data", "PATS module failure", "Communication error", "Key damage"],
+      "symptoms": ["No start condition", "Security warning", "Intermittent starting", "Key fault"]
+    },
+    {
+      "id": "B2799",
+      "description": "Engine Immobilizer System Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Key not registered", "Immobilizer ECU failure", "Transponder malfunction", "Wiring issue"],
+      "symptoms": ["No start condition", "Security light on", "Engine cranks but won't start", "Theft deterrent active"]
+    },
+    {
+      "id": "C0035",
+      "description": "Left Front Wheel Speed Sensor Circuit",
+      "severity": "warning",
+      "possibleCauses": ["Faulty wheel speed sensor", "Wiring damage", "Sensor gap too large", "Damaged tone ring"],
+      "symptoms": ["ABS warning light on", "Traction control off", "Stability control off", "ABS not working"]
+    },
+    {
+      "id": "C0040",
+      "description": "Right Front Wheel Speed Sensor Circuit",
+      "severity": "warning",
+      "possibleCauses": ["Faulty wheel speed sensor", "Wiring issue", "Sensor gap problem", "Tone ring damage"],
+      "symptoms": ["ABS warning light on", "Traction control off", "Stability control off", "ABS inoperative"]
+    },
+    {
+      "id": "C0045",
+      "description": "Left Rear Wheel Speed Sensor Circuit",
+      "severity": "warning",
+      "possibleCauses": ["Faulty wheel speed sensor", "Wiring damage", "Sensor mounting issue", "Tone ring problem"],
+      "symptoms": ["ABS warning light on", "Traction control fault", "Stability control off", "ABS not working"]
+    },
+    {
+      "id": "C0050",
+      "description": "Right Rear Wheel Speed Sensor Circuit",
+      "severity": "warning",
+      "possibleCauses": ["Faulty wheel speed sensor", "Wiring issue", "Sensor gap too large", "Damaged tone ring"],
+      "symptoms": ["ABS warning light on", "Traction control off", "Stability control fault", "ABS inoperative"]
+    },
+    {
+      "id": "C0060",
+      "description": "Left Front ABS Solenoid 1 Circuit",
+      "severity": "critical",
+      "possibleCauses": ["Faulty ABS solenoid", "Wiring problem", "ABS module failure", "Hydraulic unit issue"],
+      "symptoms": ["ABS warning light on", "ABS not functioning", "Brake pedal pulsation", "Traction control fault"]
+    },
+    {
+      "id": "C0065",
+      "description": "Right Front ABS Solenoid 1 Circuit",
+      "severity": "critical",
+      "possibleCauses": ["Faulty ABS solenoid", "Wiring issue", "ABS module failure", "Hydraulic unit problem"],
+      "symptoms": ["ABS warning light on", "ABS inoperative", "Brake issue", "Traction control off"]
+    },
+    {
+      "id": "C0131",
+      "description": "ABS/TCS Brake Switch Circuit",
+      "severity": "warning",
+      "possibleCauses": ["Faulty brake light switch", "Wiring problem", "Poor adjustment", "Connector issue"],
+      "symptoms": ["ABS warning light on", "Cruise control inoperative", "Brake lights not working", "Traction control fault"]
+    },
+    {
+      "id": "C0161",
+      "description": "ABS/TCS Brake System Pressure Circuit",
+      "severity": "critical",
+      "possibleCauses": ["Faulty brake pressure sensor", "Low brake fluid", "ABS pump failure", "Master cylinder issue"],
+      "symptoms": ["ABS warning light on", "Brake warning light", "Poor braking", "Spongy brake pedal"]
+    },
+    {
+      "id": "C0196",
+      "description": "Yaw Rate Sensor Bias",
+      "severity": "warning",
+      "possibleCauses": ["Faulty yaw rate sensor", "Sensor out of calibration", "Vehicle not level during calibration", "Wiring issue"],
+      "symptoms": ["Stability control light on", "Traction control off", "Vehicle dynamics fault", "ESC inoperative"]
+    },
+    {
+      "id": "C0226",
+      "description": "Steering Wheel Position Sensor Performance",
+      "severity": "warning",
+      "possibleCauses": ["Steering angle sensor fault", "Sensor not calibrated", "Clock spring issue", "Wiring problem"],
+      "symptoms": ["Stability control light on", "Steering warning", "Power steering fault", "Assist issues"]
+    },
+    {
+      "id": "C0242",
+      "description": "Power Steering Motor Ground Circuit",
+      "severity": "warning",
+      "possibleCauses": ["Poor ground connection", "Wiring issue", "EPS motor fault", "Connector corrosion"],
+      "symptoms": ["Power steering warning", "Heavy steering", "Intermittent assist", "Steering noise"]
+    },
+    {
+      "id": "C0265",
+      "description": "EBCM Motor Relay Circuit",
+      "severity": "critical",
+      "possibleCauses": ["Faulty relay", "Wiring problem", "EBCM failure", "Power supply issue"],
+      "symptoms": ["ABS warning light on", "Traction control off", "Stability control fault", "ABS pump not working"]
+    },
+    {
+      "id": "C0287",
+      "description": "Delivered Torque Signal Malfunction",
+      "severity": "warning",
+      "possibleCauses": ["Communication error with PCM", "Wiring issue", "PCM fault", "EBCM problem"],
+      "symptoms": ["Traction control light on", "Stability control fault", "Limited traction control function", "Warning message"]
+    },
+    {
+      "id": "C0300",
+      "description": "Rear Speed Sensor Malfunction",
+      "severity": "warning",
+      "possibleCauses": ["Faulty rear speed sensor", "Wiring damage", "Sensor gap issue", "Tone ring problem"],
+      "symptoms": ["ABS warning light on", "Speedometer fault", "Traction control off", "Cruise control issue"]
+    },
+    {
+      "id": "C0455",
+      "description": "Front Axle Control Circuit",
+      "severity": "warning",
+      "possibleCauses": ["Faulty front axle actuator", "Wiring issue", "Transfer case problem", "4WD module fault"],
+      "symptoms": ["4WD warning light on", "4WD not engaging", "Service 4WD message", "Transfer case noise"]
+    },
+    {
+      "id": "C0460",
+      "description": "Transfer Case Shift Control System",
+      "severity": "warning",
+      "possibleCauses": ["Faulty shift motor", "Transfer case encoder ring", "Wiring problem", "4WD switch issue"],
+      "symptoms": ["4WD warning light on", "Cannot shift 4WD", "Service 4WD message", "4WD stuck in gear"]
+    },
+    {
+      "id": "C0561",
+      "description": "System Disabled Information Stored",
+      "severity": "critical",
+      "possibleCauses": ["Previous system fault", "ABS module issue", "Multiple sensor faults", "System reset needed"],
+      "symptoms": ["ABS warning light on", "Traction control disabled", "Stability control off", "Safety system fault"]
+    },
+    {
+      "id": "C1130",
+      "description": "Engine Signal 1 Circuit",
+      "severity": "warning",
+      "possibleCauses": ["Communication error with PCM", "CAN bus issue", "Wiring problem", "PCM fault"],
+      "symptoms": ["ABS warning light on", "Traction control fault", "Engine signal missing", "System reduced function"]
+    },
+    {
+      "id": "C1201",
+      "description": "Engine Control System Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["Engine code present", "PCM communication fault", "CAN bus error", "Multiple system issue"],
+      "symptoms": ["ABS/VSC warning lights", "Check engine light on", "Traction control off", "Multiple warnings"]
+    },
+    {
+      "id": "C1233",
+      "description": "Left Front Wheel Speed Circuit Open Or Shorted",
+      "severity": "warning",
+      "possibleCauses": ["Open or short in sensor circuit", "Faulty wheel speed sensor", "Wiring damage", "Connector issue"],
+      "symptoms": ["ABS warning light on", "Traction control fault", "Stability control off", "ABS inoperative"]
+    },
+    {
+      "id": "C1234",
+      "description": "Right Front Wheel Speed Circuit Open Or Shorted",
+      "severity": "warning",
+      "possibleCauses": ["Open or short in sensor circuit", "Faulty wheel speed sensor", "Wiring issue", "Connector problem"],
+      "symptoms": ["ABS warning light on", "Traction control fault", "Stability control off", "ABS not working"]
+    },
+    {
+      "id": "C1241",
+      "description": "Low Or High Battery Supply Voltage",
+      "severity": "warning",
+      "possibleCauses": ["Low battery voltage", "Charging system fault", "High resistance in circuit", "Module power issue"],
+      "symptoms": ["ABS warning light on", "Multiple warning lights", "Electrical issues", "System resets"]
+    },
+    {
+      "id": "U0001",
+      "description": "High Speed CAN Communication Bus",
+      "severity": "critical",
+      "possibleCauses": ["CAN bus wiring fault", "Terminating resistor issue", "Module failure", "Water damage"],
+      "symptoms": ["Multiple warning lights", "No communication with modules", "Systems inoperative", "DTC storage failure"]
+    },
+    {
+      "id": "U0073",
+      "description": "Control Module Communication Bus Off",
+      "severity": "critical",
+      "possibleCauses": ["CAN bus failure", "Wiring short/open", "Module failure", "Power supply issue"],
+      "symptoms": ["Multiple warning lights", "Systems not working", "No scanner communication", "Limp mode"]
+    },
+    {
+      "id": "U0100",
+      "description": "Lost Communication With ECM/PCM A",
+      "severity": "critical",
+      "possibleCauses": ["CAN bus fault", "PCM failure", "Wiring problem", "Power or ground issue"],
+      "symptoms": ["Multiple warning lights", "No start condition", "Limp mode", "Systems inoperative"]
+    },
+    {
+      "id": "U0101",
+      "description": "Lost Communication With TCM",
+      "severity": "critical",
+      "possibleCauses": ["CAN bus fault", "TCM failure", "Wiring issue", "Power supply problem"],
+      "symptoms": ["Check Engine Light on", "Transmission in limp mode", "No shifting", "Harsh engagement"]
+    },
+    {
+      "id": "U0107",
+      "description": "Lost Communication With Throttle Actuator Control Module",
+      "severity": "critical",
+      "possibleCauses": ["Throttle body failure", "CAN bus issue", "Wiring problem", "Power supply fault"],
+      "symptoms": ["Reduced power", "Limp mode", "No throttle response", "Multiple warning lights"]
+    },
+    {
+      "id": "U0109",
+      "description": "Lost Communication With Fuel Pump Control Module",
+      "severity": "critical",
+      "possibleCauses": ["Fuel pump module failure", "CAN bus fault", "Wiring issue", "No power to module"],
+      "symptoms": ["No start condition", "Engine stalling", "Fuel delivery fault", "No fuel pump operation"]
+    },
+    {
+      "id": "U0121",
+      "description": "Lost Communication With Anti-Lock Brake System (ABS) Control Module",
+      "severity": "warning",
+      "possibleCauses": ["ABS module failure", "CAN bus fault", "Wiring problem", "Power supply issue"],
+      "symptoms": ["ABS warning light on", "Traction control off", "Stability control fault", "Brake warning"]
+    },
+    {
+      "id": "U0122",
+      "description": "Lost Communication With Vehicle Dynamics Control Module",
+      "severity": "warning",
+      "possibleCauses": ["VDC module failure", "CAN bus fault", "Wiring issue", "Power problem"],
+      "symptoms": ["Stability control light on", "Traction control off", "VDC inoperative", "ABS warning"]
+    },
+    {
+      "id": "U0126",
+      "description": "Lost Communication With Steering Angle Sensor Module",
+      "severity": "warning",
+      "possibleCauses": ["Steering angle sensor failure", "CAN bus fault", "Wiring issue", "Clock spring problem"],
+      "symptoms": ["Stability control fault", "Power steering warning", "Steering angle not learned", "ESC off"]
+    },
+    {
+      "id": "U0140",
+      "description": "Lost Communication With Body Control Module",
+      "severity": "warning",
+      "possibleCauses": ["BCM failure", "CAN bus fault", "Wiring problem", "Power supply issue"],
+      "symptoms": ["Multiple electrical faults", "Lighting issues", "Door lock problems", "Warning lights on"]
+    },
+    {
+      "id": "U0141",
+      "description": "Lost Communication With Body Control Module A",
+      "severity": "warning",
+      "possibleCauses": ["BCM A failure", "CAN bus fault", "Wiring issue", "Module power problem"],
+      "symptoms": ["Electrical system faults", "Warning lights on", "Features inoperative", "No BCM response"]
+    },
+    {
+      "id": "U0155",
+      "description": "Lost Communication With Instrument Panel Cluster (IPC) Control Module",
+      "severity": "warning",
+      "possibleCauses": ["Instrument cluster failure", "CAN bus fault", "Wiring issue", "Power problem"],
+      "symptoms": ["Gauges not working", "Warning lights fault", "No display", "Odometer issue"]
+    },
+    {
+      "id": "U0164",
+      "description": "Lost Communication With HVAC Control Module",
+      "severity": "info",
+      "possibleCauses": ["HVAC module failure", "CAN bus fault", "Wiring issue", "Connector problem"],
+      "symptoms": ["HVAC not working", "Climate control fault", "No A/C", "Blower issues"]
+    },
+    {
+      "id": "U0167",
+      "description": "Lost Communication With Vehicle Immobilizer Control Module",
+      "severity": "critical",
+      "possibleCauses": ["Immobilizer module failure", "CAN bus fault", "Wiring issue", "Security system problem"],
+      "symptoms": ["No start condition", "Security light on", "Key not recognized", "Anti-theft active"]
+    },
+    {
+      "id": "U0184",
+      "description": "Lost Communication With Radio",
+      "severity": "info",
+      "possibleCauses": ["Radio failure", "CAN bus fault", "Wiring issue", "Fuse blown"],
+      "symptoms": ["No radio function", "Display blank", "No audio", "Steering wheel controls inoperative"]
+    },
+    {
+      "id": "U0214",
+      "description": "Lost Communication With Remote Function Actuation Module",
+      "severity": "info",
+      "possibleCauses": ["Remote start module failure", "CAN bus fault", "Wiring issue", "Antenna problem"],
+      "symptoms": ["Remote start not working", "Key fob issues", "Remote features inoperative", "Warning light"]
+    },
+    {
+      "id": "U0231",
+      "description": "Lost Communication With Rain Sensing Module",
+      "severity": "info",
+      "possibleCauses": ["Rain sensor failure", "CAN bus fault", "Wiring issue", "Windshield replacement needed"],
+      "symptoms": ["Auto wipers not working", "Rain sense fault", "Manual wipers only", "Warning message"]
+    },
+    {
+      "id": "U0300",
+      "description": "Internal Control Module Software Incompatibility",
+      "severity": "warning",
+      "possibleCauses": ["Module software mismatch", "Incomplete programming", "Wrong module installed", "Update needed"],
+      "symptoms": ["Warning lights on", "System reduced function", "Features inoperative", "Communication issues"]
+    },
+    {
+      "id": "U0401",
+      "description": "Invalid Data Received From ECM/PCM",
+      "severity": "warning",
+      "possibleCauses": ["CAN bus interference", "PCM issue", "Wiring problem", "Module incompatibility"],
+      "symptoms": ["Warning lights on", "System faults", "Erratic behavior", "Reduced performance"]
+    },
+    {
+      "id": "U0402",
+      "description": "Invalid Data Received From Transmission Control Module",
+      "severity": "warning",
+      "possibleCauses": ["TCM issue", "CAN bus fault", "Software mismatch", "Wiring problem"],
+      "symptoms": ["Transmission warning", "Shifting problems", "Check engine light", "Limp mode"]
+    },
+    {
+      "id": "U0415",
+      "description": "Invalid Data Received From Anti-Lock Brake System Control Module",
+      "severity": "warning",
+      "possibleCauses": ["ABS module issue", "CAN bus fault", "Data corruption", "Module failure"],
+      "symptoms": ["ABS warning light", "Traction control fault", "Brake system warning", "Stability control off"]
+    },
+    {
+      "id": "U0426",
+      "description": "Invalid Data Received From Steering Angle Sensor Module",
+      "severity": "warning",
+      "possibleCauses": ["Steering angle sensor fault", "CAN bus issue", "Calibration error", "Wiring problem"],
+      "symptoms": ["Stability control fault", "Power steering warning", "ESC inoperative", "Steering warning"]
+    },
+    {
+      "id": "U1000",
+      "description": "Class 2 Communication Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["CAN bus fault", "Module failure", "Wiring problem", "Terminating resistor issue"],
+      "symptoms": ["Multiple warning lights", "Systems not communicating", "Scan tool issues", "No module response"]
+    },
+    {
+      "id": "U1016",
+      "description": "Serial Communication Link Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["CAN bus wiring fault", "Module failure", "Communication error", "Power issue"],
+      "symptoms": ["Multiple warning lights", "No communication", "Systems inoperative", "Diagnostic trouble"]
+    },
+    {
+      "id": "U1041",
+      "description": "Loss of Electronic Brake Controller Communication",
+      "severity": "critical",
+      "possibleCauses": ["EBCM failure", "CAN bus fault", "Wiring issue", "Power supply problem"],
+      "symptoms": ["ABS warning light on", "Traction control off", "Brake warning", "Stability control fault"]
+    },
+    {
+      "id": "U1073",
+      "description": "Data Circuit Message Count Error",
+      "severity": "warning",
+      "possibleCauses": ["CAN bus interference", "Module timeout", "Wiring issue", "Software problem"],
+      "symptoms": ["Intermittent warnings", "System faults", "Communication errors", "Module timeout"]
+    },
+    {
+      "id": "U1255",
+      "description": "Serial Communications Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["CAN bus fault", "Gateway module issue", "Wiring problem", "Multiple module failure"],
+      "symptoms": ["Multiple warning lights", "Systems inoperative", "No scan tool communication", "Vehicle disabled"]
+    },
+    {
+      "id": "U1262",
+      "description": "SCP Communication Malfunction",
+      "severity": "critical",
+      "possibleCauses": ["SCP network fault", "Module failure", "Wiring damage", "Connector issue"],
+      "symptoms": ["Warning lights on", "Communication loss", "System faults", "Reduced function"]
+    },
+    {
+      "id": "U1900",
+      "description": "CAN Communication Bus Fault",
+      "severity": "critical",
+      "possibleCauses": ["CAN bus wiring fault", "Short circuit", "Open circuit", "Module overload"],
+      "symptoms": ["Multiple warning lights", "No module communication", "Systems inoperative", "Vehicle may not start"]
+    }
+  ]
+}
