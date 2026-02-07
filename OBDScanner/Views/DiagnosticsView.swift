@@ -26,8 +26,9 @@ struct DiagnosticsView: View {
                         ) {
                             if obd.isDemoMode {
                                 dtcManager.scanForDTCsDemo()
+                            } else {
+                                obd.scanForDTCs()
                             }
-                            // Real OBD scanning would be triggered here
                         }
 
                         // Error message if any
@@ -95,8 +96,9 @@ struct DiagnosticsView: View {
                 Button("Clear All", role: .destructive) {
                     if obd.isDemoMode {
                         dtcManager.clearDTCsDemo()
+                    } else {
+                        obd.clearDTCs()
                     }
-                    // Real OBD clearing would be triggered here
                 }
             } message: {
                 Text("This will clear all stored trouble codes and turn off the Check Engine light. The codes may return if the underlying issue is not fixed.")

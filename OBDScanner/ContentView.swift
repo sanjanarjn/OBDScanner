@@ -117,6 +117,12 @@ class OBDConnection: ObservableObject {
     @Published var parameters: [OBDParameterData] = []
     @Published var isConnected = false
 
+    // DTC manager reference for routing Mode 03/04 responses
+    weak var dtcManager: DTCManager?
+
+    // Track whether we're currently doing a DTC scan/clear (pauses parameter polling)
+    private var isDTCOperation = false
+
     init() {
         // Initialize all parameters with N/A values
         parameters = OBDParameterType.allCases.map { type in
@@ -198,6 +204,55 @@ class OBDConnection: ObservableObject {
                     lastUpdated: Date()
                 )
             }
+        }
+    }
+
+    // MARK: - Real DTC Scanning (Mode 03 / Mode 04)
+
+    func scanForDTCs() {
+        guard isConnected, !isDemoMode, let connection = connection else { return }
+        dtcManager?.isScanning = true
+        dtcManager?.scanError = nil
+        isDTCOperation = true
+        isWaitingForResponse = false // cancel any pending parameter poll
+
+        let data = "03\r".data(using: .utf8)!
+        print("Sending: 03 (Read DTCs)")
+        connection.send(content: data, completion: .contentProcessed({ _ in }))
+
+        // Timeout — if no response after 10s, report error
+        DispatchQueue.global().asyncAfter(deadline: .now() + 10.0) { [weak self] in
+            guard let self = self, self.isDTCOperation else { return }
+            self.isDTCOperation = false
+            self.dtcManager?.handleError("No response from vehicle. Check connection.")
+            self.resumePolling()
+        }
+    }
+
+    func clearDTCs() {
+        guard isConnected, !isDemoMode, let connection = connection else { return }
+        dtcManager?.isClearing = true
+        dtcManager?.scanError = nil
+        isDTCOperation = true
+        isWaitingForResponse = false
+
+        let data = "04\r".data(using: .utf8)!
+        print("Sending: 04 (Clear DTCs)")
+        connection.send(content: data, completion: .contentProcessed({ _ in }))
+
+        // Timeout
+        DispatchQueue.global().asyncAfter(deadline: .now() + 10.0) { [weak self] in
+            guard let self = self, self.isDTCOperation else { return }
+            self.isDTCOperation = false
+            self.dtcManager?.handleError("Clear command timed out. Try again.")
+            self.resumePolling()
+        }
+    }
+
+    private func resumePolling() {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            guard let self = self, self.isActive else { return }
+            self.sendNextParameter()
         }
     }
 
@@ -382,12 +437,51 @@ class OBDConnection: ObservableObject {
 
         // Ignore negative response codes
         if response.hasPrefix("7F") {
+            // Check if this is a DTC operation error (7F03 or 7F04)
+            let cleanHex = response.replacingOccurrences(of: " ", with: "")
+            if isDTCOperation && (cleanHex.hasPrefix("7F03") || cleanHex.hasPrefix("7F04")) {
+                isDTCOperation = false
+                dtcManager?.handleError("Vehicle rejected the request. Try again.")
+                resumePolling()
+                return
+            }
             print("Negative response from ECU: \(response) - trying next parameter")
             isWaitingForResponse = false
             DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) { [weak self] in
                 guard let self = self, self.isActive else { return }
                 self.sendNextParameter()
             }
+            return
+        }
+
+        // Handle Mode 03 response (Read DTCs) — "43 ..."
+        let compactResponse = response.replacingOccurrences(of: " ", with: "").uppercased()
+        if compactResponse.hasPrefix("43") {
+            print("Mode 03 DTC response: \(response)")
+            isDTCOperation = false
+            dtcManager?.processReadDTCsResponse(response)
+            isWaitingForResponse = false
+            resumePolling()
+            return
+        }
+
+        // Handle Mode 04 response (Clear DTCs) — "44"
+        if compactResponse.hasPrefix("44") {
+            print("Mode 04 Clear DTCs response: \(response)")
+            isDTCOperation = false
+            dtcManager?.processClearDTCsResponse(response)
+            isWaitingForResponse = false
+            resumePolling()
+            return
+        }
+
+        // Handle NO DATA during DTC scan (means no stored DTCs)
+        if isDTCOperation && response.contains("NO DATA") {
+            print("No DTCs stored in vehicle")
+            isDTCOperation = false
+            dtcManager?.handleNoData()
+            isWaitingForResponse = false
+            resumePolling()
             return
         }
 
@@ -458,6 +552,9 @@ struct ContentView: View {
         }
         .preferredColorScheme(.dark)
         .tint(accentGreen)
+        .onAppear {
+            obd.dtcManager = dtcManager
+        }
         .onChange(of: obd.isDemoMode) { _, newValue in
             if newValue {
                 dtcManager.startDemoMode()
