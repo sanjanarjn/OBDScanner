@@ -117,6 +117,12 @@ class OBDConnection: ObservableObject {
     @Published var parameters: [OBDParameterData] = []
     @Published var isConnected = false
 
+    // DTC manager reference for routing Mode 03/04 responses
+    weak var dtcManager: DTCManager?
+
+    // Track whether we're currently doing a DTC scan/clear (pauses parameter polling)
+    private var isDTCOperation = false
+
     init() {
         // Initialize all parameters with N/A values
         parameters = OBDParameterType.allCases.map { type in
@@ -198,6 +204,69 @@ class OBDConnection: ObservableObject {
                     lastUpdated: Date()
                 )
             }
+        }
+    }
+
+    // MARK: - Real DTC Scanning (Mode 03 / Mode 04)
+
+    func scanForDTCs() {
+        guard isConnected, !isDemoMode, connection != nil else { return }
+        dtcManager?.isScanning = true
+        dtcManager?.scanError = nil
+
+        // Flag DTC operation first — this blocks sendNextParameter() immediately
+        isDTCOperation = true
+
+        // Wait for any in-flight parameter command to finish before sending
+        let delay: TimeInterval = isWaitingForResponse ? 1.5 : 0.3
+        isWaitingForResponse = false
+
+        DispatchQueue.global().asyncAfter(deadline: .now() + delay) { [weak self] in
+            guard let self = self, let connection = self.connection else { return }
+            let data = "03\r".data(using: .utf8)!
+            print("Sending: 03 (Read DTCs)")
+            connection.send(content: data, completion: .contentProcessed({ _ in }))
+        }
+
+        // Timeout — if no response after 12s, report error
+        DispatchQueue.global().asyncAfter(deadline: .now() + delay + 10.0) { [weak self] in
+            guard let self = self, self.isDTCOperation else { return }
+            self.isDTCOperation = false
+            self.dtcManager?.handleError("No response from vehicle. Check connection.")
+            self.resumePolling()
+        }
+    }
+
+    func clearDTCs() {
+        guard isConnected, !isDemoMode, connection != nil else { return }
+        dtcManager?.isClearing = true
+        dtcManager?.scanError = nil
+
+        isDTCOperation = true
+
+        let delay: TimeInterval = isWaitingForResponse ? 1.5 : 0.3
+        isWaitingForResponse = false
+
+        DispatchQueue.global().asyncAfter(deadline: .now() + delay) { [weak self] in
+            guard let self = self, let connection = self.connection else { return }
+            let data = "04\r".data(using: .utf8)!
+            print("Sending: 04 (Clear DTCs)")
+            connection.send(content: data, completion: .contentProcessed({ _ in }))
+        }
+
+        // Timeout
+        DispatchQueue.global().asyncAfter(deadline: .now() + delay + 10.0) { [weak self] in
+            guard let self = self, self.isDTCOperation else { return }
+            self.isDTCOperation = false
+            self.dtcManager?.handleError("Clear command timed out. Try again.")
+            self.resumePolling()
+        }
+    }
+
+    private func resumePolling() {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            guard let self = self, self.isActive else { return }
+            self.sendNextParameter()
         }
     }
 
@@ -300,7 +369,7 @@ class OBDConnection: ObservableObject {
     }
 
     private func sendNextParameter() {
-        guard isActive, connection != nil else { return }
+        guard isActive, connection != nil, !isDTCOperation else { return }
 
         // Get the current parameter to poll
         let paramTypes = Array(OBDParameterType.allCases)
@@ -357,6 +426,16 @@ class OBDConnection: ObservableObject {
             return
         }
 
+        // During a DTC operation, handle NO DATA as "no stored DTCs"
+        if isDTCOperation && response.contains("NO DATA") {
+            print("No DTCs stored in vehicle")
+            isDTCOperation = false
+            dtcManager?.handleNoData()
+            isWaitingForResponse = false
+            resumePolling()
+            return
+        }
+
         // Handle NO DATA responses (vehicle doesn't support this parameter)
         if response.contains("NO DATA") {
             print("No data for this parameter - skipping")
@@ -382,12 +461,41 @@ class OBDConnection: ObservableObject {
 
         // Ignore negative response codes
         if response.hasPrefix("7F") {
+            // Check if this is a DTC operation error (7F03 or 7F04)
+            let cleanHex = response.replacingOccurrences(of: " ", with: "")
+            if isDTCOperation && (cleanHex.hasPrefix("7F03") || cleanHex.hasPrefix("7F04")) {
+                isDTCOperation = false
+                dtcManager?.handleError("Vehicle rejected the request. Try again.")
+                resumePolling()
+                return
+            }
             print("Negative response from ECU: \(response) - trying next parameter")
             isWaitingForResponse = false
             DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) { [weak self] in
                 guard let self = self, self.isActive else { return }
                 self.sendNextParameter()
             }
+            return
+        }
+
+        // Handle Mode 03 response (Read DTCs) — "43 ..."
+        let compactResponse = response.replacingOccurrences(of: " ", with: "").uppercased()
+        if compactResponse.hasPrefix("43") {
+            print("Mode 03 DTC response: \(response)")
+            isDTCOperation = false
+            dtcManager?.processReadDTCsResponse(response)
+            isWaitingForResponse = false
+            resumePolling()
+            return
+        }
+
+        // Handle Mode 04 response (Clear DTCs) — "44"
+        if compactResponse.hasPrefix("44") {
+            print("Mode 04 Clear DTCs response: \(response)")
+            isDTCOperation = false
+            dtcManager?.processClearDTCsResponse(response)
+            isWaitingForResponse = false
+            resumePolling()
             return
         }
 
@@ -436,147 +544,37 @@ let cardBackground = Color(red: 0.10, green: 0.14, blue: 0.12)
 
 struct ContentView: View {
     @StateObject private var obd = OBDConnection()
+    @StateObject private var dtcManager = DTCManager()
 
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color.black.ignoresSafeArea()
-
-                ScrollView {
-                    VStack(spacing: 20) {
-                        // Connection status banner
-                        ConnectionStatusBanner(isConnected: obd.isConnected, isDemoMode: obd.isDemoMode)
-
-                        // Connection button (hidden when in demo mode)
-                        if obd.isDemoMode {
-                            // Show demo mode indicator instead of connect/disconnect
-                            HStack(spacing: 10) {
-                                Image(systemName: "play.circle.fill")
-                                    .font(.title3)
-                                Text("Demo Mode Active")
-                            }
-                            .font(.headline)
-                            .foregroundColor(.black)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 14)
-                            .background(accentGreen.opacity(0.7))
-                            .cornerRadius(14)
-                            .padding(.horizontal)
-                        } else if !obd.isConnected {
-                            Button(action: {
-                                obd.connect()
-                            }) {
-                                HStack(spacing: 10) {
-                                    Image(systemName: "bolt.circle.fill")
-                                        .font(.title3)
-                                    Text("Connect to OBD-II")
-                                }
-                                .font(.headline)
-                                .foregroundColor(.black)
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, 14)
-                                .background(accentGreen)
-                                .cornerRadius(14)
-                                .shadow(color: accentGreen.opacity(0.3), radius: 8, y: 4)
-                            }
-                            .padding(.horizontal)
-                        } else {
-                            Button(action: {
-                                obd.disconnect()
-                            }) {
-                                HStack(spacing: 10) {
-                                    Image(systemName: "xmark.circle.fill")
-                                        .font(.title3)
-                                    Text("Disconnect")
-                                }
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, 14)
-                                .background(Color(white: 0.20))
-                                .cornerRadius(14)
-                            }
-                            .padding(.horizontal)
-                        }
-
-                        // Grid of parameters
-                        LazyVGrid(columns: [
-                            GridItem(.flexible(), spacing: 14),
-                            GridItem(.flexible(), spacing: 14)
-                        ], spacing: 14) {
-                            ForEach(obd.parameters) { parameter in
-                                NavigationLink(destination: ParameterDetailView(parameter: parameter)) {
-                                    ParameterCardView(parameter: parameter)
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                            }
-                        }
-                        .padding(.horizontal)
-                    }
-                    .padding(.bottom)
+        TabView {
+            DashboardView(obd: obd)
+                .tabItem {
+                    Label("Dashboard", systemImage: "gauge.with.dots.needle.bottom.50percent")
                 }
-            }
-            .navigationTitle("OBD Scanner")
-            .toolbarColorScheme(.dark, for: .navigationBar)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: SettingsView(obd: obd)) {
-                        Image(systemName: "gearshape")
-                            .foregroundColor(accentGreen)
-                    }
+
+            DiagnosticsView(obd: obd, dtcManager: dtcManager)
+                .tabItem {
+                    Label("Diagnostics", systemImage: "exclamationmark.triangle")
                 }
-            }
+                .badge(dtcManager.activeDTCs.count > 0 ? dtcManager.activeDTCs.count : 0)
+
+            SettingsView(obd: obd, dtcManager: dtcManager)
+                .tabItem {
+                    Label("Settings", systemImage: "gearshape")
+                }
         }
-        .navigationViewStyle(.stack)
         .preferredColorScheme(.dark)
-    }
-}
-
-struct ConnectionStatusBanner: View {
-    let isConnected: Bool
-    var isDemoMode: Bool = false
-
-    var body: some View {
-        HStack {
-            Circle()
-                .fill(isConnected ? accentGreen : Color.gray)
-                .frame(width: 10, height: 10)
-                .shadow(color: isConnected ? accentGreen.opacity(0.6) : .clear, radius: 4)
-
-            Text(isDemoMode ? "Demo Mode" : (isConnected ? "Connected" : "Not Connected"))
-                .font(.subheadline)
-                .fontWeight(.medium)
-                .foregroundColor(.white)
-
-            Spacer()
-
-            if isDemoMode {
-                HStack(spacing: 4) {
-                    Image(systemName: "play.circle")
-                        .foregroundColor(accentGreen)
-                    Text("Simulated")
-                }
-                .font(.caption)
-                .foregroundColor(Color(white: 0.5))
-            } else if isConnected {
-                HStack(spacing: 4) {
-                    Image(systemName: "wifi")
-                        .foregroundColor(accentGreen)
-                    Text("192.168.0.10")
-                }
-                .font(.caption)
-                .foregroundColor(Color(white: 0.5))
+        .tint(accentGreen)
+        .onAppear {
+            obd.dtcManager = dtcManager
+        }
+        .onChange(of: obd.isDemoMode) { _, newValue in
+            if newValue {
+                dtcManager.startDemoMode()
+            } else {
+                dtcManager.stopDemoMode()
             }
         }
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 14)
-                .fill(cardBackground)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 14)
-                        .stroke(accentGreen.opacity(0.15), lineWidth: 1)
-                )
-        )
-        .padding(.horizontal)
     }
 }
