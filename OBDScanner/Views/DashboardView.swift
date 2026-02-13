@@ -11,7 +11,12 @@ struct DashboardView: View {
                 ScrollView {
                     VStack(spacing: 20) {
                         // Connection status banner
-                        ConnectionStatusBanner(isConnected: obd.isConnected, isDemoMode: obd.isDemoMode)
+                        ConnectionStatusBanner(
+                            isConnected: obd.isConnected,
+                            isDemoMode: obd.isDemoMode,
+                            connectionType: obd.connectionType,
+                            peripheralName: obd.connectedPeripheralName
+                        )
 
                         // Connection button (hidden when in demo mode)
                         if obd.isDemoMode {
@@ -94,6 +99,8 @@ struct DashboardView: View {
 struct ConnectionStatusBanner: View {
     let isConnected: Bool
     var isDemoMode: Bool = false
+    var connectionType: ConnectionType = .wifi
+    var peripheralName: String? = nil
 
     var body: some View {
         HStack {
@@ -119,9 +126,15 @@ struct ConnectionStatusBanner: View {
                 .foregroundColor(Color(white: 0.5))
             } else if isConnected {
                 HStack(spacing: 4) {
-                    Image(systemName: "wifi")
-                        .foregroundColor(accentGreen)
-                    Text("192.168.0.10")
+                    if connectionType == .ble {
+                        Image(systemName: "antenna.radiowaves.left.and.right")
+                            .foregroundColor(accentGreen)
+                        Text(peripheralName ?? "BLE")
+                    } else {
+                        Image(systemName: "wifi")
+                            .foregroundColor(accentGreen)
+                        Text("192.168.0.10")
+                    }
                 }
                 .font(.caption)
                 .foregroundColor(Color(white: 0.5))

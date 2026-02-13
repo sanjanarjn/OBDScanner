@@ -8,6 +8,9 @@ DerivedData/
 # macOS
 .DS_Store
 
+# Project context (local reference only)
+PROJECT_CONTEXT.md
+
 # Swift Package Manager
 .build/
 Packages/
