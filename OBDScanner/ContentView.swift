@@ -100,14 +100,16 @@ struct ContentView: View {
 
 
 import SwiftUI
-import Network
+import Combine
 
 class OBDConnection: ObservableObject {
-    private var connection: NWConnection?
+    private var transport: OBDTransport?
     private var isWaitingForResponse = false
+    private var commandGeneration = 0
     private var pollingTimer: Timer?
     private var currentParameterIndex = 0
     private var isActive = false
+    private var cancellables = Set<AnyCancellable>()
 
     // Demo mode
     @Published var isDemoMode = false
@@ -117,6 +119,17 @@ class OBDConnection: ObservableObject {
     @Published var parameters: [OBDParameterData] = []
     @Published var isConnected = false
 
+    // Connection type (persisted)
+    @Published var connectionType: ConnectionType {
+        didSet { UserDefaults.standard.set(connectionType.rawValue, forKey: "connectionType") }
+    }
+
+    // BLE transport (shared instance for scanning UI access)
+    @Published var bleTransport = BLETransport()
+
+    // Connected peripheral name for UI display
+    @Published var connectedPeripheralName: String?
+
     // DTC manager reference for routing Mode 03/04 responses
     weak var dtcManager: DTCManager?
 
@@ -124,6 +137,10 @@ class OBDConnection: ObservableObject {
     private var isDTCOperation = false
 
     init() {
+        // Restore saved connection type
+        let saved = UserDefaults.standard.string(forKey: "connectionType") ?? ConnectionType.wifi.rawValue
+        connectionType = ConnectionType(rawValue: saved) ?? .wifi
+
         // Initialize all parameters with N/A values
         parameters = OBDParameterType.allCases.map { type in
             OBDParameterData(type: type, value: "N/A", lastUpdated: Date())
@@ -134,6 +151,13 @@ class OBDConnection: ObservableObject {
             .throttlePosition: 30, .fuelLevel: 55, .intakeAirTemp: 28,
             .maf: 8.0, .timing: 10.0
         ]
+
+        // Forward bleTransport changes so SwiftUI views observing OBDConnection re-render
+        bleTransport.objectWillChange
+            .sink { [weak self] _ in
+                self?.objectWillChange.send()
+            }
+            .store(in: &cancellables)
     }
 
     // MARK: - Demo Mode
@@ -143,8 +167,8 @@ class OBDConnection: ObservableObject {
         isActive = false
         pollingTimer?.invalidate()
         pollingTimer = nil
-        connection?.cancel()
-        connection = nil
+        transport?.disconnect()
+        transport = nil
         isWaitingForResponse = false
 
         isDemoMode = true
@@ -210,7 +234,7 @@ class OBDConnection: ObservableObject {
     // MARK: - Real DTC Scanning (Mode 03 / Mode 04)
 
     func scanForDTCs() {
-        guard isConnected, !isDemoMode, connection != nil else { return }
+        guard isConnected, !isDemoMode, transport != nil else { return }
         dtcManager?.isScanning = true
         dtcManager?.scanError = nil
 
@@ -222,10 +246,9 @@ class OBDConnection: ObservableObject {
         isWaitingForResponse = false
 
         DispatchQueue.global().asyncAfter(deadline: .now() + delay) { [weak self] in
-            guard let self = self, let connection = self.connection else { return }
-            let data = "03\r".data(using: .utf8)!
+            guard let self = self, self.transport != nil else { return }
             print("Sending: 03 (Read DTCs)")
-            connection.send(content: data, completion: .contentProcessed({ _ in }))
+            self.transport?.send("03\r")
         }
 
         // Timeout — if no response after 12s, report error
@@ -238,7 +261,7 @@ class OBDConnection: ObservableObject {
     }
 
     func clearDTCs() {
-        guard isConnected, !isDemoMode, connection != nil else { return }
+        guard isConnected, !isDemoMode, transport != nil else { return }
         dtcManager?.isClearing = true
         dtcManager?.scanError = nil
 
@@ -248,10 +271,9 @@ class OBDConnection: ObservableObject {
         isWaitingForResponse = false
 
         DispatchQueue.global().asyncAfter(deadline: .now() + delay) { [weak self] in
-            guard let self = self, let connection = self.connection else { return }
-            let data = "04\r".data(using: .utf8)!
+            guard let self = self, self.transport != nil else { return }
             print("Sending: 04 (Clear DTCs)")
-            connection.send(content: data, completion: .contentProcessed({ _ in }))
+            self.transport?.send("04\r")
         }
 
         // Timeout
@@ -271,60 +293,36 @@ class OBDConnection: ObservableObject {
     }
 
     func connect() {
-        let host = NWEndpoint.Host("192.168.0.10")   // default IP for iCar Pro WiFi
-        let port = NWEndpoint.Port(rawValue: 35000)!
-
         isActive = true
-        connection = NWConnection(host: host, port: port, using: .tcp)
-        connection?.stateUpdateHandler = { [weak self] state in
-            guard let self = self else { return }
-            print("Connection state: \(state)")
-            switch state {
-            case .ready:
-                DispatchQueue.main.async { self.isConnected = true }
-                self.startListening()
-                self.initialize()
-            case .failed, .cancelled:
-                self.isActive = false
-                DispatchQueue.main.async { self.isConnected = false }
-            case .waiting:
-                // Connection can't be established — clean up
-                self.isActive = false
-                self.connection?.cancel()
-                DispatchQueue.main.async { self.isConnected = false }
-            default:
-                break
-            }
+
+        switch connectionType {
+        case .wifi:
+            let wifi = WiFiTransport()
+            wifi.delegate = self
+            transport = wifi
+            connectedPeripheralName = nil
+        case .ble:
+            bleTransport.delegate = self
+            transport = bleTransport
+            connectedPeripheralName = bleTransport.targetPeripheral?.name
         }
 
-        connection?.start(queue: .global())
+        transport?.connect()
     }
 
     func disconnect() {
         isActive = false
         pollingTimer?.invalidate()
         pollingTimer = nil
-        connection?.cancel()
-        connection = nil
+        transport?.disconnect()
+        transport = nil
         isWaitingForResponse = false
+        connectedPeripheralName = nil
         DispatchQueue.main.async {
             self.isConnected = false
             self.parameters = OBDParameterType.allCases.map { type in
                 OBDParameterData(type: type, value: "N/A", lastUpdated: Date())
             }
-        }
-    }
-
-    private func startListening() {
-        guard isActive, let connection = connection else { return }
-        connection.receive(minimumIncompleteLength: 1, maximumLength: 1024) { [weak self] data, _, _, _ in
-            guard let self = self, self.isActive else { return }
-            if let data = data, let response = String(data: data, encoding: .utf8) {
-                let cleanResponse = response.trimmingCharacters(in: .whitespacesAndNewlines)
-                print("Raw Response: \(cleanResponse)")
-                self.handleResponse(cleanResponse)
-            }
-            self.startListening()
         }
     }
 
@@ -369,7 +367,7 @@ class OBDConnection: ObservableObject {
     }
 
     private func sendNextParameter() {
-        guard isActive, connection != nil, !isDTCOperation else { return }
+        guard isActive, transport != nil, !isDTCOperation else { return }
 
         // Get the current parameter to poll
         let paramTypes = Array(OBDParameterType.allCases)
@@ -383,16 +381,18 @@ class OBDConnection: ObservableObject {
     }
 
     private func sendCommand(_ command: String) {
-        guard isActive, let connection = connection else { return }
-        print("Sending: \(command.trimmingCharacters(in: .whitespacesAndNewlines))")
-        let data = command.data(using: .utf8)!
-        connection.send(content: data, completion: .contentProcessed({ _ in }))
+        guard isActive, transport != nil else { return }
+        transport?.send(command)
 
         isWaitingForResponse = true
+        commandGeneration += 1
+        let expectedGeneration = commandGeneration
 
         // Longer timeout (8 seconds) to allow for SEARCHING and ECU response
         DispatchQueue.global().asyncAfter(deadline: .now() + 8.0) { [weak self] in
             guard let self = self, self.isActive else { return }
+            // Ignore stale timeouts — a newer command has been sent since
+            guard self.commandGeneration == expectedGeneration else { return }
             if self.isWaitingForResponse {
                 print("Timeout waiting for response to: \(command.trimmingCharacters(in: .whitespacesAndNewlines))")
                 self.isWaitingForResponse = false
@@ -534,6 +534,35 @@ class OBDConnection: ObservableObject {
                 )
                 print("✓ UI Updated: \(type.title) = \(value)")
             }
+        }
+    }
+}
+
+// MARK: - OBDTransportDelegate
+
+extension OBDConnection: OBDTransportDelegate {
+    func transport(_ transport: OBDTransport, didChangeState state: TransportState) {
+        switch state {
+        case .connected:
+            isConnected = true
+            initialize()
+        case .disconnected, .failed:
+            isActive = false
+            isConnected = false
+        case .connecting:
+            break
+        }
+    }
+
+    func transport(_ transport: OBDTransport, didReceiveData data: String) {
+        // BLE buffers until ">" prompt, so responses can be multi-line
+        // (e.g. "SEARCHING...\nSTOPPED"). Split and process each line individually.
+        let lines = data.components(separatedBy: .newlines)
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+        for line in lines {
+            print("Raw Response: \(line)")
+            handleResponse(line)
         }
     }
 }

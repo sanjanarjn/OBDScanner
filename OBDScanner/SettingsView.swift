@@ -1,4 +1,5 @@
 import SwiftUI
+import CoreBluetooth
 
 struct SettingsView: View {
     @ObservedObject var obd: OBDConnection
@@ -21,6 +22,100 @@ struct SettingsView: View {
                             .foregroundColor(Color(white: 0.5))
                     }
 
+                    // Connection Type Section
+                    if !obd.isDemoMode {
+                        Section {
+                            Picker("Connection Type", selection: $obd.connectionType) {
+                                ForEach(ConnectionType.allCases, id: \.self) { type in
+                                    Text(type.rawValue).tag(type)
+                                }
+                            }
+                            .pickerStyle(.segmented)
+                            .listRowBackground(cardBackground)
+                        } header: {
+                            Text("Connection Type")
+                        } footer: {
+                            Text(obd.connectionType == .ble
+                                 ? "Connect to a Bluetooth Low Energy OBD-II adapter (e.g. Veepeak BLE)."
+                                 : "Connect to a WiFi OBD-II adapter via TCP.")
+                                .foregroundColor(Color(white: 0.5))
+                        }
+                    }
+
+                    // BLE Section (shown only when BLE selected and not in demo mode)
+                    if obd.connectionType == .ble && !obd.isDemoMode {
+                        Section {
+                            // Bluetooth state
+                            HStack {
+                                Text("Bluetooth")
+                                    .foregroundColor(.white)
+                                Spacer()
+                                bluetoothStateView
+                            }
+                            .listRowBackground(cardBackground)
+
+                            if obd.bleTransport.bluetoothState == .poweredOn {
+                                // Scan button
+                                Button(action: {
+                                    if obd.bleTransport.isScanning {
+                                        obd.bleTransport.stopScanning()
+                                    } else {
+                                        obd.bleTransport.startScanning()
+                                    }
+                                }) {
+                                    HStack {
+                                        if obd.bleTransport.isScanning {
+                                            ProgressView()
+                                                .tint(.white)
+                                                .scaleEffect(0.8)
+                                            Text("Scanning...")
+                                                .foregroundColor(.white)
+                                        } else {
+                                            Image(systemName: "antenna.radiowaves.left.and.right")
+                                                .foregroundColor(accentGreen)
+                                            Text("Scan for Devices")
+                                                .foregroundColor(.white)
+                                        }
+                                    }
+                                }
+                                .listRowBackground(cardBackground)
+
+                                // Discovered peripherals
+                                ForEach(obd.bleTransport.discoveredPeripherals, id: \.identifier) { peripheral in
+                                    Button(action: {
+                                        obd.bleTransport.targetPeripheral = peripheral
+                                    }) {
+                                        HStack {
+                                            Image(systemName: "antenna.radiowaves.left.and.right")
+                                                .foregroundColor(accentGreen)
+                                            Text(peripheral.name ?? "Unknown Device")
+                                                .foregroundColor(.white)
+                                            Spacer()
+                                            if obd.bleTransport.targetPeripheral?.identifier == peripheral.identifier {
+                                                Image(systemName: "checkmark.circle.fill")
+                                                    .foregroundColor(accentGreen)
+                                            }
+                                        }
+                                    }
+                                    .listRowBackground(cardBackground)
+                                }
+                            } else if obd.bleTransport.bluetoothState == .unsupported {
+                                HStack {
+                                    Image(systemName: "info.circle")
+                                        .foregroundColor(.yellow)
+                                    Text("Not available on Simulator")
+                                        .foregroundColor(Color(white: 0.5))
+                                }
+                                .listRowBackground(cardBackground)
+                            }
+                        } header: {
+                            Text("Bluetooth Devices")
+                        } footer: {
+                            Text("Connect from this app only — do not pair in iOS Bluetooth settings.")
+                                .foregroundColor(Color(white: 0.5))
+                        }
+                    }
+
                     // Connection Section
                     Section {
                         HStack {
@@ -32,12 +127,23 @@ struct SettingsView: View {
                         }
                         .listRowBackground(cardBackground)
 
-                        if !obd.isDemoMode {
+                        if !obd.isDemoMode && obd.connectionType == .wifi {
                             HStack {
                                 Text("Adapter IP")
                                     .foregroundColor(.white)
                                 Spacer()
                                 Text("192.168.0.10:35000")
+                                    .foregroundColor(Color(white: 0.5))
+                            }
+                            .listRowBackground(cardBackground)
+                        }
+
+                        if !obd.isDemoMode && obd.connectionType == .ble {
+                            HStack {
+                                Text("Selected Device")
+                                    .foregroundColor(.white)
+                                Spacer()
+                                Text(obd.bleTransport.targetPeripheral?.name ?? "None")
                                     .foregroundColor(Color(white: 0.5))
                             }
                             .listRowBackground(cardBackground)
@@ -114,6 +220,44 @@ struct SettingsView: View {
             } else {
                 obd.stopDemo()
             }
+        }
+        .onChange(of: obd.connectionType) { _, _ in
+            // Disconnect when switching connection types
+            if obd.isConnected && !obd.isDemoMode {
+                obd.disconnect()
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var bluetoothStateView: some View {
+        switch obd.bleTransport.bluetoothState {
+        case .poweredOn:
+            HStack(spacing: 4) {
+                Circle().fill(accentGreen).frame(width: 8, height: 8)
+                Text("Ready")
+                    .foregroundColor(accentGreen)
+            }
+            .font(.caption)
+        case .poweredOff:
+            HStack(spacing: 4) {
+                Circle().fill(Color.red).frame(width: 8, height: 8)
+                Text("Off")
+                    .foregroundColor(.red)
+            }
+            .font(.caption)
+        case .unauthorized:
+            Text("Unauthorized")
+                .foregroundColor(.orange)
+                .font(.caption)
+        case .unsupported:
+            Text("Unsupported")
+                .foregroundColor(Color(white: 0.5))
+                .font(.caption)
+        default:
+            Text("...")
+                .foregroundColor(Color(white: 0.5))
+                .font(.caption)
         }
     }
 }

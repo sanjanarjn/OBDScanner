@@ -2,15 +2,15 @@
 
 ## Project Overview
 
-OBDScanner is a native iOS app (Swift/SwiftUI) for real-time OBD-II vehicle diagnostics over WiFi. It communicates with ELM327-compatible OBD-II adapters via TCP to read live engine parameters and diagnostic trouble codes (DTCs).
+OBDScanner is a native iOS app (Swift/SwiftUI) for real-time OBD-II vehicle diagnostics over WiFi and Bluetooth Low Energy (BLE). It communicates with ELM327-compatible OBD-II adapters via TCP or BLE to read live engine parameters and diagnostic trouble codes (DTCs).
 
 ## Tech Stack
 
 - **Language:** Swift 5+
 - **UI Framework:** SwiftUI
-- **Networking:** Network framework (`NWConnection`, TCP)
+- **Networking:** Network framework (`NWConnection`, TCP) + CoreBluetooth (BLE)
 - **Reactive State:** Combine (`ObservableObject`, `@Published`)
-- **Target:** iOS 15.0+
+- **Target:** iOS 18.1+
 - **IDE:** Xcode 14+
 - **Dependencies:** None (no CocoaPods, SPM, or Carthage)
 
@@ -25,6 +25,9 @@ OBDScanner/
 ├── ParameterDetailView.swift    # Parameter detail view
 ├── SettingsView.swift           # Settings tab (demo mode, connection)
 ├── Managers/
+│   ├── OBDTransport.swift       # Transport protocol + ConnectionType/TransportState enums
+│   ├── WiFiTransport.swift      # WiFi TCP transport (NWConnection)
+│   ├── BLETransport.swift       # BLE transport (CoreBluetooth)
 │   ├── DTCManager.swift         # DTC scanning/clearing (Mode 03/04)
 │   └── DTCDatabase.swift        # DTC code lookup (singleton, 215 codes)
 ├── Models/
@@ -41,16 +44,19 @@ OBDScanner/
 
 **Pattern:** MVVM with ObservableObject
 
-- **OBDConnection** (`ContentView.swift`) — Central class managing TCP connection, ELM327 initialization, parameter polling, and demo mode simulation. Uses `@StateObject` at the root.
+- **OBDConnection** (`ContentView.swift`) — Central class managing ELM327 initialization, parameter polling, and demo mode. Delegates send/receive to an `OBDTransport` instance. Uses `@StateObject` at the root.
+- **OBDTransport** (`Managers/OBDTransport.swift`) — Protocol defining the transport contract (`connect`, `disconnect`, `send`), plus `OBDTransportDelegate` for receiving data and state changes.
+- **WiFiTransport** (`Managers/WiFiTransport.swift`) — TCP transport via `NWConnection` (default `192.168.0.10:35000`).
+- **BLETransport** (`Managers/BLETransport.swift`) — CoreBluetooth transport for BLE OBD-II adapters (service `FFF0`, notify `FFF1`, write `FFF2`). Handles scanning, peripheral discovery, and response buffering.
 - **DTCManager** (`Managers/DTCManager.swift`) — Handles DTC read (Mode 03), clear (Mode 04), and freeze frame (Mode 02). OBDConnection holds a weak reference to it.
 - **DTCDatabase** (`Managers/DTCDatabase.swift`) — Singleton that loads `dtc_database.json` with fallback to built-in codes.
 
 **Data Flow:**
 ```
 UI (SwiftUI Views)
-  → OBDConnection (TCP via NWConnection)
-    → WiFi OBD-II Adapter (192.168.0.10:35000)
-      → Vehicle ECU → Response parsed → @Published properties → UI updates
+  → OBDConnection (OBD logic, ELM327 init, polling)
+    → OBDTransport (WiFiTransport or BLETransport)
+      → OBD-II Adapter → Vehicle ECU → Response → delegate → @Published → UI
 ```
 
 ## Build & Run
@@ -68,7 +74,7 @@ No command-line build scripts are configured. Build exclusively through Xcode.
 
 No formal test targets exist. Testing is done via:
 - **Demo mode** — Toggle in Settings tab; provides simulated OBD data with drifting values
-- **Manual testing** — Real WiFi OBD-II adapter (default: `192.168.0.10:35000`)
+- **Manual testing** — Real WiFi OBD-II adapter (default: `192.168.0.10:35000`) or BLE adapter (e.g. Veepeak OBDCheck BLE)
 - **SwiftUI Previews** — Available in view files
 
 ## Code Conventions
@@ -93,11 +99,12 @@ No formal test targets exist. Testing is done via:
 
 ## Active Development
 
-- **Current branch:** `feature/dtc-diagnostics`
+- **Current branch:** `feature/ble-support`
 - **Roadmap:** See `OBD_Scanner_Feature_Roadmap.md` for planned features (BLE support, custom dashboard, data logging, HUD mode, performance metrics)
 
 ## Common Tasks
 
 - **Add a new OBD parameter:** Add a case to `OBDParameterType` enum in `OBDParameter.swift`, implement `parseValue()`, add to the polling list in `OBDConnection`
 - **Add DTC codes:** Edit `Resources/dtc_database.json`
-- **Modify connection settings:** Default host/port in `OBDConnection` class (`ContentView.swift`)
+- **Modify connection settings:** Default host/port in `WiFiTransport.swift`; BLE UUIDs in `BLETransport.swift`
+- **Add a new transport:** Conform to `OBDTransport` protocol, add case to `ConnectionType` enum
