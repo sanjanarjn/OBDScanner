@@ -27,7 +27,7 @@ struct SettingsView: View {
                         Section {
                             Picker("Connection Type", selection: $obd.connectionType) {
                                 ForEach(ConnectionType.allCases, id: \.self) { type in
-                                    Text(type.rawValue).tag(type)
+                                    Text(type.displayName).tag(type)
                                 }
                             }
                             .pickerStyle(.segmented)
@@ -132,7 +132,7 @@ struct SettingsView: View {
                                 Text("Adapter IP")
                                     .foregroundColor(.white)
                                 Spacer()
-                                Text("192.168.0.10:35000")
+                                Text(verbatim: "192.168.0.10:35000")
                                     .foregroundColor(Color(white: 0.5))
                             }
                             .listRowBackground(cardBackground)
@@ -189,7 +189,7 @@ struct SettingsView: View {
                             Text("Version")
                                 .foregroundColor(.white)
                             Spacer()
-                            Text("1.0.0")
+                            Text(verbatim: "1.0.0")
                                 .foregroundColor(Color(white: 0.5))
                         }
                         .listRowBackground(cardBackground)
@@ -198,7 +198,7 @@ struct SettingsView: View {
                             Text("Supported Protocols")
                                 .foregroundColor(.white)
                             Spacer()
-                            Text("OBD-II (ISO 9141, CAN)")
+                            Text(verbatim: "OBD-II (ISO 9141, CAN)")
                                 .foregroundColor(Color(white: 0.5))
                                 .font(.caption)
                         }
@@ -255,7 +255,7 @@ struct SettingsView: View {
                 .foregroundColor(Color(white: 0.5))
                 .font(.caption)
         default:
-            Text("...")
+            Text(verbatim: "...")
                 .foregroundColor(Color(white: 0.5))
                 .font(.caption)
         }

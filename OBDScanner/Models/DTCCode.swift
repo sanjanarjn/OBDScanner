@@ -15,6 +15,14 @@ enum DTCSeverity: String, Codable, CaseIterable {
         }
     }
 
+    var displayName: String {
+        switch self {
+        case .critical: return String(localized: "Critical")
+        case .warning: return String(localized: "Warning")
+        case .info: return String(localized: "Info")
+        }
+    }
+
     var iconName: String {
         switch self {
         case .critical: return "exclamationmark.octagon.fill"
@@ -34,19 +42,19 @@ enum DTCCategory: String, CaseIterable {
 
     var displayName: String {
         switch self {
-        case .powertrain: return "Powertrain"
-        case .body: return "Body"
-        case .chassis: return "Chassis"
-        case .network: return "Network"
+        case .powertrain: return String(localized: "Powertrain")
+        case .body: return String(localized: "Body")
+        case .chassis: return String(localized: "Chassis")
+        case .network: return String(localized: "Network")
         }
     }
 
     var description: String {
         switch self {
-        case .powertrain: return "Engine, transmission, and emissions systems"
-        case .body: return "Body systems like airbags, A/C, and lighting"
-        case .chassis: return "ABS, steering, and suspension systems"
-        case .network: return "CAN bus and module communication"
+        case .powertrain: return String(localized: "Engine, transmission, and emissions systems")
+        case .body: return String(localized: "Body systems like airbags, A/C, and lighting")
+        case .chassis: return String(localized: "ABS, steering, and suspension systems")
+        case .network: return String(localized: "CAN bus and module communication")
         }
     }
 }
@@ -98,10 +106,10 @@ struct DTCCode: Identifiable, Codable, Hashable {
 
         return DTCCode(
             id: id,
-            description: "Unknown \(category.displayName) code",
+            description: String(localized: "Unknown \(category.displayName) code"),
             severity: .warning,
-            possibleCauses: ["Consult a professional mechanic for diagnosis"],
-            symptoms: ["Check Engine Light may be on"]
+            possibleCauses: [String(localized: "Consult a professional mechanic for diagnosis")],
+            symptoms: [String(localized: "Check Engine Light may be on")]
         )
     }
 }

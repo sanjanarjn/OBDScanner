@@ -111,7 +111,7 @@ struct DTCHeaderCard: View {
                 .shadow(color: dtc.code.severity.color.opacity(0.4), radius: 10)
 
             // Code
-            Text(dtc.code.id)
+            Text(verbatim: dtc.code.id)
                 .font(.system(size: 36, weight: .bold, design: .monospaced))
                 .foregroundColor(.white)
 
@@ -137,7 +137,7 @@ struct DTCHeaderCard: View {
                 HStack(spacing: 4) {
                     Image(systemName: dtc.code.severity.iconName)
                         .font(.caption)
-                    Text(dtc.code.severity.rawValue.capitalized)
+                    Text(dtc.code.severity.displayName)
                         .font(.caption)
                         .fontWeight(.medium)
                 }
@@ -239,12 +239,12 @@ struct FreezeFrameItem: View {
                 .foregroundColor(Color(white: 0.5))
 
             HStack(alignment: .firstTextBaseline, spacing: 2) {
-                Text(value)
+                Text(verbatim: value)
                     .font(.system(.title3, design: .rounded))
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
 
-                Text(unit)
+                Text(verbatim: unit)
                     .font(.caption)
                     .foregroundColor(Color(white: 0.5))
             }

@@ -25,8 +25,15 @@ enum TransportState: Equatable {
 // MARK: - Connection Type
 
 enum ConnectionType: String, CaseIterable {
-    case wifi = "WiFi"
-    case ble = "BLE"
+    case wifi = "wifi"
+    case ble = "ble"
+
+    var displayName: String {
+        switch self {
+        case .wifi: return String(localized: "WiFi")
+        case .ble: return String(localized: "BLE")
+        }
+    }
 }
 
 // MARK: - Transport Delegate

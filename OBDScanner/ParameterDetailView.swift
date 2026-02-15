@@ -22,12 +22,12 @@ struct ParameterDetailView: View {
                             .foregroundColor(.white)
 
                         HStack(alignment: .firstTextBaseline, spacing: 4) {
-                            Text(parameter.value == "N/A" ? "--" : parameter.value)
+                            Text(verbatim: parameter.value == "N/A" ? "--" : parameter.value)
                                 .font(.system(size: 52, weight: .bold, design: .rounded))
                                 .foregroundColor(.white)
 
                             if parameter.value != "N/A" {
-                                Text(parameter.type.unit)
+                                Text(verbatim: parameter.type.unit)
                                     .font(.title3)
                                     .foregroundColor(Color(white: 0.5))
                             }
@@ -82,7 +82,7 @@ struct ParameterDetailView: View {
 }
 
 struct SectionView<Content: View>: View {
-    let title: String
+    let title: LocalizedStringKey
     let icon: String
     @ViewBuilder let content: Content
 

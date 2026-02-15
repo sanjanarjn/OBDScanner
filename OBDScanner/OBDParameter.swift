@@ -29,15 +29,15 @@ enum OBDParameterType: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .rpm: return "Engine RPM"
-        case .speed: return "Speed"
-        case .coolantTemp: return "Coolant Temp"
-        case .engineLoad: return "Engine Load"
-        case .throttlePosition: return "Throttle Position"
-        case .fuelLevel: return "Fuel Level"
-        case .intakeAirTemp: return "Intake Air Temp"
-        case .maf: return "Air Flow Rate"
-        case .timing: return "Timing Advance"
+        case .rpm: return String(localized: "Engine RPM")
+        case .speed: return String(localized: "Speed")
+        case .coolantTemp: return String(localized: "Coolant Temp")
+        case .engineLoad: return String(localized: "Engine Load")
+        case .throttlePosition: return String(localized: "Throttle Position")
+        case .fuelLevel: return String(localized: "Fuel Level")
+        case .intakeAirTemp: return String(localized: "Intake Air Temp")
+        case .maf: return String(localized: "Air Flow Rate")
+        case .timing: return String(localized: "Timing Advance")
         }
     }
 
@@ -72,60 +72,60 @@ enum OBDParameterType: String, CaseIterable, Identifiable {
     var description: String {
         switch self {
         case .rpm:
-            return "Engine RPM (Revolutions Per Minute) indicates how fast your engine is turning. Normal idle is typically 600-1000 RPM. Higher RPM means the engine is working harder."
+            return String(localized: "Engine RPM (Revolutions Per Minute) indicates how fast your engine is turning. Normal idle is typically 600-1000 RPM. Higher RPM means the engine is working harder.")
         case .speed:
-            return "Vehicle speed as reported by the vehicle's speed sensor. This is the actual speed your car is traveling."
+            return String(localized: "Vehicle speed as reported by the vehicle's speed sensor. This is the actual speed your car is traveling.")
         case .coolantTemp:
-            return "Engine coolant temperature shows how hot your engine is running. Normal operating temperature is typically 85-105°C. If it's too high, your engine may be overheating."
+            return String(localized: "Engine coolant temperature shows how hot your engine is running. Normal operating temperature is typically 85-105°C. If it's too high, your engine may be overheating.")
         case .engineLoad:
-            return "Calculated engine load shows what percentage of maximum available torque is being used. Higher values indicate the engine is working harder."
+            return String(localized: "Calculated engine load shows what percentage of maximum available torque is being used. Higher values indicate the engine is working harder.")
         case .throttlePosition:
-            return "Throttle position shows how far the accelerator pedal is pressed. 0% means idle, 100% means full throttle."
+            return String(localized: "Throttle position shows how far the accelerator pedal is pressed. 0% means idle, 100% means full throttle.")
         case .fuelLevel:
-            return "Fuel tank level indicates how much fuel remains in your tank as a percentage of the total capacity."
+            return String(localized: "Fuel tank level indicates how much fuel remains in your tank as a percentage of the total capacity.")
         case .intakeAirTemp:
-            return "Intake air temperature measures the temperature of air entering the engine. Cooler air is denser and can improve performance."
+            return String(localized: "Intake air temperature measures the temperature of air entering the engine. Cooler air is denser and can improve performance.")
         case .maf:
-            return "Mass Air Flow (MAF) measures the amount of air entering the engine in grams per second. This helps the engine computer determine the correct fuel mixture."
+            return String(localized: "Mass Air Flow (MAF) measures the amount of air entering the engine in grams per second. This helps the engine computer determine the correct fuel mixture.")
         case .timing:
-            return "Timing advance shows how many degrees before Top Dead Center (TDC) the spark plug fires. Advanced timing can improve performance but too much can cause engine knock."
+            return String(localized: "Timing advance shows how many degrees before Top Dead Center (TDC) the spark plug fires. Advanced timing can improve performance but too much can cause engine knock.")
         }
     }
 
     var normalRange: String {
         switch self {
-        case .rpm: return "Idle: 600-1000 RPM\nDriving: 1500-3000 RPM"
-        case .speed: return "Varies based on driving"
-        case .coolantTemp: return "Normal: 85-105°C\nWarning: >110°C"
-        case .engineLoad: return "Idle: 20-30%\nCruising: 30-50%\nAccelerating: 50-90%"
-        case .throttlePosition: return "Idle: 0-5%\nCruising: 10-20%\nFull throttle: 100%"
-        case .fuelLevel: return "Refill recommended: <25%"
-        case .intakeAirTemp: return "Normal: 10-50°C"
-        case .maf: return "Idle: 2-7 g/s\nCruising: 5-15 g/s"
-        case .timing: return "Typical: -10° to +40°"
+        case .rpm: return String(localized: "Idle: 600-1000 RPM\nDriving: 1500-3000 RPM")
+        case .speed: return String(localized: "Varies based on driving")
+        case .coolantTemp: return String(localized: "Normal: 85-105°C\nWarning: >110°C")
+        case .engineLoad: return String(localized: "Idle: 20-30%\nCruising: 30-50%\nAccelerating: 50-90%")
+        case .throttlePosition: return String(localized: "Idle: 0-5%\nCruising: 10-20%\nFull throttle: 100%")
+        case .fuelLevel: return String(localized: "Refill recommended: <25%")
+        case .intakeAirTemp: return String(localized: "Normal: 10-50°C")
+        case .maf: return String(localized: "Idle: 2-7 g/s\nCruising: 5-15 g/s")
+        case .timing: return String(localized: "Typical: -10° to +40°")
         }
     }
 
     var tips: String {
         switch self {
         case .rpm:
-            return "• Keep RPM below 3000 for better fuel economy\n• High RPM at idle may indicate a problem\n• Shift gears around 2000-2500 RPM for efficiency"
+            return String(localized: "• Keep RPM below 3000 for better fuel economy\n• High RPM at idle may indicate a problem\n• Shift gears around 2000-2500 RPM for efficiency")
         case .speed:
-            return "• Maintain steady speed for better fuel economy\n• Use cruise control on highways\n• Avoid rapid acceleration and braking"
+            return String(localized: "• Maintain steady speed for better fuel economy\n• Use cruise control on highways\n• Avoid rapid acceleration and braking")
         case .coolantTemp:
-            return "• Let engine warm up before driving hard\n• Check coolant levels if temperature is too high\n• Turn off AC if engine is overheating"
+            return String(localized: "• Let engine warm up before driving hard\n• Check coolant levels if temperature is too high\n• Turn off AC if engine is overheating")
         case .engineLoad:
-            return "• Lower load = better fuel economy\n• High load during cruising may indicate a problem\n• Remove unnecessary weight from vehicle"
+            return String(localized: "• Lower load = better fuel economy\n• High load during cruising may indicate a problem\n• Remove unnecessary weight from vehicle")
         case .throttlePosition:
-            return "• Gentle acceleration saves fuel\n• Smooth throttle control improves comfort\n• Avoid sudden throttle changes"
+            return String(localized: "• Gentle acceleration saves fuel\n• Smooth throttle control improves comfort\n• Avoid sudden throttle changes")
         case .fuelLevel:
-            return "• Keep tank above 25% to protect fuel pump\n• Fill up when convenient, don't wait for empty\n• Track fuel consumption to detect issues"
+            return String(localized: "• Keep tank above 25% to protect fuel pump\n• Fill up when convenient, don't wait for empty\n• Track fuel consumption to detect issues")
         case .intakeAirTemp:
-            return "• High intake temps reduce performance\n• Cold air intake can help in hot weather\n• High temps normal after engine shutdown"
+            return String(localized: "• High intake temps reduce performance\n• Cold air intake can help in hot weather\n• High temps normal after engine shutdown")
         case .maf:
-            return "• Clean MAF sensor if readings seem erratic\n• Low readings may indicate air leaks\n• Consistent readings indicate good engine health"
+            return String(localized: "• Clean MAF sensor if readings seem erratic\n• Low readings may indicate air leaks\n• Consistent readings indicate good engine health")
         case .timing:
-            return "• Engine computer adjusts automatically\n• Retarded timing may indicate knock detection\n• Use recommended fuel octane rating"
+            return String(localized: "• Engine computer adjusts automatically\n• Retarded timing may indicate knock detection\n• Use recommended fuel octane rating")
         }
     }
 
