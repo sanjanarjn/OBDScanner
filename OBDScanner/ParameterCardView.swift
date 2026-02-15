@@ -24,12 +24,12 @@ struct ParameterCardView: View {
                 Spacer()
 
                 HStack(alignment: .firstTextBaseline, spacing: 3) {
-                    Text(parameter.value == "N/A" ? "--" : parameter.value)
+                    Text(verbatim: parameter.value == "N/A" ? "--" : parameter.value)
                         .font(.system(size: 28, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
 
                     if parameter.value != "N/A" {
-                        Text(parameter.type.unit)
+                        Text(verbatim: parameter.type.unit)
                             .font(.caption)
                             .foregroundColor(Color(white: 0.5))
                     }

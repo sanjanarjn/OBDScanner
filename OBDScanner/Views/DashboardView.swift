@@ -129,11 +129,11 @@ struct ConnectionStatusBanner: View {
                     if connectionType == .ble {
                         Image(systemName: "antenna.radiowaves.left.and.right")
                             .foregroundColor(accentGreen)
-                        Text(peripheralName ?? "BLE")
+                        Text(verbatim: peripheralName ?? "BLE")
                     } else {
                         Image(systemName: "wifi")
                             .foregroundColor(accentGreen)
-                        Text("192.168.0.10")
+                        Text(verbatim: "192.168.0.10")
                     }
                 }
                 .font(.caption)

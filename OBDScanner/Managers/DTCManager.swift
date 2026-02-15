@@ -257,7 +257,7 @@ class DTCManager: ObservableObject {
                 self.scanError = nil
             } else if cleanResponse.hasPrefix("7F") {
                 // Error
-                self.scanError = "Failed to clear codes. Try again."
+                self.scanError = String(localized: "Failed to clear codes. Try again.")
             }
             self.isClearing = false
         }

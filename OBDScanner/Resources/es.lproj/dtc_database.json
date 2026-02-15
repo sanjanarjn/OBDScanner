@@ -1,0 +1,4123 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-06",
+  "totalCodes": 215,
+  "codes": [
+    {
+      "id": "P0100",
+      "description": "Falla del Circuito de Flujo de Aire en Masa o Volumen",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor MAF defectuoso",
+        "Fuga de aire en sistema de admisión",
+        "Cableado o conectores dañados",
+        "Elemento del sensor MAF contaminado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Bajo rendimiento de combustible",
+        "Ralentí inestable",
+        "Titubeo durante aceleración"
+      ]
+    },
+    {
+      "id": "P0101",
+      "description": "Problema de Rango/Rendimiento del Circuito de Flujo de Aire",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor MAF sucio o contaminado",
+        "Fugas de vacío",
+        "Filtro de aire restringido",
+        "Sensor MAF defectuoso"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Mala aceleración",
+        "Humo negro del escape",
+        "Motor se apaga"
+      ]
+    },
+    {
+      "id": "P0102",
+      "description": "Entrada Baja del Circuito de Flujo de Aire",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor MAF defectuoso",
+        "Circuito abierto del sensor MAF",
+        "Mala conexión eléctrica",
+        "Fugas de aire"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Motor funciona pobre",
+        "Bajo rendimiento",
+        "Arranque difícil"
+      ]
+    },
+    {
+      "id": "P0103",
+      "description": "Entrada Alta del Circuito de Flujo de Aire",
+      "severity": "warning",
+      "possibleCauses": [
+        "Corto a voltaje en circuito MAF",
+        "Sensor MAF defectuoso",
+        "Cableado dañado",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Motor funciona rico",
+        "Humo negro",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0106",
+      "description": "Problema de Rango/Rendimiento del Circuito MAP/Presión Barométrica",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor MAP defectuoso",
+        "Fugas de vacío",
+        "Mangueras de vacío obstruidas o con fugas",
+        "Cableado defectuoso"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí inestable",
+        "Bajo rendimiento de combustible",
+        "Motor con fluctuaciones"
+      ]
+    },
+    {
+      "id": "P0107",
+      "description": "Entrada Baja del Circuito MAP/Presión Barométrica",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor MAP defectuoso",
+        "Circuito abierto",
+        "Mala conexión eléctrica",
+        "Fuga de vacío"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Arranque difícil",
+        "Mezcla rica de combustible",
+        "Bajo rendimiento"
+      ]
+    },
+    {
+      "id": "P0108",
+      "description": "Entrada Alta del Circuito MAP/Presión Barométrica",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor MAP defectuoso",
+        "Corto a voltaje",
+        "Cableado dañado",
+        "Manguera de vacío desconectada"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Mezcla pobre de combustible",
+        "Motor con fluctuaciones",
+        "Mala aceleración"
+      ]
+    },
+    {
+      "id": "P0110",
+      "description": "Falla del Circuito de Temperatura de Aire de Admisión",
+      "severity": "info",
+      "possibleCauses": [
+        "Sensor IAT defectuoso",
+        "Circuito abierto o en corto",
+        "Mala conexión eléctrica",
+        "Cableado dañado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Bajo rendimiento de combustible",
+        "Arranque difícil en clima frío",
+        "Ralentí inestable"
+      ]
+    },
+    {
+      "id": "P0111",
+      "description": "Problema de Rango/Rendimiento del Circuito de Temperatura de Aire de Admisión",
+      "severity": "info",
+      "possibleCauses": [
+        "Sensor IAT defectuoso",
+        "Mal contacto térmico",
+        "Problemas de cableado",
+        "Fuga de aire de admisión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Mezcla incorrecta de combustible",
+        "Problemas de rendimiento",
+        "Problemas de arranque"
+      ]
+    },
+    {
+      "id": "P0112",
+      "description": "Entrada Baja del Circuito de Temperatura de Aire de Admisión",
+      "severity": "info",
+      "possibleCauses": [
+        "Corto a tierra en el circuito",
+        "Sensor IAT defectuoso",
+        "Mala conexión",
+        "Intrusión de agua"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Condición de mezcla rica",
+        "Bajo rendimiento de combustible",
+        "Humo negro"
+      ]
+    },
+    {
+      "id": "P0113",
+      "description": "Entrada Alta del Circuito de Temperatura de Aire de Admisión",
+      "severity": "info",
+      "possibleCauses": [
+        "Circuito abierto",
+        "Sensor IAT defectuoso",
+        "Cableado dañado",
+        "Mala conexión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Condición de mezcla pobre",
+        "Arranque difícil",
+        "Bajo rendimiento en frío"
+      ]
+    },
+    {
+      "id": "P0115",
+      "description": "Falla del Circuito de Temperatura del Refrigerante del Motor",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor ECT defectuoso",
+        "Circuito abierto o en corto",
+        "Mala conexión eléctrica",
+        "Arnés de cableado dañado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Bajo rendimiento de combustible",
+        "Problemas del ventilador de enfriamiento",
+        "Arranque difícil"
+      ]
+    },
+    {
+      "id": "P0116",
+      "description": "Problema de Rango/Rendimiento del Circuito de Temperatura del Refrigerante",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor ECT defectuoso",
+        "Termostato atorado abierto",
+        "Nivel bajo de refrigerante",
+        "Aire en sistema de enfriamiento"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Sobrecalentamiento del motor",
+        "Bajo rendimiento del calefactor",
+        "Problemas de economía de combustible"
+      ]
+    },
+    {
+      "id": "P0117",
+      "description": "Entrada Baja del Circuito de Temperatura del Refrigerante",
+      "severity": "warning",
+      "possibleCauses": [
+        "Corto a tierra",
+        "Sensor ECT defectuoso",
+        "Cableado dañado",
+        "Intrusión de agua en conector"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Motor funcionando rico",
+        "Ventilador funcionando constantemente",
+        "Bajo rendimiento"
+      ]
+    },
+    {
+      "id": "P0118",
+      "description": "Entrada Alta del Circuito de Temperatura del Refrigerante",
+      "severity": "warning",
+      "possibleCauses": [
+        "Circuito abierto",
+        "Sensor ECT defectuoso",
+        "Conector corroído",
+        "Cableado dañado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Arranque difícil",
+        "Ventilador de enfriamiento no funciona",
+        "Sobrecalentamiento del motor"
+      ]
+    },
+    {
+      "id": "P0120",
+      "description": "Falla del Circuito A del Sensor de Posición del Acelerador",
+      "severity": "critical",
+      "possibleCauses": [
+        "TPS defectuoso",
+        "Cableado dañado",
+        "Mala conexión eléctrica",
+        "Problemas del cuerpo de aceleración"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Mala aceleración",
+        "Motor se apaga",
+        "Ralentí errático"
+      ]
+    },
+    {
+      "id": "P0121",
+      "description": "Problema de Rango/Rendimiento del Circuito A del Sensor de Posición del Acelerador",
+      "severity": "warning",
+      "possibleCauses": [
+        "TPS desgastado",
+        "Acumulación de carbón en cuerpo de aceleración",
+        "Tornillos de montaje flojos",
+        "Conexión intermitente"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Titubeo en aceleración",
+        "Fluctuación en ralentí",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0122",
+      "description": "Entrada Baja del Circuito A del Sensor de Posición del Acelerador",
+      "severity": "warning",
+      "possibleCauses": [
+        "Corto a tierra",
+        "TPS defectuoso",
+        "Cableado dañado",
+        "Mala conexión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Sin respuesta del acelerador",
+        "Motor se apaga",
+        "Modo de emergencia"
+      ]
+    },
+    {
+      "id": "P0123",
+      "description": "Entrada Alta del Circuito A del Sensor de Posición del Acelerador",
+      "severity": "warning",
+      "possibleCauses": [
+        "Corto a voltaje",
+        "TPS defectuoso",
+        "Circuito de tierra abierto",
+        "Cableado dañado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí alto",
+        "Motor con fluctuaciones",
+        "Aceleración no intencional"
+      ]
+    },
+    {
+      "id": "P0125",
+      "description": "Temperatura de Refrigerante Insuficiente para Control de Combustible en Ciclo Cerrado",
+      "severity": "info",
+      "possibleCauses": [
+        "Termostato atorado abierto",
+        "Sensor ECT defectuoso",
+        "Nivel bajo de refrigerante",
+        "Fuga en sistema de enfriamiento"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Bajo rendimiento de combustible",
+        "Tiempo de calentamiento largo",
+        "Bajo rendimiento del calefactor"
+      ]
+    },
+    {
+      "id": "P0128",
+      "description": "Termostato de Refrigerante (Temperatura de Refrigerante por Debajo de la Temperatura de Regulación)",
+      "severity": "info",
+      "possibleCauses": [
+        "Termostato atorado abierto",
+        "Termostato defectuoso",
+        "Nivel bajo de refrigerante",
+        "Sensor ECT defectuoso"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Motor funciona frío",
+        "Bajo rendimiento de combustible",
+        "Salida débil del calefactor"
+      ]
+    },
+    {
+      "id": "P0130",
+      "description": "Falla del Circuito del Sensor O2 (Bank 1, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor O2 defectuoso",
+        "Fuga de escape",
+        "Problemas de cableado",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Bajo rendimiento de combustible",
+        "Ralentí inestable",
+        "Falla en prueba de emisiones"
+      ]
+    },
+    {
+      "id": "P0131",
+      "description": "Voltaje Bajo del Circuito del Sensor O2 (Bank 1, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Condición de escape pobre",
+        "Sensor O2 defectuoso",
+        "Fuga de vacío",
+        "Problema de presión de combustible"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Bajo rendimiento",
+        "Titubeo",
+        "Condición de mezcla pobre"
+      ]
+    },
+    {
+      "id": "P0132",
+      "description": "Voltaje Alto del Circuito del Sensor O2 (Bank 1, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Condición de escape rica",
+        "Sensor O2 defectuoso",
+        "Corto en cableado",
+        "Problema del sistema de combustible"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Bajo rendimiento de combustible",
+        "Humo negro",
+        "Condición de mezcla rica"
+      ]
+    },
+    {
+      "id": "P0133",
+      "description": "Respuesta Lenta del Circuito del Sensor O2 (Bank 1, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor O2 desgastado",
+        "Fugas de escape",
+        "Contaminación de combustible",
+        "Problemas de cableado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Economía de combustible reducida",
+        "Falla en prueba de emisiones",
+        "Ralentí inestable"
+      ]
+    },
+    {
+      "id": "P0134",
+      "description": "Sin Actividad Detectada en Circuito del Sensor O2 (Bank 1, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor O2 defectuoso",
+        "Circuito abierto",
+        "Fuga de escape antes del sensor",
+        "Problema del circuito del calentador"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Bajo rendimiento de combustible",
+        "Falla en prueba de emisiones",
+        "Problemas de funcionamiento"
+      ]
+    },
+    {
+      "id": "P0135",
+      "description": "Falla del Circuito del Calentador del Sensor O2 (Bank 1, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Calentador del sensor O2 fallido",
+        "Fusible quemado",
+        "Problema de cableado",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Emisiones extendidas en calentamiento",
+        "Bajo rendimiento en arranque en frío",
+        "Falla en prueba de emisiones"
+      ]
+    },
+    {
+      "id": "P0136",
+      "description": "Falla del Circuito del Sensor O2 (Bank 1, Sensor 2)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor O2 aguas abajo defectuoso",
+        "Problemas de cableado",
+        "Fuga de escape",
+        "Problema del convertidor catalítico"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla en prueba de emisiones",
+        "Baja eficiencia catalítica",
+        "Economía de combustible reducida"
+      ]
+    },
+    {
+      "id": "P0137",
+      "description": "Voltaje Bajo del Circuito del Sensor O2 (Bank 1, Sensor 2)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Escape pobre después del catalizador",
+        "Sensor O2 defectuoso",
+        "Fuga de escape",
+        "Problema de cableado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla en prueba de emisiones",
+        "Bajo rendimiento de combustible",
+        "Problemas del catalizador"
+      ]
+    },
+    {
+      "id": "P0138",
+      "description": "Voltaje Alto del Circuito del Sensor O2 (Bank 1, Sensor 2)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Condición rica después del catalizador",
+        "Sensor O2 defectuoso",
+        "Cortocircuito en el circuito",
+        "Problema del sistema de combustible"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla en prueba de emisiones",
+        "Bajo rendimiento de combustible",
+        "Humo negro"
+      ]
+    },
+    {
+      "id": "P0141",
+      "description": "Falla del Circuito del Calentador del Sensor O2 (Bank 1, Sensor 2)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Calentador del sensor O2 fallido",
+        "Fusible quemado",
+        "Problema de cableado",
+        "Mala conexión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Calentamiento prolongado de emisiones",
+        "Falla en prueba de emisiones",
+        "Bajo rendimiento"
+      ]
+    },
+    {
+      "id": "P0150",
+      "description": "Falla del Circuito del Sensor O2 (Bank 2, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor O2 defectuoso",
+        "Fuga de escape",
+        "Problemas de cableado",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Bajo rendimiento de combustible",
+        "Funcionamiento irregular",
+        "Falla en prueba de emisiones"
+      ]
+    },
+    {
+      "id": "P0155",
+      "description": "Falla del Circuito del Calentador del Sensor O2 (Bank 2, Sensor 1)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Calentador del sensor O2 fallido",
+        "Fusible quemado",
+        "Problema de cableado",
+        "Mala conexión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Emisiones extendidas en calentamiento",
+        "Bajo rendimiento en frío",
+        "Falla en prueba de emisiones"
+      ]
+    },
+    {
+      "id": "P0171",
+      "description": "Sistema Demasiado Pobre (Bank 1)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Fuga de vacío",
+        "Sensor MAF defectuoso",
+        "Bomba de combustible débil",
+        "Inyectores de combustible obstruidos",
+        "Fuga de escape antes del sensor O2"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí inestable",
+        "Titubeo en aceleración",
+        "Bajo rendimiento de combustible",
+        "Misfire"
+      ]
+    },
+    {
+      "id": "P0172",
+      "description": "Sistema Demasiado Rico (Bank 1)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor O2 defectuoso",
+        "Inyectores de combustible con fuga",
+        "Alta presión de combustible",
+        "Sensor MAF defectuoso",
+        "Válvula de purga atorada abierta"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Humo negro del escape",
+        "Bajo rendimiento de combustible",
+        "Fuerte olor a combustible",
+        "Ralentí inestable"
+      ]
+    },
+    {
+      "id": "P0174",
+      "description": "Sistema Demasiado Pobre (Bank 2)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Fuga de vacío",
+        "Sensor MAF defectuoso",
+        "Bomba de combustible débil",
+        "Inyectores de combustible obstruidos",
+        "Fuga de junta de admisión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí inestable",
+        "Titubeo",
+        "Bajo rendimiento de combustible",
+        "Misfire"
+      ]
+    },
+    {
+      "id": "P0175",
+      "description": "Sistema Demasiado Rico (Bank 2)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor O2 defectuoso",
+        "Inyectores de combustible con fuga",
+        "Alta presión de combustible",
+        "Sensor MAF defectuoso",
+        "Problema del sistema EVAP"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Humo negro",
+        "Bajo rendimiento de combustible",
+        "Olor a combustible",
+        "Funcionamiento irregular"
+      ]
+    },
+    {
+      "id": "P0190",
+      "description": "Falla del Circuito del Sensor de Presión del Riel de Combustible",
+      "severity": "critical",
+      "possibleCauses": [
+        "Sensor de presión del riel de combustible defectuoso",
+        "Problemas de cableado",
+        "Mala conexión",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Arranque difícil",
+        "Motor se apaga",
+        "Bajo rendimiento"
+      ]
+    },
+    {
+      "id": "P0191",
+      "description": "Rango/Rendimiento del Circuito del Sensor de Presión del Riel de Combustible",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor de presión del riel de combustible defectuoso",
+        "Problema de presión de combustible",
+        "Filtro de combustible restringido",
+        "Bomba de combustible fallando"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Titubeo del motor",
+        "Mala aceleración",
+        "Se apaga"
+      ]
+    },
+    {
+      "id": "P0200",
+      "description": "Falla del Circuito del Inyector",
+      "severity": "critical",
+      "possibleCauses": [
+        "Inyector de combustible defectuoso",
+        "Problema de cableado",
+        "Falla del PCM",
+        "Mala conexión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Misfire",
+        "Ralentí inestable",
+        "Bajo rendimiento"
+      ]
+    },
+    {
+      "id": "P0201",
+      "description": "Falla del Circuito del Inyector - Cilindro 1",
+      "severity": "critical",
+      "possibleCauses": [
+        "Inyector 1 defectuoso",
+        "Circuito abierto o en corto",
+        "Mala conexión",
+        "Falla del controlador del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla de encendido en cilindro 1",
+        "Ralentí inestable",
+        "Pérdida de potencia"
+      ]
+    },
+    {
+      "id": "P0202",
+      "description": "Falla del Circuito del Inyector - Cilindro 2",
+      "severity": "critical",
+      "possibleCauses": [
+        "Inyector 2 defectuoso",
+        "Circuito abierto o en corto",
+        "Mala conexión",
+        "Falla del controlador del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla de encendido en cilindro 2",
+        "Ralentí inestable",
+        "Pérdida de potencia"
+      ]
+    },
+    {
+      "id": "P0203",
+      "description": "Falla del Circuito del Inyector - Cilindro 3",
+      "severity": "critical",
+      "possibleCauses": [
+        "Inyector 3 defectuoso",
+        "Circuito abierto o en corto",
+        "Mala conexión",
+        "Falla del controlador del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla de encendido en cilindro 3",
+        "Ralentí inestable",
+        "Pérdida de potencia"
+      ]
+    },
+    {
+      "id": "P0204",
+      "description": "Falla del Circuito del Inyector - Cilindro 4",
+      "severity": "critical",
+      "possibleCauses": [
+        "Inyector 4 defectuoso",
+        "Circuito abierto o en corto",
+        "Mala conexión",
+        "Falla del controlador del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla de encendido en cilindro 4",
+        "Ralentí inestable",
+        "Pérdida de potencia"
+      ]
+    },
+    {
+      "id": "P0205",
+      "description": "Falla del Circuito del Inyector - Cilindro 5",
+      "severity": "critical",
+      "possibleCauses": [
+        "Inyector 5 defectuoso",
+        "Circuito abierto o en corto",
+        "Mala conexión",
+        "Falla del controlador del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla de encendido en cilindro 5",
+        "Ralentí inestable",
+        "Pérdida de potencia"
+      ]
+    },
+    {
+      "id": "P0206",
+      "description": "Falla del Circuito del Inyector - Cilindro 6",
+      "severity": "critical",
+      "possibleCauses": [
+        "Inyector 6 defectuoso",
+        "Circuito abierto o en corto",
+        "Mala conexión",
+        "Falla del controlador del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla de encendido en cilindro 6",
+        "Ralentí inestable",
+        "Pérdida de potencia"
+      ]
+    },
+    {
+      "id": "P0217",
+      "description": "Condición de Sobrecalentamiento del Motor",
+      "severity": "critical",
+      "possibleCauses": [
+        "Nivel bajo de refrigerante",
+        "Termostato defectuoso",
+        "Bomba de agua fallida",
+        "Radiador obstruido",
+        "Ventilador de enfriamiento defectuoso"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Indicador de temperatura alto",
+        "Vapor del motor",
+        "Pérdida de potencia",
+        "Riesgo de daño al motor"
+      ]
+    },
+    {
+      "id": "P0218",
+      "description": "Condición de Sobretemperatura de la Transmisión",
+      "severity": "critical",
+      "possibleCauses": [
+        "Líquido de transmisión bajo",
+        "Enfriador de transmisión defectuoso",
+        "Remolque pesado",
+        "Componentes de transmisión desgastados"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Transmisión patinando",
+        "Olor a quemado",
+        "Modo de emergencia",
+        "Problemas de cambio"
+      ]
+    },
+    {
+      "id": "P0219",
+      "description": "Condición de Exceso de Velocidad del Motor",
+      "severity": "critical",
+      "possibleCauses": [
+        "RPM del motor excesivas",
+        "Patinaje de la transmisión",
+        "Cambio descendente a alta velocidad",
+        "Embrague patinando"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Limitador de revoluciones activado",
+        "Posible daño al motor",
+        "Problemas de transmisión"
+      ]
+    },
+    {
+      "id": "P0220",
+      "description": "Falla del Circuito B del Sensor de Posición del Acelerador/Pedal",
+      "severity": "critical",
+      "possibleCauses": [
+        "Sensor APP defectuoso",
+        "Problema de cableado",
+        "Mala conexión",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Potencia del motor reducida",
+        "Modo de emergencia",
+        "Sin respuesta del acelerador"
+      ]
+    },
+    {
+      "id": "P0221",
+      "description": "Rango/Rendimiento del Circuito B del Sensor de Posición del Acelerador/Pedal Problem",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor APP desgastado",
+        "Conexión intermitente",
+        "Problema de cableado",
+        "Acumulación de carbón"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Respuesta del acelerador errática",
+        "Titubeo",
+        "Surging"
+      ]
+    },
+    {
+      "id": "P0222",
+      "description": "Entrada Baja del Circuito B del Sensor de Posición del Acelerador/Pedal",
+      "severity": "warning",
+      "possibleCauses": [
+        "Corto a tierra",
+        "Sensor defectuoso",
+        "Cableado dañado",
+        "Mala conexión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Sin respuesta del acelerador",
+        "Modo de emergencia",
+        "Motor se apaga"
+      ]
+    },
+    {
+      "id": "P0223",
+      "description": "Entrada Alta del Circuito B del Sensor de Posición del Acelerador/Pedal",
+      "severity": "warning",
+      "possibleCauses": [
+        "Corto a voltaje",
+        "Sensor defectuoso",
+        "Circuito de tierra abierto",
+        "Daño de cableado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Aceleración no intencional",
+        "Ralentí alto",
+        "Surging"
+      ]
+    },
+    {
+      "id": "P0230",
+      "description": "Falla del Circuito Primario de la Bomba de Combustible",
+      "severity": "critical",
+      "possibleCauses": [
+        "Relé de bomba de combustible defectuoso",
+        "Fusible quemado",
+        "Problema de cableado",
+        "Bomba de combustible fallida",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Condición de no arranque",
+        "Motor se apaga",
+        "Pérdida de potencia"
+      ]
+    },
+    {
+      "id": "P0261",
+      "description": "Circuito Bajo del Inyector del Cilindro 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Corto a tierra en el circuito del inyector",
+        "Inyector defectuoso",
+        "Falla del controlador del PCM",
+        "Problema de cableado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla de encendido en cilindro 1",
+        "Ralentí inestable",
+        "Bajo rendimiento"
+      ]
+    },
+    {
+      "id": "P0262",
+      "description": "Circuito Alto del Inyector del Cilindro 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Circuito del inyector abierto",
+        "Corto a voltaje",
+        "Inyector defectuoso",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla de encendido en cilindro 1",
+        "Funcionamiento irregular",
+        "Pérdida de potencia"
+      ]
+    },
+    {
+      "id": "P0300",
+      "description": "Falla de Encendido Aleatoria/Múltiple Detectada",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bujías desgastadas",
+        "Bobinas de encendido defectuosas",
+        "Fuga de vacío",
+        "Baja presión de combustible",
+        "Sensor MAF defectuoso",
+        "Inyectores de combustible obstruidos"
+      ],
+      "symptoms": [
+        "Luz de Check Engine parpadeando",
+        "Ralentí inestable",
+        "Titubeo",
+        "Pérdida de potencia",
+        "Bajo rendimiento de combustible",
+        "Riesgo de daño al convertidor catalítico"
+      ]
+    },
+    {
+      "id": "P0301",
+      "description": "Falla de Encendido Detectada en Cilindro 1",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bujía 1 defectuosa",
+        "Bobina de encendido 1 dañada",
+        "Inyector de combustible 1 defectuoso",
+        "Fuga de vacío",
+        "Baja compresión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine parpadeando",
+        "Ralentí inestable",
+        "Pérdida de potencia",
+        "Vibración del motor",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0302",
+      "description": "Falla de Encendido Detectada en Cilindro 2",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bujía 2 defectuosa",
+        "Bobina de encendido 2 dañada",
+        "Inyector de combustible 2 defectuoso",
+        "Fuga de vacío",
+        "Baja compresión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine parpadeando",
+        "Ralentí inestable",
+        "Pérdida de potencia",
+        "Vibración del motor",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0303",
+      "description": "Falla de Encendido Detectada en Cilindro 3",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bujía 3 defectuosa",
+        "Bobina de encendido 3 dañada",
+        "Inyector de combustible 3 defectuoso",
+        "Fuga de vacío",
+        "Baja compresión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine parpadeando",
+        "Ralentí inestable",
+        "Pérdida de potencia",
+        "Vibración del motor",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0304",
+      "description": "Falla de Encendido Detectada en Cilindro 4",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bujía 4 defectuosa",
+        "Bobina de encendido 4 dañada",
+        "Inyector de combustible 4 defectuoso",
+        "Fuga de vacío",
+        "Baja compresión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine parpadeando",
+        "Ralentí inestable",
+        "Pérdida de potencia",
+        "Vibración del motor",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0305",
+      "description": "Falla de Encendido Detectada en Cilindro 5",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bujía 5 defectuosa",
+        "Bobina de encendido 5 dañada",
+        "Inyector de combustible 5 defectuoso",
+        "Fuga de vacío",
+        "Baja compresión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine parpadeando",
+        "Ralentí inestable",
+        "Pérdida de potencia",
+        "Vibración del motor",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0306",
+      "description": "Falla de Encendido Detectada en Cilindro 6",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bujía 6 defectuosa",
+        "Bobina de encendido 6 dañada",
+        "Inyector de combustible 6 defectuoso",
+        "Fuga de vacío",
+        "Baja compresión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine parpadeando",
+        "Ralentí inestable",
+        "Pérdida de potencia",
+        "Vibración del motor",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0307",
+      "description": "Falla de Encendido Detectada en Cilindro 7",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bujía 7 defectuosa",
+        "Bobina de encendido 7 dañada",
+        "Inyector de combustible 7 defectuoso",
+        "Fuga de vacío",
+        "Baja compresión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine parpadeando",
+        "Ralentí inestable",
+        "Pérdida de potencia",
+        "Vibración del motor",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0308",
+      "description": "Falla de Encendido Detectada en Cilindro 8",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bujía 8 defectuosa",
+        "Bobina de encendido 8 dañada",
+        "Inyector de combustible 8 defectuoso",
+        "Fuga de vacío",
+        "Baja compresión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine parpadeando",
+        "Ralentí inestable",
+        "Pérdida de potencia",
+        "Vibración del motor",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0325",
+      "description": "Falla del Circuito del Sensor de Detonación 1 (Bank 1 or Single Sensor)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor de detonación defectuoso",
+        "Problema de cableado",
+        "Mala conexión",
+        "Ruido mecánico del motor"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Potencia del motor reducida",
+        "Cascabeleo bajo carga",
+        "Sincronización retrasada"
+      ]
+    },
+    {
+      "id": "P0327",
+      "description": "Entrada Baja del Circuito del Sensor de Detonación 1 (Bank 1 or Single Sensor)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Corto a tierra",
+        "Sensor de detonación defectuoso",
+        "Cableado dañado",
+        "Conexión a tierra deficiente"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Potencia reducida",
+        "Cascabeleo del motor",
+        "Bajo rendimiento"
+      ]
+    },
+    {
+      "id": "P0328",
+      "description": "Entrada Alta del Circuito del Sensor de Detonación 1 (Bank 1 or Single Sensor)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Circuito abierto",
+        "Sensor de detonación defectuoso",
+        "Daño de cableado",
+        "Ruido excesivo del motor"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Sincronización excesivamente retrasada",
+        "Potencia reducida",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0335",
+      "description": "Falla del Circuito A del Sensor de Posición del Cigüeñal",
+      "severity": "critical",
+      "possibleCauses": [
+        "Sensor CKP defectuoso",
+        "Rueda del reluctor dañada",
+        "Problema de cableado",
+        "Mala conexión",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Condición de no arranque",
+        "Motor se apaga",
+        "Funcionamiento irregular",
+        "Falla de encendido intermitente"
+      ]
+    },
+    {
+      "id": "P0336",
+      "description": "Rango/Rendimiento del Circuito A del Sensor de Posición del Cigüeñal",
+      "severity": "critical",
+      "possibleCauses": [
+        "Rueda del reluctor dañada",
+        "Sensor CKP defectuoso",
+        "Espacio de aire incorrecto",
+        "Cableado intermitente"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Motor se apaga",
+        "Arranque difícil",
+        "Misfire",
+        "Ralentí inestable"
+      ]
+    },
+    {
+      "id": "P0340",
+      "description": "Falla del Circuito del Sensor de Posición del Árbol de Levas (Banco 1 o Sensor Único)",
+      "severity": "critical",
+      "possibleCauses": [
+        "Sensor CMP defectuoso",
+        "Cableado dañado",
+        "Mala conexión",
+        "Problemas de cadena/banda de distribución",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Arranque difícil",
+        "Motor se apaga",
+        "Ralentí inestable",
+        "Misfire"
+      ]
+    },
+    {
+      "id": "P0341",
+      "description": "Rango/Rendimiento del Circuito del Sensor de Posición del Árbol de Levas (Banco 1 o Sensor Único)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Cadena de distribución estirada",
+        "Sensor CMP defectuoso",
+        "Instalación incorrecta",
+        "Problema de cableado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Bajo rendimiento",
+        "Ralentí inestable",
+        "Problemas de arranque",
+        "Misfire"
+      ]
+    },
+    {
+      "id": "P0345",
+      "description": "Falla del Circuito A del Sensor de Posición del Árbol de Levas (Bank 2)",
+      "severity": "critical",
+      "possibleCauses": [
+        "Sensor CMP defectuoso",
+        "Problema de cableado",
+        "Mala conexión",
+        "Problemas de sincronización",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Arranque difícil",
+        "Motor se apaga",
+        "Funcionamiento irregular",
+        "Misfire"
+      ]
+    },
+    {
+      "id": "P0351",
+      "description": "Falla del Circuito Primario/Secundario de la Bobina de Encendido A",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bobina de encendido 1 defectuosa",
+        "Problema de cableado",
+        "Mala conexión",
+        "Falla del controlador del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla de encendido en cilindro 1",
+        "Ralentí inestable",
+        "Pérdida de potencia",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0352",
+      "description": "Falla del Circuito Primario/Secundario de la Bobina de Encendido B",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bobina de encendido 2 defectuosa",
+        "Problema de cableado",
+        "Mala conexión",
+        "Falla del controlador del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla de encendido en cilindro 2",
+        "Ralentí inestable",
+        "Pérdida de potencia",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0353",
+      "description": "Falla del Circuito Primario/Secundario de la Bobina de Encendido C",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bobina de encendido 3 defectuosa",
+        "Problema de cableado",
+        "Mala conexión",
+        "Falla del controlador del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla de encendido en cilindro 3",
+        "Ralentí inestable",
+        "Pérdida de potencia",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0354",
+      "description": "Falla del Circuito Primario/Secundario de la Bobina de Encendido D",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bobina de encendido 4 defectuosa",
+        "Problema de cableado",
+        "Mala conexión",
+        "Falla del controlador del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla de encendido en cilindro 4",
+        "Ralentí inestable",
+        "Pérdida de potencia",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0401",
+      "description": "Flujo Insuficiente de Recirculación de Gases de Escape Detectado",
+      "severity": "warning",
+      "possibleCauses": [
+        "Conductos EGR obstruidos",
+        "Válvula EGR defectuosa",
+        "Acumulación de carbón",
+        "Fuga de vacío",
+        "Solenoide EGR defectuoso"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí inestable",
+        "Cascabeleo del motor",
+        "Falla en prueba de emisiones",
+        "Aumento de emisiones de NOx"
+      ]
+    },
+    {
+      "id": "P0402",
+      "description": "Flujo Excesivo de Recirculación de Gases de Escape Detectado",
+      "severity": "warning",
+      "possibleCauses": [
+        "Válvula EGR atorada abierta",
+        "Sensor de posición EGR defectuoso",
+        "Vacuum line issue",
+        "Calibración del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí inestable",
+        "Se apaga",
+        "Titubeo",
+        "Bajo rendimiento"
+      ]
+    },
+    {
+      "id": "P0404",
+      "description": "Rango/Rendimiento del Circuito de Recirculación de Gases de Escape",
+      "severity": "warning",
+      "possibleCauses": [
+        "Válvula EGR defectuosa",
+        "Acumulación de carbón",
+        "Problema del sensor de posición",
+        "Problema de cableado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí inestable",
+        "Titubeo",
+        "Mala aceleración",
+        "Emisiones reprobadas"
+      ]
+    },
+    {
+      "id": "P0420",
+      "description": "Eficiencia del Sistema Catalítico por Debajo del Umbral (Bank 1)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Convertidor catalítico fallando",
+        "Fuga de escape",
+        "Sensor O2 defectuoso",
+        "Daño por falla de encendido",
+        "Contaminación de aceite o refrigerante"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla en prueba de emisiones",
+        "Olor a azufre del escape",
+        "Rendimiento reducido",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0430",
+      "description": "Eficiencia del Sistema Catalítico por Debajo del Umbral (Bank 2)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Convertidor catalítico fallando",
+        "Fuga de escape",
+        "Sensor O2 defectuoso",
+        "Daño por falla de encendido",
+        "Contaminación"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla en prueba de emisiones",
+        "Olor a azufre",
+        "Rendimiento reducido",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0440",
+      "description": "Falla del Sistema de Control de Emisiones Evaporativas",
+      "severity": "info",
+      "possibleCauses": [
+        "Tapón de gasolina suelto o faltante",
+        "EVAP leak",
+        "Válvula de purga defectuosa",
+        "Válvula de ventilación defectuosa",
+        "Mangueras agrietadas"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Olor a combustible",
+        "Falla en prueba de emisiones",
+        "Ligera disminución de rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P0441",
+      "description": "Flujo de Purga Incorrecto del Sistema de Control de Emisiones Evaporativas",
+      "severity": "info",
+      "possibleCauses": [
+        "Válvula de purga defectuosa",
+        "Fuga de vacío",
+        "Línea EVAP bloqueada",
+        "Válvula de ventilación defectuosa"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Olor a combustible",
+        "Falla en prueba de emisiones",
+        "Ralentí inestable después de recargar"
+      ]
+    },
+    {
+      "id": "P0442",
+      "description": "Fuga del Sistema de Emisiones Evaporativas Detectada (Fuga Pequeña)",
+      "severity": "info",
+      "possibleCauses": [
+        "Tapa de gasolina floja",
+        "Manguera EVAP agrietada",
+        "Válvula de purga defectuosa",
+        "Fuga pequeña en el tanque de combustible"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Olor a combustible",
+        "Falla en prueba de emisiones",
+        "Sin problemas notables de conducción"
+      ]
+    },
+    {
+      "id": "P0443",
+      "description": "Falla del Circuito de Válvula de Purga del Sistema de Emisiones Evaporativas",
+      "severity": "info",
+      "possibleCauses": [
+        "Solenoide de purga defectuoso",
+        "Problema de cableado",
+        "Mala conexión",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí inestable",
+        "Falla en prueba de emisiones",
+        "Olor a combustible"
+      ]
+    },
+    {
+      "id": "P0446",
+      "description": "Falla del Circuito de Ventilación del Sistema de Emisiones Evaporativas",
+      "severity": "info",
+      "possibleCauses": [
+        "Válvula de ventilación defectuosa",
+        "Filtro de ventilación obstruido",
+        "Problema de cableado",
+        "Línea de ventilación bloqueada"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Dificultad para recargar combustible",
+        "Falla en prueba de emisiones",
+        "Vacío en el tanque de combustible"
+      ]
+    },
+    {
+      "id": "P0449",
+      "description": "Falla del Circuito de Válvula/Solenoide de Ventilación del Sistema de Emisiones Evaporativas",
+      "severity": "info",
+      "possibleCauses": [
+        "Solenoide de ventilación defectuoso",
+        "Problema de cableado",
+        "Mala conexión",
+        "Corrosion"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla en prueba de emisiones",
+        "Olor a combustible",
+        "Dificultad para recargar combustible"
+      ]
+    },
+    {
+      "id": "P0451",
+      "description": "Rango/Rendimiento del Sensor de Presión del Sistema de Control de Emisiones Evaporativas",
+      "severity": "info",
+      "possibleCauses": [
+        "Sensor de presión del tanque defectuoso",
+        "Problema de cableado",
+        "Fuga del sistema EVAP",
+        "Mala conexión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla en prueba de emisiones",
+        "Sin síntomas de conducción",
+        "Olor a combustible"
+      ]
+    },
+    {
+      "id": "P0455",
+      "description": "Fuga Detectada en el Sistema de Control de Emisiones Evaporativas (Fuga Mayor)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Tapón de gasolina faltante",
+        "Fuga grande del sistema EVAP",
+        "Manguera desconectada",
+        "Bote de carbón agrietado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Fuerte olor a combustible",
+        "Falla en prueba de emisiones",
+        "Posible pérdida de combustible"
+      ]
+    },
+    {
+      "id": "P0456",
+      "description": "Fuga del Sistema de Emisiones Evaporativas Detectada (Fuga Muy Pequeña)",
+      "severity": "info",
+      "possibleCauses": [
+        "Tapón de gasolina no sella",
+        "Fuga mínima del sistema EVAP",
+        "Conexión de manguera degradada",
+        "Falla menor de sello"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ligero olor a combustible",
+        "Falla en prueba de emisiones",
+        "Sin problemas de conducción"
+      ]
+    },
+    {
+      "id": "P0500",
+      "description": "Falla del Sensor de Velocidad del Vehículo",
+      "severity": "warning",
+      "possibleCauses": [
+        "VSS defectuoso",
+        "Cableado dañado",
+        "Mala conexión",
+        "Anillo reluctor dañado",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Velocímetro no funciona",
+        "Problemas de cambio de transmisión",
+        "Control crucero inoperativo"
+      ]
+    },
+    {
+      "id": "P0501",
+      "description": "Rango/Rendimiento del Sensor de Velocidad del Vehículo",
+      "severity": "warning",
+      "possibleCauses": [
+        "Señal VSS intermitente",
+        "Reluctor dañado",
+        "Problema de cableado",
+        "Problema del rodamiento de la rueda"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Velocímetro errático",
+        "Problemas de cambio",
+        "Luz de ABS encendida"
+      ]
+    },
+    {
+      "id": "P0505",
+      "description": "Falla del Sistema de Control de Ralentí",
+      "severity": "warning",
+      "possibleCauses": [
+        "Válvula IAC defectuosa",
+        "Acumulación de carbón",
+        "Fuga de vacío",
+        "Problema de cableado",
+        "Problemas del cuerpo de aceleración"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí inestable",
+        "Se apaga",
+        "Velocidad de ralentí errática",
+        "Arranque difícil"
+      ]
+    },
+    {
+      "id": "P0506",
+      "description": "RPM del Sistema de Control de Ralentí Más Bajas de lo Esperado",
+      "severity": "warning",
+      "possibleCauses": [
+        "Fuga de vacío",
+        "Cuerpo de aceleración sucio",
+        "Faulty IAC",
+        "Baja presión de combustible",
+        "Air leak"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Low idle",
+        "Motor se apaga",
+        "Ralentí inestable",
+        "Difícil mantener funcionando"
+      ]
+    },
+    {
+      "id": "P0507",
+      "description": "RPM del Sistema de Control de Ralentí Más Altas de lo Esperado",
+      "severity": "warning",
+      "possibleCauses": [
+        "Fuga de vacío",
+        "Válvula IAC defectuosa",
+        "Problema del cuerpo del acelerador",
+        "Fuga de aire después del MAF"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí alto",
+        "Motor acelerado",
+        "Difícil detener el vehículo",
+        "Aumento del consumo de combustible"
+      ]
+    },
+    {
+      "id": "P0520",
+      "description": "Falla del Circuito del Sensor de Presión de Aceite del Motor",
+      "severity": "critical",
+      "possibleCauses": [
+        "Sensor de presión de aceite defectuoso",
+        "Problema de cableado",
+        "Nivel bajo de aceite",
+        "Falla de la bomba de aceite",
+        "Mala conexión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Luz de advertencia de presión de aceite",
+        "Lectura baja de presión de aceite",
+        "Posible daño al motor"
+      ]
+    },
+    {
+      "id": "P0521",
+      "description": "Rango/Rendimiento del Sensor/Interruptor de Presión de Aceite del Motor",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor de presión de aceite defectuoso",
+        "Viscosidad de aceite incorrecta",
+        "Cojinetes del motor desgastados",
+        "Desgaste de la bomba de aceite"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Indicador de presión de aceite errático",
+        "Advertencia de presión de aceite",
+        "Ruido del motor"
+      ]
+    },
+    {
+      "id": "P0562",
+      "description": "Voltaje del Sistema Bajo",
+      "severity": "warning",
+      "possibleCauses": [
+        "Alternador fallando",
+        "Batería dañada",
+        "Banda de transmisión floja",
+        "Conexiones eléctricas deficientes",
+        "Carga eléctrica alta"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Luces tenues",
+        "Luz de advertencia de batería",
+        "Problemas eléctricos",
+        "Arranque difícil"
+      ]
+    },
+    {
+      "id": "P0563",
+      "description": "Voltaje del Sistema Alto",
+      "severity": "warning",
+      "possibleCauses": [
+        "Regulador de voltaje defectuoso",
+        "Alternador fallando",
+        "Conexión a tierra deficiente",
+        "Problema de la batería"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Luces brillantes",
+        "Focos fundidos",
+        "Batería sobrecargando",
+        "Daño eléctrico"
+      ]
+    },
+    {
+      "id": "P0600",
+      "description": "Falla del Enlace de Comunicación Serial",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla interna del PCM",
+        "Problema del bus CAN",
+        "Problema de cableado",
+        "Falla de comunicación del módulo"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Fallas de múltiples sistemas",
+        "Sin comunicación con el PCM",
+        "Varias luces de advertencia"
+      ]
+    },
+    {
+      "id": "P0601",
+      "description": "Error de Suma de Verificación de Memoria del Módulo de Control",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla del PCM",
+        "Corrupción de software",
+        "Daño por pico de voltaje",
+        "Intrusión de agua"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Comportamiento errático del motor",
+        "Condición de no arranque",
+        "Múltiples códigos de falla"
+      ]
+    },
+    {
+      "id": "P0606",
+      "description": "Falla del Procesador del PCM",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla interna del PCM",
+        "Problema de fuente de alimentación",
+        "Corrupción de software",
+        "Pico de voltaje"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Funcionamiento errático del motor",
+        "Se apaga",
+        "Condición de no arranque"
+      ]
+    },
+    {
+      "id": "P0700",
+      "description": "Falla del Sistema de Control de la Transmisión",
+      "severity": "warning",
+      "possibleCauses": [
+        "TCM fault",
+        "Problema del sensor de la transmisión",
+        "Problema de cableado",
+        "Problema interno de transmisión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Luz de advertencia de transmisión",
+        "Problemas de cambio",
+        "Modo de emergencia"
+      ]
+    },
+    {
+      "id": "P0705",
+      "description": "Falla del Circuito del Sensor de Rango de Transmisión (Entrada PRNDL)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor de rango defectuoso",
+        "Problema de cableado",
+        "Mala conexión",
+        "Problema de enlace"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Velocidad incorrecta indicada",
+        "Problemas de cambio de transmisión",
+        "No arranca en estacionamiento"
+      ]
+    },
+    {
+      "id": "P0706",
+      "description": "Rango/Rendimiento del Circuito del Sensor de Rango de Transmisión",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor de rango desgastado",
+        "Enlace mal ajustado",
+        "Conexión intermitente",
+        "Desgaste interno del interruptor"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Indicador de velocidad errático",
+        "Problemas de cambio",
+        "Problema de luces de reversa"
+      ]
+    },
+    {
+      "id": "P0710",
+      "description": "Falla del Circuito del Sensor de Temperatura del Líquido de Transmisión",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor TFT defectuoso",
+        "Problema de cableado",
+        "Mala conexión",
+        "Falla del TCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Problemas de cambio de transmisión",
+        "Enganche retrasado",
+        "Cambios bruscos"
+      ]
+    },
+    {
+      "id": "P0715",
+      "description": "Falla del Circuito del Sensor de Velocidad de Entrada/Turbina",
+      "severity": "critical",
+      "possibleCauses": [
+        "Sensor de velocidad de entrada defectuoso",
+        "Problema de cableado",
+        "Reluctor dañado",
+        "Falla del TCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Cambios erráticos",
+        "Slipping",
+        "Sin lectura del velocímetro",
+        "Modo de emergencia"
+      ]
+    },
+    {
+      "id": "P0720",
+      "description": "Falla del Circuito del Sensor de Velocidad de Salida",
+      "severity": "critical",
+      "possibleCauses": [
+        "Sensor de velocidad de salida defectuoso",
+        "Problema de cableado",
+        "Reluctor dañado",
+        "Falla del TCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Velocímetro no funciona",
+        "Problemas de cambio",
+        "Modo de emergencia"
+      ]
+    },
+    {
+      "id": "P0725",
+      "description": "Falla del Circuito de Entrada de Velocidad del Motor",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor del cigüeñal defectuoso",
+        "Problema de cableado",
+        "TCM issue",
+        "Interferencia de señal"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Cambios bruscos",
+        "Motor se apaga",
+        "Transmisión patinando"
+      ]
+    },
+    {
+      "id": "P0730",
+      "description": "Relación de Engranaje Incorrecta",
+      "severity": "critical",
+      "possibleCauses": [
+        "Embragues desgastados",
+        "Líquido de transmisión bajo",
+        "Solenoide defectuoso",
+        "Daño interno de la transmisión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Slipping",
+        "Aumento de RPM durante cambios",
+        "Enganche retrasado",
+        "Cambios bruscos"
+      ]
+    },
+    {
+      "id": "P0740",
+      "description": "Falla del Circuito del Embrague del Convertidor de Par",
+      "severity": "warning",
+      "possibleCauses": [
+        "Solenoide TCC defectuoso",
+        "Problema de cableado",
+        "Líquido de transmisión bajo",
+        "Problema del cuerpo de válvulas"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Sin bloqueo del convertidor de par",
+        "Bajo rendimiento de combustible",
+        "Motor se apaga en paradas"
+      ]
+    },
+    {
+      "id": "P0741",
+      "description": "Rendimiento del Circuito del Embrague del Convertidor de Par o Atorado",
+      "severity": "warning",
+      "possibleCauses": [
+        "Worn TCC",
+        "Solenoide TCC defectuoso",
+        "Nivel bajo de líquido",
+        "Problema del cuerpo de válvulas"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Sin bloqueo a velocidad de autopista",
+        "Bajo rendimiento de combustible",
+        "Sensación de patinaje de la transmisión"
+      ]
+    },
+    {
+      "id": "P0750",
+      "description": "Falla del Solenoide de Cambio A",
+      "severity": "critical",
+      "possibleCauses": [
+        "Solenoide de cambio A defectuoso",
+        "Problema de cableado",
+        "Líquido de transmisión bajo",
+        "Problema del cuerpo de válvulas"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Cambios bruscos",
+        "Sin segunda velocidad",
+        "Modo de emergencia",
+        "Enganche retrasado"
+      ]
+    },
+    {
+      "id": "P0751",
+      "description": "Rendimiento del Solenoide de Cambio A o Atorado en Apagado",
+      "severity": "warning",
+      "possibleCauses": [
+        "Solenoide de cambio atorado",
+        "Residuos en el cuerpo de válvulas",
+        "Problema de cableado",
+        "Low fluid"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Cambio 1-2 brusco",
+        "Slipping",
+        "Cambios retrasados"
+      ]
+    },
+    {
+      "id": "P0755",
+      "description": "Falla del Solenoide de Cambio B",
+      "severity": "critical",
+      "possibleCauses": [
+        "Solenoide de cambio B defectuoso",
+        "Problema de cableado",
+        "Líquido de transmisión bajo",
+        "Problema del cuerpo de válvulas"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Sin segunda o cuarta velocidad",
+        "Cambios bruscos",
+        "Modo de emergencia"
+      ]
+    },
+    {
+      "id": "P0760",
+      "description": "Falla del Solenoide de Cambio C",
+      "severity": "critical",
+      "possibleCauses": [
+        "Solenoide de cambio C defectuoso",
+        "Problema de cableado",
+        "Líquido de transmisión bajo",
+        "Problema del cuerpo de válvulas"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Problemas de cambio",
+        "Sin sobremarcha",
+        "Cambios bruscos"
+      ]
+    },
+    {
+      "id": "P0765",
+      "description": "Falla del Solenoide de Cambio D",
+      "severity": "warning",
+      "possibleCauses": [
+        "Solenoide de cambio D defectuoso",
+        "Problema de cableado",
+        "Low fluid",
+        "Problema del cuerpo de válvulas"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Problemas de cambio",
+        "Cambios retrasados",
+        "Enganche brusco"
+      ]
+    },
+    {
+      "id": "P1000",
+      "description": "Prueba de Preparación de Sistemas OBD No Completada",
+      "severity": "info",
+      "possibleCauses": [
+        "Batería desconectada recientemente",
+        "Códigos borrados recientemente",
+        "Ciclo de conducción insuficiente",
+        "PCM reset"
+      ],
+      "symptoms": [
+        "Luz de Check Engine apagada",
+        "Falla en prueba de emisiones",
+        "Monitores no listos",
+        "Sin problemas de conducción"
+      ]
+    },
+    {
+      "id": "P1101",
+      "description": "Sensor de Flujo de Aire en Masa Fuera de Rango de Autoprueba",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor MAF defectuoso",
+        "Fuga de vacío",
+        "Filtro de aire restringido",
+        "Fuga de admisión después del MAF"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Bajo rendimiento",
+        "Titubeo",
+        "Ralentí inestable"
+      ]
+    },
+    {
+      "id": "P1131",
+      "description": "Falta de Cambio del Sensor de Oxígeno Calentado Aguas Arriba - Mezcla Pobre (Banco 1)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Fuga de vacío",
+        "Baja presión de combustible",
+        "Sensor O2 defectuoso",
+        "Fuga de escape"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Funcionamiento pobre",
+        "Titubeo",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P1151",
+      "description": "Falta de Cambio del Sensor de Oxígeno Calentado Aguas Arriba - Mezcla Pobre (Banco 2)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Fuga de vacío",
+        "Baja presión de combustible",
+        "Sensor O2 defectuoso",
+        "Fuga de escape"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Funcionamiento pobre",
+        "Titubeo",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P1211",
+      "description": "Controlador de la Bomba de Inyección de Combustible por Encima de la Presión Esperada",
+      "severity": "critical",
+      "possibleCauses": [
+        "Regulador de presión de combustible defectuoso",
+        "Línea de retorno restringida",
+        "Bomba de combustible defectuosa",
+        "PCM issue"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Arranque difícil",
+        "Funcionamiento irregular",
+        "Humo negro"
+      ]
+    },
+    {
+      "id": "P1259",
+      "description": "Falla del Sistema VTEC",
+      "severity": "warning",
+      "possibleCauses": [
+        "Nivel bajo de aceite",
+        "Solenoide VTEC defectuoso",
+        "Problema de cableado",
+        "Problema de presión de aceite"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Pérdida de potencia a altas RPM",
+        "Mala aceleración",
+        "Titubeo del motor"
+      ]
+    },
+    {
+      "id": "P1320",
+      "description": "Circuito Primario de la Señal de Encendido",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bobina de encendido defectuosa",
+        "Problema de cableado",
+        "Falla del PCM",
+        "Tierra deficiente"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Misfire",
+        "Ralentí inestable",
+        "Condición de no arranque"
+      ]
+    },
+    {
+      "id": "P1345",
+      "description": "Correlación de Posición del Cigüeñal - Árbol de Levas (Banco 1)",
+      "severity": "critical",
+      "possibleCauses": [
+        "Cadena de distribución estirada",
+        "Sensor CMP defectuoso",
+        "Sensor CKP defectuoso",
+        "Sincronización de válvulas desfasada"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí inestable",
+        "Misfire",
+        "Bajo rendimiento",
+        "Arranque difícil"
+      ]
+    },
+    {
+      "id": "P1400",
+      "description": "Voltaje Bajo del Circuito del Sensor DPFE",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor DPFE defectuoso",
+        "Corto a tierra",
+        "Problema de cableado",
+        "Conductos EGR obstruidos"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla del sistema EGR",
+        "Falla en prueba de emisiones",
+        "Ralentí inestable"
+      ]
+    },
+    {
+      "id": "P1450",
+      "description": "Incapaz de Purgar el Vacío del Tanque de Combustible",
+      "severity": "info",
+      "possibleCauses": [
+        "Válvula de ventilación defectuosa",
+        "Restricción del sistema EVAP",
+        "Problema del tanque de combustible",
+        "Problema de la válvula de purga"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Dificultad para recargar combustible",
+        "Vacío en el tanque de combustible",
+        "Problema del tapón de gasolina"
+      ]
+    },
+    {
+      "id": "P1516",
+      "description": "Rendimiento de Posición del Actuador del Acelerador del Módulo de Control",
+      "severity": "critical",
+      "possibleCauses": [
+        "Cuerpo del acelerador defectuoso",
+        "Problema del sensor APP",
+        "Problema de cableado",
+        "Acumulación de carbón"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Potencia del motor reducida",
+        "Modo de emergencia",
+        "Respuesta del acelerador deficiente"
+      ]
+    },
+    {
+      "id": "P2000",
+      "description": "Eficiencia del Adsorbedor de NOx por Debajo del Umbral Banco 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Catalizador adsorbedor de NOx fallido",
+        "Problemas de calidad del combustible",
+        "Fuga de escape",
+        "Falla del sensor"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla en prueba de emisiones",
+        "Aumento de emisiones de NOx",
+        "Sin problemas de conducción"
+      ]
+    },
+    {
+      "id": "P2004",
+      "description": "Control del Conducto del Múltiple de Admisión Atorado Abierto Bank 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Válvula IMRC atorada",
+        "Actuador defectuoso",
+        "Problema de cableado",
+        "Fuga de vacío"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Pérdida de par a bajas RPM",
+        "Mala aceleración",
+        "Ralentí inestable"
+      ]
+    },
+    {
+      "id": "P2008",
+      "description": "Circuito/Abierto del Control del Conducto del Múltiple de Admisión Bank 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Solenoide IMRC defectuoso",
+        "Circuito abierto",
+        "Daño de cableado",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Rendimiento reducido",
+        "Par deficiente a bajas RPM",
+        "Titubeo"
+      ]
+    },
+    {
+      "id": "P2015",
+      "description": "Rango/Rendimiento del Circuito del Sensor de Posición del Conducto del Múltiple de Admisión Bank 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor IMRC defectuoso",
+        "Válvula de conducto atorada",
+        "Problema de cableado",
+        "Acumulación de carbón"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí inestable",
+        "Bajo rendimiento",
+        "Titubeo"
+      ]
+    },
+    {
+      "id": "P2017",
+      "description": "Circuito Alto del Sensor/Interruptor de Posición del Conducto de Admisión Banco 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Circuito abierto",
+        "Sensor defectuoso",
+        "Daño de cableado",
+        "Mala conexión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Problemas de rendimiento",
+        "Ralentí inestable",
+        "Titubeo"
+      ]
+    },
+    {
+      "id": "P2096",
+      "description": "Sistema de Ajuste de Combustible Post-Catalítico Demasiado Pobre Bank 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Fuga de escape después del catalizador",
+        "Sensor O2 trasero defectuoso",
+        "Sistema de combustible pobre",
+        "Fuga de vacío"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla en prueba de emisiones",
+        "Baja eficiencia catalítica",
+        "Sin problemas de conducción"
+      ]
+    },
+    {
+      "id": "P2097",
+      "description": "Sistema de Ajuste de Combustible Post-Catalítico Demasiado Rico Bank 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor O2 trasero defectuoso",
+        "Sistema de combustible rico",
+        "Inyector con fuga",
+        "Problema del convertidor catalítico"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla en prueba de emisiones",
+        "Olor a escape rico",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P2101",
+      "description": "Rango/Rendimiento del Circuito del Motor de Control del Actuador del Acelerador",
+      "severity": "critical",
+      "possibleCauses": [
+        "Cuerpo de acelerador electrónico defectuoso",
+        "Acumulación de carbón",
+        "Problema de cableado",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Potencia del motor reducida",
+        "Modo de emergencia",
+        "Ralentí errático"
+      ]
+    },
+    {
+      "id": "P2106",
+      "description": "Sistema de Control del Actuador del Acelerador - Potencia Limitada Forzada",
+      "severity": "critical",
+      "possibleCauses": [
+        "Múltiples fallas del TPS",
+        "Falla del cuerpo del acelerador",
+        "Problema del sensor APP",
+        "Problema de cableado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Reducción severa de potencia",
+        "Modo de emergencia",
+        "Aceleración limitada"
+      ]
+    },
+    {
+      "id": "P2110",
+      "description": "Sistema de Control del Actuador del Acelerador - RPM Limitadas Forzadas",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla del acelerador electrónico",
+        "Falla del sensor APP",
+        "TPS fault",
+        "Modo de protección del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "RPM limitadas",
+        "Potencia reducida",
+        "Modo de emergencia"
+      ]
+    },
+    {
+      "id": "P2111",
+      "description": "Sistema de Control del Actuador del Acelerador - Atorado Abierto",
+      "severity": "critical",
+      "possibleCauses": [
+        "Placa del acelerador atorada",
+        "Motor del acelerador defectuoso",
+        "Residuos en el cuerpo del acelerador",
+        "Falla del resorte"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí alto",
+        "Aceleración descontrolada",
+        "El vehículo jala al frenar"
+      ]
+    },
+    {
+      "id": "P2112",
+      "description": "Sistema de Control del Actuador del Acelerador - Atorado Cerrado",
+      "severity": "critical",
+      "possibleCauses": [
+        "Placa del acelerador atorada",
+        "Motor del acelerador defectuoso",
+        "Acumulación de carbón",
+        "Enlace trabado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Sin respuesta del acelerador",
+        "Motor se apaga",
+        "No puede acelerar"
+      ]
+    },
+    {
+      "id": "P2118",
+      "description": "Rango/Rendimiento de Corriente del Motor de Control del Actuador del Acelerador",
+      "severity": "critical",
+      "possibleCauses": [
+        "Motor del acelerador defectuoso",
+        "Problema de cableado",
+        "Alta resistencia",
+        "Falla del controlador del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Potencia reducida",
+        "Acelerador errático",
+        "Modo de emergencia"
+      ]
+    },
+    {
+      "id": "P2119",
+      "description": "Rango/Rendimiento del Cuerpo del Acelerador del Control del Actuador",
+      "severity": "critical",
+      "possibleCauses": [
+        "Cuerpo del acelerador defectuoso",
+        "Acumulación de carbón",
+        "Mecanismo trabado",
+        "Incompatibilidad del sensor"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Potencia reducida",
+        "Ralentí errático",
+        "Respuesta del acelerador deficiente"
+      ]
+    },
+    {
+      "id": "P2122",
+      "description": "Entrada Baja del Circuito D del Sensor de Posición del Acelerador/Pedal",
+      "severity": "critical",
+      "possibleCauses": [
+        "Corto a tierra",
+        "Sensor APP defectuoso",
+        "Daño de cableado",
+        "Mala conexión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Modo de emergencia",
+        "Sin respuesta del acelerador",
+        "Potencia reducida"
+      ]
+    },
+    {
+      "id": "P2127",
+      "description": "Entrada Baja del Circuito E del Sensor de Posición del Acelerador/Pedal",
+      "severity": "critical",
+      "possibleCauses": [
+        "Corto a tierra",
+        "Sensor APP defectuoso",
+        "Problema de cableado",
+        "Corrosion"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Potencia reducida",
+        "Modo de emergencia",
+        "Acelerador errático"
+      ]
+    },
+    {
+      "id": "P2135",
+      "description": "Correlación de Voltaje A/B del Sensor de Posición del Acelerador/Pedal",
+      "severity": "critical",
+      "possibleCauses": [
+        "TPS defectuoso",
+        "Problema de cableado",
+        "Falla del cuerpo del acelerador",
+        "Mala conexión"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Modo de emergencia",
+        "Potencia reducida",
+        "Respuesta del acelerador errática"
+      ]
+    },
+    {
+      "id": "P2138",
+      "description": "Correlación de Voltaje D/E del Sensor de Posición del Acelerador/Pedal",
+      "severity": "critical",
+      "possibleCauses": [
+        "Sensor APP defectuoso",
+        "Daño de cableado",
+        "Mala conexión",
+        "Falla del conjunto del pedal"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Modo de emergencia",
+        "No acceleration",
+        "Advertencia de potencia reducida"
+      ]
+    },
+    {
+      "id": "P2176",
+      "description": "Sistema de Control del Actuador del Acelerador - Posición de Ralentí No Aprendida",
+      "severity": "info",
+      "possibleCauses": [
+        "Cuerpo del acelerador reemplazado",
+        "Batería desconectada",
+        "PCM reset",
+        "Ralentí no reaprendido"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí alto",
+        "Ralentí inestable",
+        "Se apaga"
+      ]
+    },
+    {
+      "id": "P2187",
+      "description": "Sistema Demasiado Pobre en Ralentí Banco 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Fuga de vacío",
+        "Problema de la válvula PCV",
+        "Fuga de junta de admisión",
+        "Problema de suministro de combustible"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí inestable",
+        "Se apaga en ralentí",
+        "Titubeo"
+      ]
+    },
+    {
+      "id": "P2188",
+      "description": "Sistema Demasiado Rico en Ralentí Banco 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Inyector de combustible con fuga",
+        "Regulador de presión de combustible defectuoso",
+        "Problema de purga EVAP",
+        "Contaminación del MAF"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí inestable",
+        "Humo negro en ralentí",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P2195",
+      "description": "Señal del Sensor O2 Atascada en Pobre Banco 1 Sensor 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Fuga de vacío",
+        "Baja presión de combustible",
+        "Sensor O2 defectuoso",
+        "Fuga de escape"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Condición pobre",
+        "Bajo rendimiento",
+        "Titubeo"
+      ]
+    },
+    {
+      "id": "P2196",
+      "description": "Señal del Sensor O2 Atascada en Rica Banco 1 Sensor 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Inyector con fuga",
+        "Alta presión de combustible",
+        "Sensor O2 defectuoso",
+        "Problema del sistema EVAP"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Condición rica",
+        "Bajo rendimiento de combustible",
+        "Humo negro"
+      ]
+    },
+    {
+      "id": "P2270",
+      "description": "Señal del Sensor O2 Atascada en Pobre Banco 1 Sensor 2",
+      "severity": "warning",
+      "possibleCauses": [
+        "Fuga de escape después del catalizador",
+        "Sensor O2 trasero defectuoso",
+        "Problema de eficiencia del catalizador",
+        "Problema de cableado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla en prueba de emisiones",
+        "Sin problemas de conducción",
+        "Código de catalizador"
+      ]
+    },
+    {
+      "id": "P2271",
+      "description": "Señal del Sensor O2 Atascada en Rica Banco 1 Sensor 2",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor O2 trasero defectuoso",
+        "Contaminación del catalizador",
+        "Condición de combustible rico",
+        "Corto en cableado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla en prueba de emisiones",
+        "Problema de eficiencia del catalizador",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P2279",
+      "description": "Fuga en el Sistema de Aire de Admisión",
+      "severity": "warning",
+      "possibleCauses": [
+        "Fuga de la junta del múltiple de admisión",
+        "Manguera de admisión agrietada",
+        "Fuga del sistema PCV",
+        "Fuga del servofreno"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Ralentí inestable",
+        "Condición pobre",
+        "Titubeo",
+        "Ruido de silbido"
+      ]
+    },
+    {
+      "id": "P2400",
+      "description": "Circuito de Control de la Bomba de Detección de Fugas del Sistema de Emisiones Evaporativas/Abierto",
+      "severity": "info",
+      "possibleCauses": [
+        "Bomba de detección de fugas defectuosa",
+        "Problema de cableado",
+        "Mala conexión",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla en prueba de emisiones",
+        "Sin problemas de conducción",
+        "Falla del sistema EVAP"
+      ]
+    },
+    {
+      "id": "P2401",
+      "description": "Circuito de Detección de la Bomba de Fugas del Sistema de Emisiones Evaporativas/Abierto",
+      "severity": "info",
+      "possibleCauses": [
+        "Bomba de detección de fugas defectuosa",
+        "Problema de cableado",
+        "Falla del sensor",
+        "Intrusión de agua"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Falla en prueba de emisiones",
+        "Sin síntomas de conducción",
+        "EVAP fault"
+      ]
+    },
+    {
+      "id": "P2610",
+      "description": "Rendimiento del Temporizador Interno de Motor Apagado del ECM/PCM",
+      "severity": "info",
+      "possibleCauses": [
+        "Batería desconectada con motor en marcha",
+        "Problema interno del PCM",
+        "Interrupción de energía",
+        "Error de software"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Tiempo de arranque prolongado",
+        "Monitores no ejecutándose",
+        "Problemas de arranque en frío"
+      ]
+    },
+    {
+      "id": "P2646",
+      "description": "Rendimiento del Sistema del Actuador del Balancín o Atorado Bank 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Nivel bajo de aceite",
+        "Dirty oil",
+        "Solenoide VTEC defectuoso",
+        "Problema de cableado",
+        "Problema de presión de aceite"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Pérdida de potencia a altas RPM",
+        "Funcionamiento irregular",
+        "Ruido del tren de válvulas"
+      ]
+    },
+    {
+      "id": "P3400",
+      "description": "Sistema de Desactivación de Cilindros Bank 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Taqué defectuoso",
+        "Problema de presión de aceite",
+        "Falla del solenoide",
+        "Problema de cableado"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Funcionamiento irregular",
+        "Vibration",
+        "Misfire",
+        "Bajo rendimiento de combustible"
+      ]
+    },
+    {
+      "id": "P3401",
+      "description": "Circuito Abierto de Control de Válvula de Admisión/Desactivación del Cilindro 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Solenoide defectuoso",
+        "Circuito de cableado abierto",
+        "Mala conexión",
+        "Falla del PCM"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Problema de desactivación del cilindro 1",
+        "Funcionamiento irregular",
+        "Vibration"
+      ]
+    },
+    {
+      "id": "B0001",
+      "description": "Control de Despliegue Etapa 1 Frontal del Conductor",
+      "severity": "critical",
+      "possibleCauses": [
+        "Módulo de bolsa de aire defectuoso",
+        "Problema de cableado",
+        "Problema del sensor de impacto",
+        "Despliegue previo"
+      ],
+      "symptoms": [
+        "Luz de advertencia de bolsa de aire encendida",
+        "La bolsa de aire podría no desplegarse",
+        "Falla del sistema SRS",
+        "Preocupación de seguridad"
+      ]
+    },
+    {
+      "id": "B0002",
+      "description": "Control de Despliegue Etapa 2 Frontal del Conductor",
+      "severity": "critical",
+      "possibleCauses": [
+        "Módulo de bolsa de aire defectuoso",
+        "Problema de cableado",
+        "Problema de la unidad de control de bolsa de aire",
+        "Daño del conector"
+      ],
+      "symptoms": [
+        "Luz de advertencia de bolsa de aire encendida",
+        "Protección de bolsa de aire reducida",
+        "SRS fault",
+        "Problema de seguridad"
+      ]
+    },
+    {
+      "id": "B0010",
+      "description": "Control de Despliegue Etapa 1 Frontal del Conductor Performance",
+      "severity": "critical",
+      "possibleCauses": [
+        "Circuito detonador defectuoso",
+        "Alta resistencia",
+        "Problema del módulo de bolsa de aire",
+        "Daño de cableado"
+      ],
+      "symptoms": [
+        "Luz de advertencia de bolsa de aire encendida",
+        "La bolsa de aire puede no desplegarse correctamente",
+        "SRS fault",
+        "Preocupación de seguridad"
+      ]
+    },
+    {
+      "id": "B0020",
+      "description": "Control de Despliegue Etapa 1 Frontal del Pasajero",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bolsa de aire del pasajero defectuosa",
+        "Problema de cableado",
+        "Problema del sensor de impacto",
+        "Falla del ACM"
+      ],
+      "symptoms": [
+        "Luz de advertencia de bolsa de aire encendida",
+        "Falla de bolsa de aire del pasajero",
+        "Problema del sistema SRS",
+        "Preocupación de seguridad"
+      ]
+    },
+    {
+      "id": "B0050",
+      "description": "Control de Despliegue de Bolsa de Aire Lateral (Frontal Izquierdo)",
+      "severity": "critical",
+      "possibleCauses": [
+        "Módulo de bolsa de aire lateral defectuoso",
+        "Problema de cableado",
+        "Problema del sensor de impacto lateral",
+        "Seat issue"
+      ],
+      "symptoms": [
+        "Luz de advertencia de bolsa de aire encendida",
+        "Falla de bolsa de aire lateral",
+        "Problema del sistema SRS",
+        "Preocupación de seguridad"
+      ]
+    },
+    {
+      "id": "B0051",
+      "description": "Control de Despliegue de Bolsa de Aire Lateral (Frontal Derecho)",
+      "severity": "critical",
+      "possibleCauses": [
+        "Módulo de bolsa de aire lateral defectuoso",
+        "Problema de cableado",
+        "Problema del sensor de impacto lateral",
+        "Daño del conector"
+      ],
+      "symptoms": [
+        "Luz de advertencia de bolsa de aire encendida",
+        "Falla de bolsa de aire lateral",
+        "Problema del sistema SRS",
+        "Preocupación de seguridad"
+      ]
+    },
+    {
+      "id": "B0060",
+      "description": "Control de Despliegue de Bolsa de Aire de Cortina (Izquierdo)",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bolsa de aire de cortina defectuosa",
+        "Problema de cableado",
+        "Problema del sensor de volcadura",
+        "Daño del cielo del techo"
+      ],
+      "symptoms": [
+        "Luz de advertencia de bolsa de aire encendida",
+        "Falla de bolsa de aire de cortina",
+        "SRS issue",
+        "Preocupación de seguridad"
+      ]
+    },
+    {
+      "id": "B0061",
+      "description": "Control de Despliegue de Bolsa de Aire de Cortina (Derecho)",
+      "severity": "critical",
+      "possibleCauses": [
+        "Bolsa de aire de cortina defectuosa",
+        "Problema de cableado",
+        "Problema del sensor de volcadura",
+        "Falla del ACM"
+      ],
+      "symptoms": [
+        "Luz de advertencia de bolsa de aire encendida",
+        "Falla de bolsa de aire de cortina",
+        "SRS issue",
+        "Preocupación de seguridad"
+      ]
+    },
+    {
+      "id": "B0100",
+      "description": "Circuito Cruzado del Sensor de Impacto Frontal",
+      "severity": "critical",
+      "possibleCauses": [
+        "Sensor de impacto frontal defectuoso",
+        "Daño de cableado",
+        "ACM issue",
+        "Corrosión del conector"
+      ],
+      "symptoms": [
+        "Luz de advertencia de bolsa de aire encendida",
+        "Falla del sistema SRS",
+        "Las bolsas de aire pueden no desplegarse",
+        "Preocupación de seguridad"
+      ]
+    },
+    {
+      "id": "B0101",
+      "description": "Datos del Sensor de Impacto",
+      "severity": "critical",
+      "possibleCauses": [
+        "Sensor de impacto defectuoso",
+        "Interferencia de señal",
+        "Problema de cableado",
+        "Falla del ACM"
+      ],
+      "symptoms": [
+        "Luz de advertencia de bolsa de aire encendida",
+        "SRS fault",
+        "Problema de detección de impacto",
+        "Preocupación de seguridad"
+      ]
+    },
+    {
+      "id": "B0106",
+      "description": "Circuito del Sensor de Peso del Asiento",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor de peso del asiento defectuoso",
+        "Problema de cableado",
+        "Problema de posición del asiento",
+        "Daño del conector"
+      ],
+      "symptoms": [
+        "Luz de advertencia de bolsa de aire encendida",
+        "Bolsa de aire del pasajero apagada incorrectamente",
+        "SRS fault",
+        "Preocupación de seguridad"
+      ]
+    },
+    {
+      "id": "B1000",
+      "description": "Falla de la ECU",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla interna de la ECU",
+        "Pico de voltaje",
+        "Corrupción de software",
+        "Intrusión de agua"
+      ],
+      "symptoms": [
+        "Múltiples luces de advertencia",
+        "Sistema inoperativo",
+        "Comportamiento errático",
+        "Sin comunicación"
+      ]
+    },
+    {
+      "id": "B1001",
+      "description": "Error de Configuración de Opciones",
+      "severity": "warning",
+      "possibleCauses": [
+        "Programación incorrecta",
+        "Módulo reemplazado sin codificación",
+        "Incompatibilidad de software",
+        "VIN error"
+      ],
+      "symptoms": [
+        "Luz de advertencia encendida",
+        "Función no funciona",
+        "Falla del sistema",
+        "Configuración necesaria"
+      ]
+    },
+    {
+      "id": "B1050",
+      "description": "Faro Apagado - Luz Baja Izquierda",
+      "severity": "warning",
+      "possibleCauses": [
+        "Foco fundido",
+        "Problema de cableado",
+        "Problema del conector",
+        "Fuse blown"
+      ],
+      "symptoms": [
+        "Advertencia de faro",
+        "Luz baja izquierda no funciona",
+        "Visibilidad reducida",
+        "Preocupación de seguridad"
+      ]
+    },
+    {
+      "id": "B1051",
+      "description": "Faro Apagado - Luz Baja Derecha",
+      "severity": "warning",
+      "possibleCauses": [
+        "Foco fundido",
+        "Problema de cableado",
+        "Problema del conector",
+        "Fuse blown"
+      ],
+      "symptoms": [
+        "Advertencia de faro",
+        "Luz baja derecha no funciona",
+        "Visibilidad reducida",
+        "Preocupación de seguridad"
+      ]
+    },
+    {
+      "id": "B1100",
+      "description": "Circuito de la Cerradura de la Puerta",
+      "severity": "info",
+      "possibleCauses": [
+        "Actuador de cerradura de puerta defectuoso",
+        "Problema de cableado",
+        "Problema del interruptor de cerradura de puerta",
+        "Falla del BCM"
+      ],
+      "symptoms": [
+        "Advertencia de cerradura de puerta",
+        "La puerta no se bloquea/desbloquea",
+        "Control remoto no funciona",
+        "Preocupación de seguridad"
+      ]
+    },
+    {
+      "id": "B1201",
+      "description": "Circuito del Sensor de Nivel de Combustible",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor de nivel de combustible defectuoso",
+        "Circuito de cableado abierto",
+        "Mala conexión",
+        "Problema del tablero de instrumentos"
+      ],
+      "symptoms": [
+        "Indicador de combustible impreciso",
+        "Error de advertencia de combustible bajo",
+        "Indicador de combustible atorado",
+        "Agotamiento de combustible"
+      ]
+    },
+    {
+      "id": "B1318",
+      "description": "Voltaje de Batería Bajo",
+      "severity": "warning",
+      "possibleCauses": [
+        "Batería débil",
+        "Falla del sistema de carga",
+        "Consumo parásito",
+        "Conexiones deficientes"
+      ],
+      "symptoms": [
+        "Luz de advertencia encendida",
+        "Slow crank",
+        "Problemas eléctricos",
+        "Reinicios del sistema"
+      ]
+    },
+    {
+      "id": "B1325",
+      "description": "Falla del Circuito de Llave en el Encendido",
+      "severity": "info",
+      "possibleCauses": [
+        "Interruptor de llave insertada defectuoso",
+        "Problema de cableado",
+        "Problema de la cerradura de encendido",
+        "Falla del BCM"
+      ],
+      "symptoms": [
+        "Timbre siempre encendido",
+        "Falla de advertencia de llave",
+        "Timbre nunca suena",
+        "Problema de encendido"
+      ]
+    },
+    {
+      "id": "B1342",
+      "description": "La ECU Está Defectuosa",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla interna de la ECU",
+        "Problema de fuente de alimentación",
+        "Corrupción de software",
+        "Daño por voltaje"
+      ],
+      "symptoms": [
+        "Módulo no responde",
+        "Sistema inoperativo",
+        "Múltiples fallas",
+        "Sin comunicación"
+      ]
+    },
+    {
+      "id": "B1367",
+      "description": "Circuito de Accesorio de Encendido en Corto a Tierra",
+      "severity": "warning",
+      "possibleCauses": [
+        "Corto a tierra en el circuito",
+        "Interruptor de encendido defectuoso",
+        "Daño de cableado",
+        "Problema del conector"
+      ],
+      "symptoms": [
+        "Accesorios no funcionan",
+        "Falla eléctrica",
+        "Blown fuse",
+        "Problema de encendido"
+      ]
+    },
+    {
+      "id": "B1380",
+      "description": "Circuito de Arranque/Marcha del Encendido en Corto a Batería",
+      "severity": "warning",
+      "possibleCauses": [
+        "Corto a voltaje positivo",
+        "Interruptor de encendido defectuoso",
+        "Problema de cableado",
+        "Problema del circuito de arranque"
+      ],
+      "symptoms": [
+        "Problemas de arranque",
+        "Accesorios siempre encendidos",
+        "Falla eléctrica",
+        "Drenaje de batería"
+      ]
+    },
+    {
+      "id": "B1600",
+      "description": "PATS Recibió Código de Llave Inválido",
+      "severity": "critical",
+      "possibleCauses": [
+        "Llave incorrecta utilizada",
+        "Llave no programada",
+        "Falla del transpondedor PATS",
+        "Problema del módulo PATS"
+      ],
+      "symptoms": [
+        "Condición de no arranque",
+        "Luz de seguridad encendida",
+        "Llave no reconocida",
+        "Luz antirrobo parpadeando"
+      ]
+    },
+    {
+      "id": "B1601",
+      "description": "PATS Recibió Código de Llave Incorrecto",
+      "severity": "critical",
+      "possibleCauses": [
+        "Llave incorrecta",
+        "Error de programación de llave",
+        "Transpondedor dañado",
+        "Falla del PATS"
+      ],
+      "symptoms": [
+        "Condición de no arranque",
+        "Luz de seguridad encendida",
+        "Antirrobo activo",
+        "Llave rechazada"
+      ]
+    },
+    {
+      "id": "B1602",
+      "description": "PATS Recibió Formato Inválido de Código de Llave",
+      "severity": "critical",
+      "possibleCauses": [
+        "Datos de llave corruptos",
+        "Falla del módulo PATS",
+        "Error de comunicación",
+        "Key damage"
+      ],
+      "symptoms": [
+        "Condición de no arranque",
+        "Advertencia de seguridad",
+        "Arranque intermitente",
+        "Key fault"
+      ]
+    },
+    {
+      "id": "B2799",
+      "description": "Falla del Sistema de Inmovilizador del Motor",
+      "severity": "critical",
+      "possibleCauses": [
+        "Llave no registrada",
+        "Falla de la ECU del inmovilizador",
+        "Falla del transpondedor",
+        "Problema de cableado"
+      ],
+      "symptoms": [
+        "Condición de no arranque",
+        "Luz de seguridad encendida",
+        "El motor gira pero no arranca",
+        "Disuasión de robo activa"
+      ]
+    },
+    {
+      "id": "C0035",
+      "description": "Circuito del Sensor de Velocidad de Rueda Delantera Izquierda",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor de velocidad de rueda defectuoso",
+        "Daño de cableado",
+        "Espacio del sensor demasiado grande",
+        "Anillo dentado dañado"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Control de tracción apagado",
+        "Control de estabilidad apagado",
+        "ABS no funciona"
+      ]
+    },
+    {
+      "id": "C0040",
+      "description": "Circuito del Sensor de Velocidad de Rueda Delantera Derecha",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor de velocidad de rueda defectuoso",
+        "Problema de cableado",
+        "Problema de espacio del sensor",
+        "Daño del anillo dentado"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Control de tracción apagado",
+        "Control de estabilidad apagado",
+        "ABS inoperativo"
+      ]
+    },
+    {
+      "id": "C0045",
+      "description": "Circuito del Sensor de Velocidad de Rueda Trasera Izquierda",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor de velocidad de rueda defectuoso",
+        "Daño de cableado",
+        "Problema de montaje del sensor",
+        "Problema del anillo dentado"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Falla de control de tracción",
+        "Control de estabilidad apagado",
+        "ABS no funciona"
+      ]
+    },
+    {
+      "id": "C0050",
+      "description": "Circuito del Sensor de Velocidad de Rueda Trasera Derecha",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor de velocidad de rueda defectuoso",
+        "Problema de cableado",
+        "Espacio del sensor demasiado grande",
+        "Anillo dentado dañado"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Control de tracción apagado",
+        "Falla de control de estabilidad",
+        "ABS inoperativo"
+      ]
+    },
+    {
+      "id": "C0060",
+      "description": "Circuito del Solenoide 1 del ABS Delantero Izquierdo",
+      "severity": "critical",
+      "possibleCauses": [
+        "Solenoide ABS defectuoso",
+        "Problema de cableado",
+        "Falla del módulo ABS",
+        "Problema de la unidad hidráulica"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "ABS no funciona",
+        "Pulsación del pedal de freno",
+        "Falla de control de tracción"
+      ]
+    },
+    {
+      "id": "C0065",
+      "description": "Circuito del Solenoide 1 del ABS Delantero Derecho",
+      "severity": "critical",
+      "possibleCauses": [
+        "Solenoide ABS defectuoso",
+        "Problema de cableado",
+        "Falla del módulo ABS",
+        "Problema de la unidad hidráulica"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "ABS inoperativo",
+        "Problema de frenos",
+        "Control de tracción apagado"
+      ]
+    },
+    {
+      "id": "C0131",
+      "description": "Circuito del Interruptor de Freno del ABS/TCS",
+      "severity": "warning",
+      "possibleCauses": [
+        "Interruptor de luz de freno defectuoso",
+        "Problema de cableado",
+        "Ajuste deficiente",
+        "Problema del conector"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Control crucero inoperativo",
+        "Luces de freno no funcionan",
+        "Falla de control de tracción"
+      ]
+    },
+    {
+      "id": "C0161",
+      "description": "Circuito de Presión del Sistema de Frenos del ABS/TCS",
+      "severity": "critical",
+      "possibleCauses": [
+        "Sensor de presión de freno defectuoso",
+        "Líquido de frenos bajo",
+        "Falla de la bomba ABS",
+        "Problema del cilindro maestro"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Luz de advertencia de freno",
+        "Frenado deficiente",
+        "Pedal de freno esponjoso"
+      ]
+    },
+    {
+      "id": "C0196",
+      "description": "Desviación del Sensor de Velocidad de Guiñada",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor de velocidad de guiñada defectuoso",
+        "Sensor fuera de calibración",
+        "Vehículo no nivelado durante calibración",
+        "Problema de cableado"
+      ],
+      "symptoms": [
+        "Luz de control de estabilidad encendida",
+        "Control de tracción apagado",
+        "Falla de dinámica del vehículo",
+        "ESC inoperativo"
+      ]
+    },
+    {
+      "id": "C0226",
+      "description": "Rendimiento del Sensor de Posición del Volante",
+      "severity": "warning",
+      "possibleCauses": [
+        "Falla del sensor de ángulo de dirección",
+        "Sensor no calibrado",
+        "Problema del resorte de reloj",
+        "Problema de cableado"
+      ],
+      "symptoms": [
+        "Luz de control de estabilidad encendida",
+        "Advertencia de dirección",
+        "Falla de dirección asistida",
+        "Problemas de asistencia"
+      ]
+    },
+    {
+      "id": "C0242",
+      "description": "Circuito de Tierra del Motor de Dirección Asistida",
+      "severity": "warning",
+      "possibleCauses": [
+        "Conexión a tierra deficiente",
+        "Problema de cableado",
+        "Falla del motor EPS",
+        "Corrosión del conector"
+      ],
+      "symptoms": [
+        "Advertencia de dirección asistida",
+        "Dirección pesada",
+        "Asistencia intermitente",
+        "Ruido de dirección"
+      ]
+    },
+    {
+      "id": "C0265",
+      "description": "Circuito del Relevador del Motor del EBCM",
+      "severity": "critical",
+      "possibleCauses": [
+        "Relevador defectuoso",
+        "Problema de cableado",
+        "Falla del EBCM",
+        "Problema de fuente de alimentación"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Control de tracción apagado",
+        "Falla de control de estabilidad",
+        "Bomba ABS no funciona"
+      ]
+    },
+    {
+      "id": "C0287",
+      "description": "Falla de la Señal de Par Entregado",
+      "severity": "warning",
+      "possibleCauses": [
+        "Error de comunicación con el PCM",
+        "Problema de cableado",
+        "PCM fault",
+        "Problema del EBCM"
+      ],
+      "symptoms": [
+        "Luz de control de tracción encendida",
+        "Falla de control de estabilidad",
+        "Función limitada de control de tracción",
+        "Mensaje de advertencia"
+      ]
+    },
+    {
+      "id": "C0300",
+      "description": "Falla del Sensor de Velocidad Trasero",
+      "severity": "warning",
+      "possibleCauses": [
+        "Sensor de velocidad trasero defectuoso",
+        "Daño de cableado",
+        "Problema de espacio del sensor",
+        "Problema del anillo dentado"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Falla del velocímetro",
+        "Control de tracción apagado",
+        "Problema del control crucero"
+      ]
+    },
+    {
+      "id": "C0455",
+      "description": "Circuito de Control del Eje Delantero",
+      "severity": "warning",
+      "possibleCauses": [
+        "Actuador del eje delantero defectuoso",
+        "Problema de cableado",
+        "Problema de la caja de transferencia",
+        "Falla del módulo 4WD"
+      ],
+      "symptoms": [
+        "Luz de advertencia 4WD encendida",
+        "4WD no se activa",
+        "Mensaje de servicio 4WD",
+        "Ruido de la caja de transferencia"
+      ]
+    },
+    {
+      "id": "C0460",
+      "description": "Sistema de Control de Cambio de la Caja de Transferencia",
+      "severity": "warning",
+      "possibleCauses": [
+        "Motor de cambio defectuoso",
+        "Anillo codificador de la caja de transferencia",
+        "Problema de cableado",
+        "Problema del interruptor 4WD"
+      ],
+      "symptoms": [
+        "Luz de advertencia 4WD encendida",
+        "No puede cambiar 4WD",
+        "Mensaje de servicio 4WD",
+        "4WD atorado en velocidad"
+      ]
+    },
+    {
+      "id": "C0561",
+      "description": "Información de Sistema Deshabilitado Almacenada",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla previa del sistema",
+        "Problema del módulo ABS",
+        "Múltiples fallas de sensores",
+        "Se necesita reinicio del sistema"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Control de tracción desactivado",
+        "Control de estabilidad apagado",
+        "Falla del sistema de seguridad"
+      ]
+    },
+    {
+      "id": "C1130",
+      "description": "Circuito de Señal del Motor 1",
+      "severity": "warning",
+      "possibleCauses": [
+        "Error de comunicación con el PCM",
+        "Problema del bus CAN",
+        "Problema de cableado",
+        "PCM fault"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Falla de control de tracción",
+        "Señal del motor faltante",
+        "Función reducida del sistema"
+      ]
+    },
+    {
+      "id": "C1201",
+      "description": "Falla del Sistema de Control del Motor",
+      "severity": "critical",
+      "possibleCauses": [
+        "Código de motor presente",
+        "Falla de comunicación del PCM",
+        "Error del bus CAN",
+        "Problema de múltiples sistemas"
+      ],
+      "symptoms": [
+        "Luces de advertencia ABS/VSC",
+        "Luz de Check Engine encendida",
+        "Control de tracción apagado",
+        "Múltiples advertencias"
+      ]
+    },
+    {
+      "id": "C1233",
+      "description": "Circuito de Velocidad de Rueda Delantera Izquierda Abierto o en Corto",
+      "severity": "warning",
+      "possibleCauses": [
+        "Circuito del sensor abierto o en corto",
+        "Sensor de velocidad de rueda defectuoso",
+        "Daño de cableado",
+        "Problema del conector"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Falla de control de tracción",
+        "Control de estabilidad apagado",
+        "ABS inoperativo"
+      ]
+    },
+    {
+      "id": "C1234",
+      "description": "Circuito de Velocidad de Rueda Delantera Derecha Abierto o en Corto",
+      "severity": "warning",
+      "possibleCauses": [
+        "Circuito del sensor abierto o en corto",
+        "Sensor de velocidad de rueda defectuoso",
+        "Problema de cableado",
+        "Problema del conector"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Falla de control de tracción",
+        "Control de estabilidad apagado",
+        "ABS no funciona"
+      ]
+    },
+    {
+      "id": "C1241",
+      "description": "Voltaje de Alimentación de Batería Bajo o Alto",
+      "severity": "warning",
+      "possibleCauses": [
+        "Voltaje de batería bajo",
+        "Falla del sistema de carga",
+        "Alta resistencia en el circuito",
+        "Problema de alimentación del módulo"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Múltiples luces de advertencia",
+        "Problemas eléctricos",
+        "Reinicios del sistema"
+      ]
+    },
+    {
+      "id": "U0001",
+      "description": "Bus de Comunicación CAN de Alta Velocidad",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla de cableado del bus CAN",
+        "Problema del resistor de terminación",
+        "Falla del módulo",
+        "Daño por agua"
+      ],
+      "symptoms": [
+        "Múltiples luces de advertencia",
+        "Sin comunicación con módulos",
+        "Sistemas inoperativos",
+        "Falla de almacenamiento de DTC"
+      ]
+    },
+    {
+      "id": "U0073",
+      "description": "Bus de Comunicación del Módulo de Control Apagado",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla del bus CAN",
+        "Corto o circuito abierto en cableado",
+        "Falla del módulo",
+        "Problema de fuente de alimentación"
+      ],
+      "symptoms": [
+        "Múltiples luces de advertencia",
+        "Sistemas no funcionan",
+        "Sin comunicación con escáner",
+        "Modo de emergencia"
+      ]
+    },
+    {
+      "id": "U0100",
+      "description": "Pérdida de Comunicación con ECM/PCM A",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla del bus CAN",
+        "Falla del PCM",
+        "Problema de cableado",
+        "Problema de alimentación o tierra"
+      ],
+      "symptoms": [
+        "Múltiples luces de advertencia",
+        "Condición de no arranque",
+        "Modo de emergencia",
+        "Sistemas inoperativos"
+      ]
+    },
+    {
+      "id": "U0101",
+      "description": "Pérdida de Comunicación con TCM",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla del bus CAN",
+        "Falla del TCM",
+        "Problema de cableado",
+        "Problema de suministro de energía"
+      ],
+      "symptoms": [
+        "Luz de Check Engine encendida",
+        "Transmisión en modo de emergencia",
+        "Sin cambios",
+        "Enganche brusco"
+      ]
+    },
+    {
+      "id": "U0107",
+      "description": "Pérdida de Comunicación con Throttle Actuator Control Module",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla del cuerpo del acelerador",
+        "Problema del bus CAN",
+        "Problema de cableado",
+        "Falla de suministro de energía"
+      ],
+      "symptoms": [
+        "Potencia reducida",
+        "Modo de emergencia",
+        "Sin respuesta del acelerador",
+        "Múltiples luces de advertencia"
+      ]
+    },
+    {
+      "id": "U0109",
+      "description": "Pérdida de Comunicación con Fuel Pump Control Module",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla del módulo de la bomba de combustible",
+        "Falla del bus CAN",
+        "Problema de cableado",
+        "Sin alimentación al módulo"
+      ],
+      "symptoms": [
+        "Condición de no arranque",
+        "Motor se apaga",
+        "Falla de suministro de combustible",
+        "Bomba de combustible no opera"
+      ]
+    },
+    {
+      "id": "U0121",
+      "description": "Pérdida de Comunicación con Anti-Lock Brake System (ABS) Control Module",
+      "severity": "warning",
+      "possibleCauses": [
+        "Falla del módulo ABS",
+        "Falla del bus CAN",
+        "Problema de cableado",
+        "Problema de fuente de alimentación"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Control de tracción apagado",
+        "Falla de control de estabilidad",
+        "Advertencia de freno"
+      ]
+    },
+    {
+      "id": "U0122",
+      "description": "Pérdida de Comunicación con Vehicle Dynamics Control Module",
+      "severity": "warning",
+      "possibleCauses": [
+        "Falla del módulo VDC",
+        "Falla del bus CAN",
+        "Problema de cableado",
+        "Problema de alimentación"
+      ],
+      "symptoms": [
+        "Luz de control de estabilidad encendida",
+        "Control de tracción apagado",
+        "VDC inoperativo",
+        "Advertencia del ABS"
+      ]
+    },
+    {
+      "id": "U0126",
+      "description": "Pérdida de Comunicación con Steering Angle Sensor Module",
+      "severity": "warning",
+      "possibleCauses": [
+        "Falla del sensor de ángulo de dirección",
+        "Falla del bus CAN",
+        "Problema de cableado",
+        "Problema del resorte de reloj"
+      ],
+      "symptoms": [
+        "Falla de control de estabilidad",
+        "Advertencia de dirección asistida",
+        "Ángulo de dirección no aprendido",
+        "ESC off"
+      ]
+    },
+    {
+      "id": "U0140",
+      "description": "Pérdida de Comunicación con Body Control Module",
+      "severity": "warning",
+      "possibleCauses": [
+        "Falla del BCM",
+        "Falla del bus CAN",
+        "Problema de cableado",
+        "Problema de fuente de alimentación"
+      ],
+      "symptoms": [
+        "Múltiples fallas eléctricas",
+        "Problemas de iluminación",
+        "Problemas de cerradura de puerta",
+        "Luces de advertencia encendidas"
+      ]
+    },
+    {
+      "id": "U0141",
+      "description": "Pérdida de Comunicación con Body Control Module A",
+      "severity": "warning",
+      "possibleCauses": [
+        "Falla del BCM A",
+        "Falla del bus CAN",
+        "Problema de cableado",
+        "Problema de alimentación del módulo"
+      ],
+      "symptoms": [
+        "Fallas del sistema eléctrico",
+        "Luces de advertencia encendidas",
+        "Funciones inoperativas",
+        "Sin respuesta del BCM"
+      ]
+    },
+    {
+      "id": "U0155",
+      "description": "Pérdida de Comunicación con Instrument Panel Cluster (IPC) Control Module",
+      "severity": "warning",
+      "possibleCauses": [
+        "Falla del tablero de instrumentos",
+        "Falla del bus CAN",
+        "Problema de cableado",
+        "Problema de alimentación"
+      ],
+      "symptoms": [
+        "Indicadores no funcionan",
+        "Falla de luces de advertencia",
+        "No display",
+        "Problema del odómetro"
+      ]
+    },
+    {
+      "id": "U0164",
+      "description": "Pérdida de Comunicación con HVAC Control Module",
+      "severity": "info",
+      "possibleCauses": [
+        "Falla del módulo HVAC",
+        "Falla del bus CAN",
+        "Problema de cableado",
+        "Problema del conector"
+      ],
+      "symptoms": [
+        "HVAC no funciona",
+        "Falla del control de clima",
+        "No A/C",
+        "Problemas del ventilador"
+      ]
+    },
+    {
+      "id": "U0167",
+      "description": "Pérdida de Comunicación con Vehicle Immobilizer Control Module",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla del módulo del inmovilizador",
+        "Falla del bus CAN",
+        "Problema de cableado",
+        "Problema del sistema de seguridad"
+      ],
+      "symptoms": [
+        "Condición de no arranque",
+        "Luz de seguridad encendida",
+        "Llave no reconocida",
+        "Antirrobo activo"
+      ]
+    },
+    {
+      "id": "U0184",
+      "description": "Pérdida de Comunicación con Radio",
+      "severity": "info",
+      "possibleCauses": [
+        "Falla de la radio",
+        "Falla del bus CAN",
+        "Problema de cableado",
+        "Fuse blown"
+      ],
+      "symptoms": [
+        "Radio sin función",
+        "Pantalla en blanco",
+        "No audio",
+        "Controles del volante inoperativos"
+      ]
+    },
+    {
+      "id": "U0214",
+      "description": "Pérdida de Comunicación con Remote Function Actuation Module",
+      "severity": "info",
+      "possibleCauses": [
+        "Falla del módulo de arranque remoto",
+        "Falla del bus CAN",
+        "Problema de cableado",
+        "Problema de la antena"
+      ],
+      "symptoms": [
+        "Arranque remoto no funciona",
+        "Problemas del llavero",
+        "Funciones remotas inoperativas",
+        "Luz de advertencia"
+      ]
+    },
+    {
+      "id": "U0231",
+      "description": "Pérdida de Comunicación con Rain Sensing Module",
+      "severity": "info",
+      "possibleCauses": [
+        "Falla del sensor de lluvia",
+        "Falla del bus CAN",
+        "Problema de cableado",
+        "Se necesita reemplazo de parabrisas"
+      ],
+      "symptoms": [
+        "Limpiaparabrisas automáticos no funcionan",
+        "Falla del sensor de lluvia",
+        "Solo limpiaparabrisas manuales",
+        "Mensaje de advertencia"
+      ]
+    },
+    {
+      "id": "U0300",
+      "description": "Incompatibilidad de Software del Módulo de Control Interno",
+      "severity": "warning",
+      "possibleCauses": [
+        "Incompatibilidad de software del módulo",
+        "Programación incompleta",
+        "Módulo incorrecto instalado",
+        "Se necesita actualización"
+      ],
+      "symptoms": [
+        "Luces de advertencia encendidas",
+        "Función reducida del sistema",
+        "Funciones inoperativas",
+        "Problemas de comunicación"
+      ]
+    },
+    {
+      "id": "U0401",
+      "description": "Datos Inválidos Recibidos del ECM/PCM",
+      "severity": "warning",
+      "possibleCauses": [
+        "Interferencia del bus CAN",
+        "PCM issue",
+        "Problema de cableado",
+        "Incompatibilidad del módulo"
+      ],
+      "symptoms": [
+        "Luces de advertencia encendidas",
+        "Fallas del sistema",
+        "Comportamiento errático",
+        "Rendimiento reducido"
+      ]
+    },
+    {
+      "id": "U0402",
+      "description": "Datos Inválidos Recibidos del Módulo de Control de la Transmisión",
+      "severity": "warning",
+      "possibleCauses": [
+        "TCM issue",
+        "Falla del bus CAN",
+        "Incompatibilidad de software",
+        "Problema de cableado"
+      ],
+      "symptoms": [
+        "Advertencia de la transmisión",
+        "Problemas de cambio",
+        "Luz de Check Engine",
+        "Modo de emergencia"
+      ]
+    },
+    {
+      "id": "U0415",
+      "description": "Datos Inválidos Recibidos del Módulo de Control del Sistema de Frenos Antibloqueo",
+      "severity": "warning",
+      "possibleCauses": [
+        "Problema del módulo ABS",
+        "Falla del bus CAN",
+        "Corrupción de datos",
+        "Falla del módulo"
+      ],
+      "symptoms": [
+        "Luz de advertencia del ABS",
+        "Falla de control de tracción",
+        "Advertencia del sistema de frenos",
+        "Control de estabilidad apagado"
+      ]
+    },
+    {
+      "id": "U0426",
+      "description": "Datos Inválidos Recibidos del Módulo del Sensor de Ángulo de Dirección",
+      "severity": "warning",
+      "possibleCauses": [
+        "Falla del sensor de ángulo de dirección",
+        "Problema del bus CAN",
+        "Error de calibración",
+        "Problema de cableado"
+      ],
+      "symptoms": [
+        "Falla de control de estabilidad",
+        "Advertencia de dirección asistida",
+        "ESC inoperativo",
+        "Advertencia de dirección"
+      ]
+    },
+    {
+      "id": "U1000",
+      "description": "Falla de Comunicación Clase 2",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla del bus CAN",
+        "Falla del módulo",
+        "Problema de cableado",
+        "Problema del resistor de terminación"
+      ],
+      "symptoms": [
+        "Múltiples luces de advertencia",
+        "Sistemas sin comunicación",
+        "Problemas con herramienta de diagnóstico",
+        "Sin respuesta del módulo"
+      ]
+    },
+    {
+      "id": "U1016",
+      "description": "Falla del Enlace de Comunicación Serial",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla de cableado del bus CAN",
+        "Falla del módulo",
+        "Error de comunicación",
+        "Problema de alimentación"
+      ],
+      "symptoms": [
+        "Múltiples luces de advertencia",
+        "Sin comunicación",
+        "Sistemas inoperativos",
+        "Problema de diagnóstico"
+      ]
+    },
+    {
+      "id": "U1041",
+      "description": "Pérdida de Comunicación del Controlador de Frenos Electrónico",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla del EBCM",
+        "Falla del bus CAN",
+        "Problema de cableado",
+        "Problema de suministro de energía"
+      ],
+      "symptoms": [
+        "Luz de advertencia de ABS encendida",
+        "Control de tracción apagado",
+        "Advertencia de freno",
+        "Falla de control de estabilidad"
+      ]
+    },
+    {
+      "id": "U1073",
+      "description": "Error en el Conteo de Mensajes del Circuito de Datos",
+      "severity": "warning",
+      "possibleCauses": [
+        "Interferencia del bus CAN",
+        "Tiempo de espera del módulo agotado",
+        "Problema de cableado",
+        "Problema de software"
+      ],
+      "symptoms": [
+        "Advertencias intermitentes",
+        "Fallas del sistema",
+        "Errores de comunicación",
+        "Tiempo de espera del módulo agotado"
+      ]
+    },
+    {
+      "id": "U1255",
+      "description": "Falla de Comunicaciones Seriales",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla del bus CAN",
+        "Problema del módulo de enlace",
+        "Problema de cableado",
+        "Falla de múltiples módulos"
+      ],
+      "symptoms": [
+        "Múltiples luces de advertencia",
+        "Sistemas inoperativos",
+        "Sin comunicación con herramienta de diagnóstico",
+        "Vehículo deshabilitado"
+      ]
+    },
+    {
+      "id": "U1262",
+      "description": "Falla de Comunicación SCP",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla de la red SCP",
+        "Falla del módulo",
+        "Daño de cableado",
+        "Problema del conector"
+      ],
+      "symptoms": [
+        "Luces de advertencia encendidas",
+        "Pérdida de comunicación",
+        "Fallas del sistema",
+        "Función reducida"
+      ]
+    },
+    {
+      "id": "U1900",
+      "description": "Falla del Bus de Comunicación CAN",
+      "severity": "critical",
+      "possibleCauses": [
+        "Falla de cableado del bus CAN",
+        "Cortocircuito",
+        "Circuito abierto",
+        "Sobrecarga del módulo"
+      ],
+      "symptoms": [
+        "Múltiples luces de advertencia",
+        "Sin comunicación del módulo",
+        "Sistemas inoperativos",
+        "El vehículo puede no arrancar"
+      ]
+    }
+  ]
+}

@@ -137,9 +137,21 @@ class OBDConnection: ObservableObject {
     private var isDTCOperation = false
 
     init() {
-        // Restore saved connection type
-        let saved = UserDefaults.standard.string(forKey: "connectionType") ?? ConnectionType.wifi.rawValue
-        connectionType = ConnectionType(rawValue: saved) ?? .wifi
+        // Migrate legacy raw values ("WiFi"→"wifi", "BLE"→"ble")
+        if let saved = UserDefaults.standard.string(forKey: "connectionType") {
+            let migrated: String
+            switch saved {
+            case "WiFi": migrated = ConnectionType.wifi.rawValue
+            case "BLE": migrated = ConnectionType.ble.rawValue
+            default: migrated = saved
+            }
+            if migrated != saved {
+                UserDefaults.standard.set(migrated, forKey: "connectionType")
+            }
+            connectionType = ConnectionType(rawValue: migrated) ?? .wifi
+        } else {
+            connectionType = .wifi
+        }
 
         // Initialize all parameters with N/A values
         parameters = OBDParameterType.allCases.map { type in
@@ -255,7 +267,7 @@ class OBDConnection: ObservableObject {
         DispatchQueue.global().asyncAfter(deadline: .now() + delay + 10.0) { [weak self] in
             guard let self = self, self.isDTCOperation else { return }
             self.isDTCOperation = false
-            self.dtcManager?.handleError("No response from vehicle. Check connection.")
+            self.dtcManager?.handleError(String(localized: "No response from vehicle. Check connection."))
             self.resumePolling()
         }
     }
@@ -280,7 +292,7 @@ class OBDConnection: ObservableObject {
         DispatchQueue.global().asyncAfter(deadline: .now() + delay + 10.0) { [weak self] in
             guard let self = self, self.isDTCOperation else { return }
             self.isDTCOperation = false
-            self.dtcManager?.handleError("Clear command timed out. Try again.")
+            self.dtcManager?.handleError(String(localized: "Clear command timed out. Try again."))
             self.resumePolling()
         }
     }
@@ -465,7 +477,7 @@ class OBDConnection: ObservableObject {
             let cleanHex = response.replacingOccurrences(of: " ", with: "")
             if isDTCOperation && (cleanHex.hasPrefix("7F03") || cleanHex.hasPrefix("7F04")) {
                 isDTCOperation = false
-                dtcManager?.handleError("Vehicle rejected the request. Try again.")
+                dtcManager?.handleError(String(localized: "Vehicle rejected the request. Try again."))
                 resumePolling()
                 return
             }

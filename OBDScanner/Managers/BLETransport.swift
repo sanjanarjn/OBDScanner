@@ -39,14 +39,16 @@ class BLETransport: NSObject, ObservableObject, OBDTransport {
 
     func connect() {
         guard let peripheral = targetPeripheral else {
-            state = .failed("No BLE device selected")
-            delegate?.transport(self, didChangeState: .failed("No BLE device selected"))
+            let msg = String(localized: "No BLE device selected")
+            state = .failed(msg)
+            delegate?.transport(self, didChangeState: .failed(msg))
             return
         }
 
         guard centralManager?.state == .poweredOn else {
-            state = .failed("Bluetooth not available")
-            delegate?.transport(self, didChangeState: .failed("Bluetooth not available"))
+            let msg = String(localized: "Bluetooth not available")
+            state = .failed(msg)
+            delegate?.transport(self, didChangeState: .failed(msg))
             return
         }
 
@@ -180,8 +182,9 @@ extension BLETransport: CBCentralManagerDelegate {
 extension BLETransport: CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         guard let service = peripheral.services?.first(where: { $0.uuid == serviceUUID }) else {
-            state = .failed("OBD service not found")
-            delegate?.transport(self, didChangeState: .failed("OBD service not found"))
+            let msg = String(localized: "OBD service not found")
+            state = .failed(msg)
+            delegate?.transport(self, didChangeState: .failed(msg))
             centralManager?.cancelPeripheralConnection(peripheral)
             return
         }
@@ -190,8 +193,9 @@ extension BLETransport: CBPeripheralDelegate {
 
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         guard let characteristics = service.characteristics else {
-            state = .failed("Characteristics not found")
-            delegate?.transport(self, didChangeState: .failed("Characteristics not found"))
+            let msg = String(localized: "Characteristics not found")
+            state = .failed(msg)
+            delegate?.transport(self, didChangeState: .failed(msg))
             return
         }
 

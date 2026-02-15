@@ -62,7 +62,7 @@ struct DiagnosticsView: View {
 
                                     Spacer()
 
-                                    Text("\(dtcManager.activeDTCs.count) code\(dtcManager.activeDTCs.count == 1 ? "" : "s")")
+                                    Text("\(dtcManager.activeDTCs.count) codes", comment: "Pluralized code count label")
                                         .font(.subheadline)
                                         .foregroundColor(Color(white: 0.5))
                                 }
@@ -274,7 +274,7 @@ struct DTCRowView: View {
 
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 8) {
-                    Text(dtc.code.id)
+                    Text(verbatim: dtc.code.id)
                         .font(.system(.headline, design: .monospaced))
                         .foregroundColor(accentGreen)
 

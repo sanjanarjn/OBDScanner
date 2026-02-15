@@ -1,0 +1,3183 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld" : {
+
+    },
+    "%lld codes" : {
+      "comment" : "Pluralized code count label",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld code"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld codes"
+                }
+              }
+            }
+          }
+        },
+        "es" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld código"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld códigos"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "• Clean MAF sensor if readings seem erratic\n• Low readings may indicate air leaks\n• Consistent readings indicate good engine health" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Limpia el sensor MAF si las lecturas parecen erráticas\n• Lecturas bajas pueden indicar fugas de aire\n• Lecturas consistentes indican buena salud del motor"
+          }
+        }
+      }
+    },
+    "• Engine computer adjusts automatically\n• Retarded timing may indicate knock detection\n• Use recommended fuel octane rating" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• La computadora del motor ajusta automáticamente\n• Avance retrasado puede indicar detección de cascabeleo\n• Usa el octanaje de combustible recomendado"
+          }
+        }
+      }
+    },
+    "• Gentle acceleration saves fuel\n• Smooth throttle control improves comfort\n• Avoid sudden throttle changes" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Aceleración suave ahorra combustible\n• Control suave del acelerador mejora el confort\n• Evita cambios bruscos del acelerador"
+          }
+        }
+      }
+    },
+    "• High intake temps reduce performance\n• Cold air intake can help in hot weather\n• High temps normal after engine shutdown" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Temperaturas altas de admisión reducen el rendimiento\n• Una toma de aire frío puede ayudar en clima caluroso\n• Temperaturas altas son normales después de apagar el motor"
+          }
+        }
+      }
+    },
+    "• Keep RPM below 3000 for better fuel economy\n• High RPM at idle may indicate a problem\n• Shift gears around 2000-2500 RPM for efficiency" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Mantén las RPM por debajo de 3000 para mejor economía de combustible\n• RPM altas en ralentí pueden indicar un problema\n• Cambia de velocidad alrededor de 2000-2500 RPM para mayor eficiencia"
+          }
+        }
+      }
+    },
+    "• Keep tank above 25% to protect fuel pump\n• Fill up when convenient, don't wait for empty\n• Track fuel consumption to detect issues" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Mantén el tanque arriba del 25% para proteger la bomba de combustible\n• Recarga cuando sea conveniente, no esperes a que se vacíe\n• Monitorea el consumo de combustible para detectar problemas"
+          }
+        }
+      }
+    },
+    "• Let engine warm up before driving hard\n• Check coolant levels if temperature is too high\n• Turn off AC if engine is overheating" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Deja que el motor caliente antes de conducir fuerte\n• Revisa los niveles de refrigerante si la temperatura es muy alta\n• Apaga el A/C si el motor se está sobrecalentando"
+          }
+        }
+      }
+    },
+    "• Lower load = better fuel economy\n• High load during cruising may indicate a problem\n• Remove unnecessary weight from vehicle" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Menor carga = mejor economía de combustible\n• Carga alta durante crucero puede indicar un problema\n• Elimina peso innecesario del vehículo"
+          }
+        }
+      }
+    },
+    "• Maintain steady speed for better fuel economy\n• Use cruise control on highways\n• Avoid rapid acceleration and braking" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Mantén velocidad constante para mejor economía de combustible\n• Usa el control de crucero en carretera\n• Evita aceleración y frenado bruscos"
+          }
+        }
+      }
+    },
+    "About" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acerca de"
+          }
+        }
+      }
+    },
+    "ABS fuse blown" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fusible de ABS quemado"
+          }
+        }
+      }
+    },
+    "ABS light on" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luz de ABS encendida"
+          }
+        }
+      }
+    },
+    "ABS not functional" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABS no funcional"
+          }
+        }
+      }
+    },
+    "ABS, steering, and suspension systems" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sistemas de ABS, dirección y suspensión"
+          }
+        }
+      }
+    },
+    "Active" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activos"
+          }
+        }
+      }
+    },
+    "Active Trouble Codes" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Códigos de Falla Activos"
+          }
+        }
+      }
+    },
+    "Adapter IP" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IP del Adaptador"
+          }
+        }
+      }
+    },
+    "Aging O2 sensor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor O2 desgastado"
+          }
+        }
+      }
+    },
+    "Air Flow Rate" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flujo de Aire"
+          }
+        }
+      }
+    },
+    "Air leak between MAF and throttle body" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuga de aire entre el MAF y el cuerpo de aceleración"
+          }
+        }
+      }
+    },
+    "Airbag may not deploy" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La bolsa de aire podría no desplegarse"
+          }
+        }
+      }
+    },
+    "Airbag system malfunction" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla del sistema de bolsas de aire"
+          }
+        }
+      }
+    },
+    "Airbag warning light on" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luz de advertencia de bolsa de aire encendida"
+          }
+        }
+      }
+    },
+    "BCM power issue" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problema de alimentación del BCM"
+          }
+        }
+      }
+    },
+    "Black smoke" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Humo negro"
+          }
+        }
+      }
+    },
+    "Black smoke from exhaust" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Humo negro del escape"
+          }
+        }
+      }
+    },
+    "BLE" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BLE"
+          }
+        }
+      }
+    },
+    "Blockage in vent line" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obstrucción en línea de ventilación"
+          }
+        }
+      }
+    },
+    "Bluetooth" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bluetooth"
+          }
+        }
+      }
+    },
+    "Bluetooth Devices" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dispositivos Bluetooth"
+          }
+        }
+      }
+    },
+    "Bluetooth not available" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bluetooth no disponible"
+          }
+        }
+      }
+    },
+    "Body" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carrocería"
+          }
+        }
+      }
+    },
+    "Body systems like airbags, A/C, and lighting" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sistemas de carrocería como bolsas de aire, A/C e iluminación"
+          }
+        }
+      }
+    },
+    "Calculated engine load shows what percentage of maximum available torque is being used. Higher values indicate the engine is working harder." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La carga calculada del motor muestra qué porcentaje del torque máximo disponible se está usando. Valores más altos indican que el motor está trabajando más."
+          }
+        }
+      }
+    },
+    "CAN bus and module communication" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comunicación de bus CAN y módulos"
+          }
+        }
+      }
+    },
+    "CAN bus wiring issue" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problema de cableado del bus CAN"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        }
+      }
+    },
+    "Captured: %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capturado: %@"
+          }
+        }
+      }
+    },
+    "Carbon buildup" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acumulación de carbón"
+          }
+        }
+      }
+    },
+    "Catalyst System Efficiency Below Threshold (Bank 1)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eficiencia del Sistema Catalítico por Debajo del Umbral (Banco 1)"
+          }
+        }
+      }
+    },
+    "Catalyst System Efficiency Below Threshold (Bank 2)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eficiencia del Sistema Catalítico por Debajo del Umbral (Banco 2)"
+          }
+        }
+      }
+    },
+    "Characteristics not found" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Características no encontradas"
+          }
+        }
+      }
+    },
+    "Chassis" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chasis"
+          }
+        }
+      }
+    },
+    "Check Engine Light flashing" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luz de Check Engine parpadeando"
+          }
+        }
+      }
+    },
+    "Check Engine Light may be on" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La luz de Check Engine puede estar encendida"
+          }
+        }
+      }
+    },
+    "Check Engine Light on" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luz de Check Engine encendida"
+          }
+        }
+      }
+    },
+    "Clear All" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar Todos"
+          }
+        }
+      }
+    },
+    "Clear All Codes" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar Todos los Códigos"
+          }
+        }
+      }
+    },
+    "Clear command timed out. Try again." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El comando de borrado expiró. Intenta de nuevo."
+          }
+        }
+      }
+    },
+    "Clear Trouble Codes?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Borrar Códigos de Falla?"
+          }
+        }
+      }
+    },
+    "Clearing..." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrando..."
+          }
+        }
+      }
+    },
+    "Clogged EGR passages" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conductos EGR obstruidos"
+          }
+        }
+      }
+    },
+    "Clogged fuel injectors" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inyectores de combustible obstruidos"
+          }
+        }
+      }
+    },
+    "Code Type: %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipo de Código: %@"
+          }
+        }
+      }
+    },
+    "Communication errors between modules" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Errores de comunicación entre módulos"
+          }
+        }
+      }
+    },
+    "Connect from this app only — do not pair in iOS Bluetooth settings." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conecta solo desde esta app — no emparejar en ajustes de Bluetooth de iOS."
+          }
+        }
+      }
+    },
+    "Connect to a Bluetooth Low Energy OBD-II adapter (e.g. Veepeak BLE)." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conectar a un adaptador OBD-II Bluetooth de Baja Energía (ej. Veepeak BLE)."
+          }
+        }
+      }
+    },
+    "Connect to a WiFi OBD-II adapter via TCP." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conectar a un adaptador OBD-II WiFi por TCP."
+          }
+        }
+      }
+    },
+    "Connect to OBD-II" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conectar a OBD-II"
+          }
+        }
+      }
+    },
+    "Connect to your OBD-II adapter and scan to check for trouble codes." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conecta tu adaptador OBD-II y escanea para buscar códigos de falla."
+          }
+        }
+      }
+    },
+    "Connected" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conectado"
+          }
+        }
+      }
+    },
+    "Connection" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conexión"
+          }
+        }
+      }
+    },
+    "Connection Status" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estado de Conexión"
+          }
+        }
+      }
+    },
+    "Connection Type" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipo de Conexión"
+          }
+        }
+      }
+    },
+    "Consult a professional mechanic for diagnosis" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consulte a un mecánico profesional para el diagnóstico"
+          }
+        }
+      }
+    },
+    "Contaminated MAF sensor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor MAF contaminado"
+          }
+        }
+      }
+    },
+    "Coolant" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refrigerante"
+          }
+        }
+      }
+    },
+    "Coolant Temp" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temp. de Refrigerante"
+          }
+        }
+      }
+    },
+    "Cracked EVAP hose" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manguera EVAP agrietada"
+          }
+        }
+      }
+    },
+    "Critical" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crítico"
+          }
+        }
+      }
+    },
+    "Cylinder 1 Misfire Detected" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla de Encendido Detectada en Cilindro 1"
+          }
+        }
+      }
+    },
+    "Cylinder 2 Misfire Detected" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla de Encendido Detectada en Cilindro 2"
+          }
+        }
+      }
+    },
+    "Cylinder 3 Misfire Detected" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla de Encendido Detectada en Cilindro 3"
+          }
+        }
+      }
+    },
+    "Cylinder 4 Misfire Detected" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla de Encendido Detectada en Cilindro 4"
+          }
+        }
+      }
+    },
+    "Cylinder 5 Misfire Detected" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla de Encendido Detectada en Cilindro 5"
+          }
+        }
+      }
+    },
+    "Cylinder 6 Misfire Detected" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla de Encendido Detectada en Cilindro 6"
+          }
+        }
+      }
+    },
+    "Damaged crash sensor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor de impacto dañado"
+          }
+        }
+      }
+    },
+    "Damaged tone ring" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anillo dentado dañado"
+          }
+        }
+      }
+    },
+    "Damaged wiring" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cableado dañado"
+          }
+        }
+      }
+    },
+    "Dashboard" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tablero"
+          }
+        }
+      }
+    },
+    "Demo" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Demo"
+          }
+        }
+      }
+    },
+    "Demo Mode" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo Demo"
+          }
+        }
+      }
+    },
+    "Demo Mode Active" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo Demo Activo"
+          }
+        }
+      }
+    },
+    "Description" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descripción"
+          }
+        }
+      }
+    },
+    "Details" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalles"
+          }
+        }
+      }
+    },
+    "Detected: %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detectado: %@"
+          }
+        }
+      }
+    },
+    "Diagnostics" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diagnósticos"
+          }
+        }
+      }
+    },
+    "Difficulty refueling" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dificultad para recargar combustible"
+          }
+        }
+      }
+    },
+    "Dirty air filter" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtro de aire sucio"
+          }
+        }
+      }
+    },
+    "Dirty MAF sensor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor MAF sucio"
+          }
+        }
+      }
+    },
+    "Dirty throttle body" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuerpo de aceleración sucio"
+          }
+        }
+      }
+    },
+    "Disconnect" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desconectar"
+          }
+        }
+      }
+    },
+    "Disconnected" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desconectado"
+          }
+        }
+      }
+    },
+    "Driver Frontal Stage 1 Deployment Control" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Control de Despliegue Etapa 1 Frontal del Conductor"
+          }
+        }
+      }
+    },
+    "Electronic Frontal Sensor 1 Performance" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rendimiento del Sensor Frontal Electrónico 1"
+          }
+        }
+      }
+    },
+    "Engine Coolant Temperature Circuit Malfunction" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla del Circuito de Temperatura de Refrigerante del Motor"
+          }
+        }
+      }
+    },
+    "Engine coolant temperature shows how hot your engine is running. Normal operating temperature is typically 85-105°C. If it's too high, your engine may be overheating." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La temperatura del refrigerante muestra qué tan caliente está tu motor. La temperatura normal de operación es típicamente 85-105°C. Si es muy alta, tu motor podría estar sobrecalentándose."
+          }
+        }
+      }
+    },
+    "Engine knock" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cascabeleo del motor"
+          }
+        }
+      }
+    },
+    "Engine Load" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carga del Motor"
+          }
+        }
+      }
+    },
+    "Engine misfire damage" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daño por falla de encendido del motor"
+          }
+        }
+      }
+    },
+    "Engine overheating" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobrecalentamiento del motor"
+          }
+        }
+      }
+    },
+    "Engine RPM" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RPM del Motor"
+          }
+        }
+      }
+    },
+    "Engine RPM (Revolutions Per Minute) indicates how fast your engine is turning. Normal idle is typically 600-1000 RPM. Higher RPM means the engine is working harder." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las RPM del motor (Revoluciones Por Minuto) indican qué tan rápido gira tu motor. El ralentí normal es típicamente 600-1000 RPM. Mayor RPM significa que el motor está trabajando más."
+          }
+        }
+      }
+    },
+    "Engine shaking" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motor vibrando"
+          }
+        }
+      }
+    },
+    "Engine stalling" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motor se apaga"
+          }
+        }
+      }
+    },
+    "Engine, transmission, and emissions systems" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motor, transmisión y sistemas de emisiones"
+          }
+        }
+      }
+    },
+    "Erratic idle" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ralentí errático"
+          }
+        }
+      }
+    },
+    "EVAP canister issue" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problema con el bote EVAP"
+          }
+        }
+      }
+    },
+    "Evaporative Emission Control System Malfunction" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla del Sistema de Control de Emisiones Evaporativas"
+          }
+        }
+      }
+    },
+    "Evaporative Emission System Leak Detected (Large Leak)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuga Detectada en Sistema de Emisiones Evaporativas (Fuga Grande)"
+          }
+        }
+      }
+    },
+    "Evaporative Emission System Leak Detected (Small Leak)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuga Detectada en Sistema de Emisiones Evaporativas (Fuga Pequeña)"
+          }
+        }
+      }
+    },
+    "Evaporative Emission System Vent Control Circuit" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Circuito de Control de Ventilación del Sistema de Emisiones Evaporativas"
+          }
+        }
+      }
+    },
+    "Exhaust Gas Recirculation Flow Excessive" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flujo Excesivo de Recirculación de Gases de Escape"
+          }
+        }
+      }
+    },
+    "Exhaust Gas Recirculation Flow Insufficient" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flujo Insuficiente de Recirculación de Gases de Escape"
+          }
+        }
+      }
+    },
+    "Exhaust leak" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuga de escape"
+          }
+        }
+      }
+    },
+    "Failed emissions" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emisiones reprobadas"
+          }
+        }
+      }
+    },
+    "Failed emissions test" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla en prueba de emisiones"
+          }
+        }
+      }
+    },
+    "Failed to clear codes. Try again." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error al borrar los códigos. Intenta de nuevo."
+          }
+        }
+      }
+    },
+    "Failing catalytic converter" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convertidor catalítico fallando"
+          }
+        }
+      }
+    },
+    "Faulty ABS module" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Módulo ABS defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty BCM" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BCM defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty clockspring" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resorte de reloj defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty DPFE sensor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor DPFE defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty ECM/PCM" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ECM/PCM defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty ECT sensor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor ECT defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty EGR valve" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Válvula EGR defectuosa"
+          }
+        }
+      }
+    },
+    "Faulty fuel injectors" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inyectores de combustible defectuosos"
+          }
+        }
+      }
+    },
+    "Faulty IAC valve" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Válvula IAC defectuosa"
+          }
+        }
+      }
+    },
+    "Faulty IAT sensor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor IAT defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty ignition coil" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bobina de encendido defectuosa"
+          }
+        }
+      }
+    },
+    "Faulty ignition coils" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bobinas de encendido defectuosas"
+          }
+        }
+      }
+    },
+    "Faulty input speed sensor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor de velocidad de entrada defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty instrument cluster" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tablero de instrumentos defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty MAF" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MAF defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty MAF sensor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor MAF defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty module" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Módulo defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty O2 sensor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor O2 defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty purge valve" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Válvula de purga defectuosa"
+          }
+        }
+      }
+    },
+    "Faulty spark plug in cylinder 1" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bujía defectuosa en cilindro 1"
+          }
+        }
+      }
+    },
+    "Faulty spark plug in cylinder 2" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bujía defectuosa en cilindro 2"
+          }
+        }
+      }
+    },
+    "Faulty spark plug in cylinder 3" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bujía defectuosa en cilindro 3"
+          }
+        }
+      }
+    },
+    "Faulty spark plug in cylinder 4" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bujía defectuosa en cilindro 4"
+          }
+        }
+      }
+    },
+    "Faulty spark plug in cylinder 5" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bujía defectuosa en cilindro 5"
+          }
+        }
+      }
+    },
+    "Faulty spark plug in cylinder 6" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bujía defectuosa en cilindro 6"
+          }
+        }
+      }
+    },
+    "Faulty TCM" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TCM defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty thermostat" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termostato defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty TPS" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TPS defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty vent valve" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Válvula de ventilación defectuosa"
+          }
+        }
+      }
+    },
+    "Faulty VSS" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VSS defectuoso"
+          }
+        }
+      }
+    },
+    "Faulty wheel speed sensor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor de velocidad de rueda defectuoso"
+          }
+        }
+      }
+    },
+    "Freeze Frame Data" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datos de Cuadro Congelado"
+          }
+        }
+      }
+    },
+    "Fuel injector issue" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problema con el inyector de combustible"
+          }
+        }
+      }
+    },
+    "Fuel Level" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nivel de Combustible"
+          }
+        }
+      }
+    },
+    "Fuel odor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Olor a combustible"
+          }
+        }
+      }
+    },
+    "Fuel pressure issue" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problema de presión de combustible"
+          }
+        }
+      }
+    },
+    "Fuel tank level indicates how much fuel remains in your tank as a percentage of the total capacity." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El nivel del tanque de combustible indica cuánto combustible queda en tu tanque como porcentaje de la capacidad total."
+          }
+        }
+      }
+    },
+    "Generic (SAE)" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genérico (SAE)"
+          }
+        }
+      }
+    },
+    "Hard starting" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arranque difícil"
+          }
+        }
+      }
+    },
+    "Hard starting in cold weather" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arranque difícil en clima frío"
+          }
+        }
+      }
+    },
+    "Harsh shifting" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambios bruscos"
+          }
+        }
+      }
+    },
+    "Hesitation" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titubeo"
+          }
+        }
+      }
+    },
+    "High fuel pressure" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alta presión de combustible"
+          }
+        }
+      }
+    },
+    "High idle" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ralentí alto"
+          }
+        }
+      }
+    },
+    "High Speed CAN Communication Bus" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bus de Comunicación CAN de Alta Velocidad"
+          }
+        }
+      }
+    },
+    "Idle Air Control System Malfunction" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla del Sistema de Control de Aire en Ralentí"
+          }
+        }
+      }
+    },
+    "Idle: 0-5%\nCruising: 10-20%\nFull throttle: 100%" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ralentí: 0-5%\nCrucero: 10-20%\nAceleración máxima: 100%"
+          }
+        }
+      }
+    },
+    "Idle: 2-7 g/s\nCruising: 5-15 g/s" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ralentí: 2-7 g/s\nCrucero: 5-15 g/s"
+          }
+        }
+      }
+    },
+    "Idle: 20-30%\nCruising: 30-50%\nAccelerating: 50-90%" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ralentí: 20-30%\nCrucero: 30-50%\nAcelerando: 50-90%"
+          }
+        }
+      }
+    },
+    "Idle: 600-1000 RPM\nDriving: 1500-3000 RPM" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ralentí: 600-1000 RPM\nConduciendo: 1500-3000 RPM"
+          }
+        }
+      }
+    },
+    "Increased emissions" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emisiones incrementadas"
+          }
+        }
+      }
+    },
+    "Info" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Información"
+          }
+        }
+      }
+    },
+    "Input/Turbine Speed Sensor Circuit Malfunction" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla del Circuito del Sensor de Velocidad de Entrada/Turbina"
+          }
+        }
+      }
+    },
+    "Intake Air" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aire de Admisión"
+          }
+        }
+      }
+    },
+    "Intake Air Temp" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temp. de Aire de Admisión"
+          }
+        }
+      }
+    },
+    "Intake air temperature measures the temperature of air entering the engine. Cooler air is denser and can improve performance." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La temperatura del aire de admisión mide la temperatura del aire que entra al motor. El aire más frío es más denso y puede mejorar el rendimiento."
+          }
+        }
+      }
+    },
+    "Intake Air Temperature Sensor Circuit Malfunction" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla del Circuito del Sensor de Temperatura de Aire de Admisión"
+          }
+        }
+      }
+    },
+    "Last Scan" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Último Escaneo"
+          }
+        }
+      }
+    },
+    "Last scanned: %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Último escaneo: %@"
+          }
+        }
+      }
+    },
+    "Last updated: %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última actualización: %@"
+          }
+        }
+      }
+    },
+    "Leak in EVAP system" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuga en el sistema EVAP"
+          }
+        }
+      }
+    },
+    "Leaking fuel injector" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inyector de combustible con fuga"
+          }
+        }
+      }
+    },
+    "Left Front Wheel Speed Sensor Circuit" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Circuito del Sensor de Velocidad de Rueda Delantera Izquierda"
+          }
+        }
+      }
+    },
+    "Left Rear Wheel Speed Sensor Circuit" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Circuito del Sensor de Velocidad de Rueda Trasera Izquierda"
+          }
+        }
+      }
+    },
+    "Limp mode" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo de emergencia"
+          }
+        }
+      }
+    },
+    "Load" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carga"
+          }
+        }
+      }
+    },
+    "Loose gas cap" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tapa de gasolina floja"
+          }
+        },
+        "es-CO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tapa del tanque floja"
+          }
+        }
+      }
+    },
+    "Loose or damaged gas cap" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tapa de gasolina floja o dañada"
+          }
+        },
+        "es-CO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tapa del tanque floja o dañada"
+          }
+        }
+      }
+    },
+    "Loss of power" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pérdida de potencia"
+          }
+        }
+      }
+    },
+    "Lost Communication With Anti-Lock Brake System Module" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pérdida de Comunicación con Módulo del Sistema de Frenos Antibloqueo"
+          }
+        }
+      }
+    },
+    "Lost Communication With Body Control Module" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pérdida de Comunicación con Módulo de Control de Carrocería"
+          }
+        }
+      }
+    },
+    "Lost Communication With ECM/PCM" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pérdida de Comunicación con ECM/PCM"
+          }
+        }
+      }
+    },
+    "Lost Communication With TCM" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pérdida de Comunicación con TCM"
+          }
+        }
+      }
+    },
+    "Low compression" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baja compresión"
+          }
+        }
+      }
+    },
+    "Low fuel pressure" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baja presión de combustible"
+          }
+        }
+      }
+    },
+    "Low transmission fluid" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Líquido de transmisión bajo"
+          }
+        }
+      }
+    },
+    "MAF" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MAF"
+          }
+        }
+      }
+    },
+    "Manufacturer Specific" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Específico del Fabricante"
+          }
+        }
+      }
+    },
+    "Mass Air Flow (MAF) measures the amount of air entering the engine in grams per second. This helps the engine computer determine the correct fuel mixture." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El Flujo de Aire en Masa (MAF) mide la cantidad de aire que entra al motor en gramos por segundo. Esto ayuda a la computadora del motor a determinar la mezcla correcta de combustible."
+          }
+        }
+      }
+    },
+    "Mass or Volume Air Flow Circuit High Input" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrada Alta del Circuito de Flujo de Aire en Masa o Volumen"
+          }
+        }
+      }
+    },
+    "Mass or Volume Air Flow Circuit Low Input" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrada Baja del Circuito de Flujo de Aire en Masa o Volumen"
+          }
+        }
+      }
+    },
+    "Mass or Volume Air Flow Circuit Malfunction" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla del Circuito de Flujo de Aire en Masa o Volumen"
+          }
+        }
+      }
+    },
+    "Mass or Volume Air Flow Circuit Range/Performance" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rango/Rendimiento del Circuito de Flujo de Aire en Masa o Volumen"
+          }
+        }
+      }
+    },
+    "Misfires" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fallas de encendido"
+          }
+        }
+      }
+    },
+    "Missing or loose gas cap" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tapa de gasolina faltante o floja"
+          }
+        },
+        "es-CO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tapa del tanque faltante o floja"
+          }
+        }
+      }
+    },
+    "Module failure" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla del módulo"
+          }
+        }
+      }
+    },
+    "Multiple DTCs" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Múltiples DTCs"
+          }
+        }
+      }
+    },
+    "Multiple warning lights" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Múltiples luces de advertencia"
+          }
+        }
+      }
+    },
+    "Network" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red"
+          }
+        }
+      }
+    },
+    "Network unavailable" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red no disponible"
+          }
+        }
+      }
+    },
+    "No BLE device selected" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se seleccionó un dispositivo BLE"
+          }
+        }
+      }
+    },
+    "No response from vehicle. Check connection." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin respuesta del vehículo. Verifica la conexión."
+          }
+        }
+      }
+    },
+    "No shifting" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin cambios"
+          }
+        }
+      }
+    },
+    "No speedometer reading" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin lectura del velocímetro"
+          }
+        }
+      }
+    },
+    "No start condition" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condición de no arranque"
+          }
+        }
+      }
+    },
+    "No Trouble Codes Found" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se Encontraron Códigos de Falla"
+          }
+        }
+      }
+    },
+    "None" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ninguno"
+          }
+        }
+      }
+    },
+    "Normal Range" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rango Normal"
+          }
+        }
+      }
+    },
+    "Normal: 10-50°C" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Normal: 10-50°C"
+          }
+        }
+      }
+    },
+    "Normal: 85-105°C\nWarning: >110°C" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Normal: 85-105°C\nAdvertencia: >110°C"
+          }
+        }
+      }
+    },
+    "Not available on Simulator" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No disponible en el Simulador"
+          }
+        }
+      }
+    },
+    "Not Connected" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Conectado"
+          }
+        }
+      }
+    },
+    "O2 Sensor Circuit Malfunction (Bank 1 Sensor 1)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla del Circuito del Sensor O2 (Banco 1 Sensor 1)"
+          }
+        }
+      }
+    },
+    "O2 Sensor Circuit Slow Response (Bank 1 Sensor 1)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Respuesta Lenta del Circuito del Sensor O2 (Banco 1 Sensor 1)"
+          }
+        }
+      }
+    },
+    "OBD service not found" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servicio OBD no encontrado"
+          }
+        }
+      }
+    },
+    "Off" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apagado"
+          }
+        }
+      }
+    },
+    "Open or short in wiring" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Circuito abierto o corto en el cableado"
+          }
+        }
+      }
+    },
+    "Poor acceleration" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mala aceleración"
+          }
+        }
+      }
+    },
+    "Poor connection" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mala conexión"
+          }
+        }
+      }
+    },
+    "Poor electrical connection" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mala conexión eléctrica"
+          }
+        }
+      }
+    },
+    "Poor fuel economy" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bajo rendimiento de combustible"
+          }
+        }
+      }
+    },
+    "Poor throttle body ground" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mala tierra del cuerpo de aceleración"
+          }
+        }
+      }
+    },
+    "Possible Causes" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posibles Causas"
+          }
+        }
+      }
+    },
+    "Power/ground issue" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problema de alimentación/tierra"
+          }
+        }
+      }
+    },
+    "Powertrain" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tren Motriz"
+          }
+        }
+      }
+    },
+    "Random/Multiple Cylinder Misfire Detected" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla de Encendido Aleatoria/Múltiple Detectada"
+          }
+        }
+      }
+    },
+    "Ready" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo"
+          }
+        }
+      }
+    },
+    "Ready to Scan" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo para Escanear"
+          }
+        }
+      }
+    },
+    "Reduced fuel economy" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rendimiento de combustible reducido"
+          }
+        }
+      }
+    },
+    "Refill recommended: <25%" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recarga recomendada: <25%"
+          }
+        }
+      }
+    },
+    "Restricted air filter" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtro de aire restringido"
+          }
+        }
+      }
+    },
+    "Rich running condition" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condición de mezcla rica"
+          }
+        }
+      }
+    },
+    "Rich/lean condition" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condición rica/pobre"
+          }
+        }
+      }
+    },
+    "Right Front Wheel Speed Sensor Circuit" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Circuito del Sensor de Velocidad de Rueda Delantera Derecha"
+          }
+        }
+      }
+    },
+    "Right Rear Wheel Speed Sensor Circuit" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Circuito del Sensor de Velocidad de Rueda Trasera Derecha"
+          }
+        }
+      }
+    },
+    "Rough idle" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ralentí inestable"
+          }
+        }
+      }
+    },
+    "RPM" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RPM"
+          }
+        }
+      }
+    },
+    "Scan for Devices" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar Dispositivos"
+          }
+        }
+      }
+    },
+    "Scan for Trouble Codes" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar Códigos de Falla"
+          }
+        }
+      }
+    },
+    "Scanning..." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscando..."
+          }
+        }
+      }
+    },
+    "Selected Device" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dispositivo Seleccionado"
+          }
+        }
+      }
+    },
+    "Sensor snapshot captured when fault occurred:" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Captura de sensores al momento de la falla:"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
+          }
+        }
+      }
+    },
+    "Shifting problems" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problemas de cambio"
+          }
+        }
+      }
+    },
+    "Short circuit" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cortocircuito"
+          }
+        }
+      }
+    },
+    "Short to voltage in circuit" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corto a voltaje en el circuito"
+          }
+        }
+      }
+    },
+    "Shows realistic simulated OBD data and sample trouble codes. No vehicle connection required." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muestra datos OBD simulados realistas y códigos de falla de ejemplo. No se requiere conexión al vehículo."
+          }
+        }
+      }
+    },
+    "Simulated" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulado"
+          }
+        }
+      }
+    },
+    "Slight fuel odor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ligero olor a combustible"
+          }
+        }
+      }
+    },
+    "Sluggish response" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Respuesta lenta"
+          }
+        }
+      }
+    },
+    "Small leak in EVAP hose" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuga pequeña en manguera EVAP"
+          }
+        }
+      }
+    },
+    "Solenoid failure" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla del solenoide"
+          }
+        }
+      }
+    },
+    "Spark plug fouling" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bujías contaminadas"
+          }
+        }
+      }
+    },
+    "Speed" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Velocidad"
+          }
+        }
+      }
+    },
+    "Speedometer not working" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Velocímetro no funciona"
+          }
+        }
+      }
+    },
+    "Stalling" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se apaga"
+          }
+        }
+      }
+    },
+    "Strong fuel odor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuerte olor a combustible"
+          }
+        }
+      }
+    },
+    "Stuck open EGR valve" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Válvula EGR atorada abierta"
+          }
+        }
+      }
+    },
+    "Sulfur smell" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Olor a azufre"
+          }
+        }
+      }
+    },
+    "Supported Protocols" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protocolos Compatibles"
+          }
+        }
+      }
+    },
+    "Symptoms" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Síntomas"
+          }
+        }
+      }
+    },
+    "System Status" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estado del Sistema"
+          }
+        }
+      }
+    },
+    "System Too Lean (Bank 1)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sistema Demasiado Pobre (Banco 1)"
+          }
+        }
+      }
+    },
+    "System Too Rich (Bank 1)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sistema Demasiado Rico (Banco 1)"
+          }
+        }
+      }
+    },
+    "TCM power issue" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problema de alimentación del TCM"
+          }
+        }
+      }
+    },
+    "This will clear all stored trouble codes and turn off the Check Engine light. The codes may return if the underlying issue is not fixed." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esto borrará todos los códigos de falla almacenados y apagará la luz de Check Engine. Los códigos pueden regresar si el problema subyacente no se corrige."
+          }
+        }
+      }
+    },
+    "Throttle" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acelerador"
+          }
+        }
+      }
+    },
+    "Throttle Position" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posición del Acelerador"
+          }
+        }
+      }
+    },
+    "Throttle Position Sensor Circuit Malfunction" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla del Circuito del Sensor de Posición del Acelerador"
+          }
+        }
+      }
+    },
+    "Throttle position shows how far the accelerator pedal is pressed. 0% means idle, 100% means full throttle." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La posición del acelerador muestra qué tanto está presionado el pedal del acelerador. 0% significa ralentí, 100% significa aceleración máxima."
+          }
+        }
+      }
+    },
+    "Timing Advance" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avance de Encendido"
+          }
+        }
+      }
+    },
+    "Timing advance shows how many degrees before Top Dead Center (TDC) the spark plug fires. Advanced timing can improve performance but too much can cause engine knock." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El avance de encendido muestra cuántos grados antes del Punto Muerto Superior (PMS) se dispara la bujía. Un mayor avance puede mejorar el rendimiento, pero demasiado puede causar cascabeleo del motor."
+          }
+        }
+      }
+    },
+    "Tips & Advice" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consejos"
+          }
+        }
+      }
+    },
+    "Traction control disabled" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Control de tracción desactivado"
+          }
+        }
+      }
+    },
+    "Transmission Control System Malfunction" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla del Sistema de Control de Transmisión"
+          }
+        }
+      }
+    },
+    "Transmission in limp mode" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmisión en modo de emergencia"
+          }
+        }
+      }
+    },
+    "Transmission issue detected" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problema de transmisión detectado"
+          }
+        }
+      }
+    },
+    "Transmission shifting issues" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problemas de cambio de transmisión"
+          }
+        }
+      }
+    },
+    "Transmission slipping" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmisión patinando"
+          }
+        }
+      }
+    },
+    "Transmission warning light" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luz de advertencia de transmisión"
+          }
+        }
+      }
+    },
+    "Typical: -10° to +40°" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Típico: -10° a +40°"
+          }
+        }
+      }
+    },
+    "Unauthorized" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Autorizado"
+          }
+        }
+      }
+    },
+    "Unknown %@ code" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Código %@ desconocido"
+          }
+        }
+      }
+    },
+    "Unknown Device" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dispositivo Desconocido"
+          }
+        }
+      }
+    },
+    "Unsupported" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Compatible"
+          }
+        }
+      }
+    },
+    "Vacuum leak" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuga de vacío"
+          }
+        }
+      }
+    },
+    "Vacuum leak to EGR" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuga de vacío hacia EGR"
+          }
+        }
+      }
+    },
+    "Varies based on driving" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varía según la conducción"
+          }
+        }
+      }
+    },
+    "Various electrical issues" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diversos problemas eléctricos"
+          }
+        }
+      }
+    },
+    "Vehicle rejected the request. Try again." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El vehículo rechazó la solicitud. Intenta de nuevo."
+          }
+        }
+      }
+    },
+    "Vehicle speed as reported by the vehicle's speed sensor. This is the actual speed your car is traveling." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Velocidad del vehículo reportada por el sensor de velocidad. Esta es la velocidad real a la que viaja tu auto."
+          }
+        }
+      }
+    },
+    "Vehicle Speed Sensor Malfunction" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falla del Sensor de Velocidad del Vehículo"
+          }
+        }
+      }
+    },
+    "Version" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versión"
+          }
+        }
+      }
+    },
+    "Warning" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Advertencia"
+          }
+        }
+      }
+    },
+    "Warning lights" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luces de advertencia"
+          }
+        }
+      }
+    },
+    "Weak fuel pump" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bomba de combustible débil"
+          }
+        }
+      }
+    },
+    "What is this?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Qué es esto?"
+          }
+        }
+      }
+    },
+    "WiFi" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WiFi"
+          }
+        }
+      }
+    },
+    "Wiring issue" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problema de cableado"
+          }
+        }
+      }
+    },
+    "Worn spark plugs" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bujías desgastadas"
+          }
+        }
+      }
+    },
+    "Your vehicle's computer reported no active diagnostic trouble codes." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La computadora de tu vehículo no reportó códigos de falla activos."
+          }
+        },
+        "es-CO" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El computador de tu vehículo no reportó códigos de falla activos."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

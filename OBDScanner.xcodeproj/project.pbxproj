@@ -91,6 +91,9 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				"es-MX",
+				"es-CO",
 			);
 			mainGroup = C346DC642E8B1B6C00B9D13D;
 			minimizedProjectReferenceProxies = 1;
@@ -255,6 +258,7 @@
 				DEVELOPMENT_TEAM = TL96ZEPKN3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "OBDScanner uses Bluetooth to connect to your BLE OBD-II adapter for vehicle diagnostics.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -272,7 +276,6 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "OBDScanner uses Bluetooth to connect to your BLE OBD-II adapter for vehicle diagnostics.";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -289,6 +292,7 @@
 				DEVELOPMENT_TEAM = TL96ZEPKN3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "OBDScanner uses Bluetooth to connect to your BLE OBD-II adapter for vehicle diagnostics.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -306,7 +310,6 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "OBDScanner uses Bluetooth to connect to your BLE OBD-II adapter for vehicle diagnostics.";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

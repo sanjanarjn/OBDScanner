@@ -44,9 +44,10 @@ class WiFiTransport: OBDTransport {
             case .waiting:
                 // Connection can't be established — clean up
                 self.connection?.cancel()
-                self.state = .failed("Network unavailable")
+                let msg = String(localized: "Network unavailable")
+                self.state = .failed(msg)
                 DispatchQueue.main.async {
-                    self.delegate?.transport(self, didChangeState: .failed("Network unavailable"))
+                    self.delegate?.transport(self, didChangeState: .failed(msg))
                 }
             default:
                 break
